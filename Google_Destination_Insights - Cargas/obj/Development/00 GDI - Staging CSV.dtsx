@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/1/2022 2:21:51 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PC14739"
+  DTS:CreatorName="MITYC\ddiego"
+  DTS:DTSID="{FE04CFB1-D639-4247-9B6D-7AA650293FB1}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.521.0"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{AEBFEF52-23CA-41C6-ACE9-E32955B597C3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{63A147CA-89FE-4B12-BEF2-536E6E0DC2B4}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(@[$Project::fecha_pro]  == &quot;&quot; ?&#xA;&#x9;&#x9;((DT_STR,4,1252)DATEPART( &quot;yyyy&quot; , DATEADD(&quot;d&quot;,0, GETDATE()))+RIGHT(&quot;0&quot; + (DT_STR,4,1252)DATEPART( &quot;mm&quot; , DATEADD(&quot;d&quot;,0, GETDATE()) ), 2)+RIGHT(&quot;0&quot; + (DT_STR,4,1252)DATEPART( &quot;dd&quot; , DATEADD(&quot;d&quot;,0, GETDATE())), 2)) : &#xA;&#x9;&#x9;@[$Project::fecha_pro])"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="fecha">
+      <DTS:VariableValue
+        DTS:DataType="8">20220801</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables />
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
