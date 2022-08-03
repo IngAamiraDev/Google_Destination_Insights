@@ -1,25 +1,25 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="10/29/2021 2:53:16 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="PC14886"
   DTS:CreatorName="MITYC\ddiego"
-  DTS:DTSID="{8B322E84-492E-41E4-8216-A2DCABE106B8}"
+  DTS:DTSID="{F9E95319-A0AC-4AE9-BBAD-D95BBE354D90}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.521.0"
   DTS:LocaleID="3082"
-  DTS:ObjectName="00 GDI - Staging"
+  DTS:ObjectName="00 GDI - Staging Flight To CSV"
   DTS:PackageType="5"
-  DTS:VersionBuild="217"
-  DTS:VersionGUID="{00E91B97-4FC6-4734-915E-45AD8F7FC6EB}">
+  DTS:VersionBuild="218"
+  DTS:VersionGUID="{DDF5477F-D12B-467F-A2FC-3840A0E2487A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Fichero Accomm JSON]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{1FE214FC-0170-4527-B09E-5CE102123F48}"
+      DTS:DTSID="{0843D59F-8658-42C5-85C1-DC86127DA27D}"
       DTS:ObjectName="Fichero Accomm JSON">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::accommodation_json]</DTS:PropertyExpression>
@@ -39,7 +39,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="Columna 0"
-              DTS:DTSID="{D5508930-52A2-459B-92FD-BF87A1E0906E}"
+              DTS:DTSID="{A9F620D5-4EE9-4E52-A6AF-108B23F9F68D}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -48,7 +48,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Fichero Flight JSON]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{81B37A08-3E26-4D66-B1E1-6A1E057B8789}"
+      DTS:DTSID="{638E701D-9CD9-4A0E-97AE-FD6D147809FE}"
       DTS:ObjectName="Fichero Flight JSON">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::flight_json]</DTS:PropertyExpression>
@@ -68,7 +68,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="Columna 0"
-              DTS:DTSID="{D5508930-52A2-459B-92FD-BF87A1E0906E}"
+              DTS:DTSID="{A9F620D5-4EE9-4E52-A6AF-108B23F9F68D}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -77,7 +77,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Fichero Flight JSON 1]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{8B7012A0-36A6-4EE5-ACBE-94D51D08E1DA}"
+      DTS:DTSID="{9CA9FE8C-F65D-4CAA-8381-FEACCAE71D08}"
       DTS:ObjectName="Fichero Flight JSON 1">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::flight_json]</DTS:PropertyExpression>
@@ -97,7 +97,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="Columna 0"
-              DTS:DTSID="{FFA25ADC-D719-4554-BD31-FE8C2BD233DD}"
+              DTS:DTSID="{E827B1C8-1444-4E1E-B947-8935F195BFD9}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -106,7 +106,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Fichero Flight_To CSV]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{D4C223C3-0B18-4B6C-B1C9-D7F72523D0EC}"
+      DTS:DTSID="{74685FC2-40BF-419C-AB81-B6FE451808D7}"
       DTS:ObjectName="Fichero Flight_To CSV">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::flight_path_to]+"\\"+ @[User::FileName]</DTS:PropertyExpression>
@@ -128,7 +128,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="rank"
-              DTS:DTSID="{6EA43DEF-3118-4232-9165-06DE17323ACD}"
+              DTS:DTSID="{006C574F-F58C-40DE-B707-796C587BF7FD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -137,7 +137,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="origin_country"
-              DTS:DTSID="{8110E25C-EB76-4D14-B188-C6F28153B3E3}"
+              DTS:DTSID="{CDD5B02D-436C-4075-893B-F167C290FDA4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -146,7 +146,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="destination_country"
-              DTS:DTSID="{F5117ABB-68BE-41C5-A6A6-1F980FC8A0B2}"
+              DTS:DTSID="{313D3C30-49E0-4B1C-99DA-482D1C7E8485}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -155,7 +155,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ratio"
-              DTS:DTSID="{51C28F5A-6F35-44E7-85F4-21BA7D1E47FF}"
+              DTS:DTSID="{B7393C82-DCBE-4F9B-B619-2A30C72CE4CD}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -167,7 +167,7 @@
       DTS:ConfigString="DB_LOG"
       DTS:CreationName="Microsoft.LogProviderSQLServer"
       DTS:Description="Escribe entradas del registro sobre eventos en una base de datos de SQL Server"
-      DTS:DTSID="{BC698B48-EA69-4354-9E2D-40B0D6E09CBA}"
+      DTS:DTSID="{5C585FD4-8786-4E0C-B3AC-3370711F2328}"
       DTS:ObjectName="Proveedor de registro SSIS para SQL Server">
       <DTS:ObjectData>
         <InnerObject />
@@ -177,7 +177,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5860D4CD-16DE-41A4-BADF-ABED213C9C5A}"
+      DTS:DTSID="{F9EA1833-E6C0-40EE-B7BD-CB9DC1E2F508}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::temporal] + &quot;accommodation_&quot;+ @[User::alpha2] + &quot;_&quot; + &#xA;@[User::fecha] + &quot;10_30.json&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -188,7 +188,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F84D3ADE-8F9E-4B15-9212-BC010C1605B8}"
+      DTS:DTSID="{5BE7C890-FB9F-461A-BCDA-0B421A225295}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="accommodation_path_to">
@@ -198,7 +198,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{71736CEE-4DD8-433C-9B93-6F1C93D03505}"
+      DTS:DTSID="{E238C9A4-5BAB-47B0-A058-BB2CAFA0001E}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;https://destinationinsights.withgoogle.com/data/demand-comparisons?country_code=&quot;+  @[User::alpha2]   +&quot;&amp;travel_type=ACCOMMODATION&amp;days_back=30&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -209,7 +209,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{463EA8F9-B579-4FBF-B89D-9D312759FEDF}"
+      DTS:DTSID="{314AEA1E-240B-4113-A17B-67B5137E4D17}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;AE&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -220,7 +220,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{65937CD5-280B-4383-B842-E63D05581C79}"
+      DTS:DTSID="{805C72B6-5494-48E7-AB72-68D379551D35}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="alpha2_list">
@@ -238,7 +238,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{1442B7CE-1B2C-48FA-B5F0-C38D1A8ACA24}"
+      DTS:DTSID="{AC9FF67D-2D46-48F9-BA7B-D05B564AD8D3}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="cantidad_filas">
@@ -247,7 +247,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{48087D9C-FCBB-4990-911E-8E1DBC4E920E}"
+      DTS:DTSID="{802A6A66-F69C-41B4-8BA3-6C24298960AC}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="(@[$Project::fecha_proc]  == &quot;&quot; ?&#xA;&#x9;&#x9;((DT_STR,4,1252)DATEPART( &quot;yyyy&quot; , DATEADD(&quot;d&quot;,0, GETDATE()))+RIGHT(&quot;0&quot; + (DT_STR,4,1252)DATEPART( &quot;mm&quot; , DATEADD(&quot;d&quot;,0, GETDATE()) ), 2)+RIGHT(&quot;0&quot; + (DT_STR,4,1252)DATEPART( &quot;dd&quot; , DATEADD(&quot;d&quot;,0, GETDATE())), 2)) : &#xA;&#x9;&#x9;@[$Project::fecha_proc])"
       DTS:IncludeInDebugDump="2345"
@@ -258,7 +258,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{1BEF3FE3-3B29-43AB-998F-FEB123A66C9E}"
+      DTS:DTSID="{874F6052-535A-434F-B727-2E898BDFA0EC}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="FileName">
@@ -268,7 +268,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0E2D4C2F-75B3-4DF2-917C-92791A4765B3}"
+      DTS:DTSID="{FB230052-764C-4574-A449-C77DA955E99A}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::flight_path_to]+&quot;\\&quot;+ @[User::FileName]"
       DTS:IncludeInDebugDump="2345"
@@ -279,7 +279,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8F8A10EF-D8BE-4B6B-8982-20DB104D683C}"
+      DTS:DTSID="{81391528-BDB4-495A-BC06-F5187AA088DE}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::temporal] +  &quot;flight_&quot;+ @[User::alpha2] + &quot;_&quot; + @[User::fecha]  + &quot;_30.json&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -290,7 +290,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{889E83C8-BCC6-460F-AB2B-EFEB08325B72}"
+      DTS:DTSID="{5000DAE3-E9F5-44A3-9040-279A738C0A04}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="flight_path_to">
@@ -299,7 +299,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C89E8EB0-EA06-4CE8-8488-4BCB89C7AAF4}"
+      DTS:DTSID="{08CF1F57-E333-4E88-9D46-2DFAA7882F58}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;https://destinationinsights.withgoogle.com/data/demand-comparisons?country_code=&quot;+  @[User::alpha2]   +&quot;&amp;travel_type=FLIGHT&amp;days_back=30&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -310,7 +310,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{3FE673A0-3BCD-4E44-87E7-73D5F63C5119}"
+      DTS:DTSID="{02302EF2-BDF8-43B6-84CC-7F23217C04FA}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[$Project::ruta_fichero_base] + &quot;GDI\\&quot; + @[$Project::Entorno]  + &quot;\\&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -321,7 +321,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{15140E82-8029-49B2-B292-6148B0999A59}"
+      DTS:DTSID="{0472830B-9F38-43C6-A374-00B4E4712BF3}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::gdi_folder] + &quot;Procesado KO\\&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -332,7 +332,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{240E4FDA-180A-4372-B7CD-F586A15A8591}"
+      DTS:DTSID="{D7AE1ABB-6037-4BC3-9D07-45D3F7EAFB3C}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::gdi_folder] + &quot;Procesado OK\\&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -343,7 +343,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{1702C95B-EA07-4DD3-8258-19ADD9D58DA6}"
+      DTS:DTSID="{07E825C5-D13D-46BB-92B6-5D85A6575C24}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::gdi_folder] + &quot;Procesando\\&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -354,7 +354,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6599A67E-08D3-43D4-8D33-FA70CEF9B17F}"
+      DTS:DTSID="{FD46EAF0-9EFC-4AD9-B1CB-CFD6E79DAF62}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::gdi_folder] + &quot;Temporal\\json\\&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -365,7 +365,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{BA3EB742-17BC-4C05-8EF2-8A07E39B227D}"
+      DTS:DTSID="{A44D2423-C196-4E87-8DA8-1AC941616838}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::procesado_ok]+ &quot;GDI_&quot; + LEFT((DT_WSTR, 50)GETDATE() , 10)  + &quot;.zip&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -455,7 +455,7 @@
     </DTS:Property>
     <DTS:SelectedLogProviders>
       <DTS:SelectedLogProvider
-        DTS:InstanceID="{BC698B48-EA69-4354-9E2D-40B0D6E09CBA}" />
+        DTS:InstanceID="{5C585FD4-8786-4E0C-B3AC-3370711F2328}" />
     </DTS:SelectedLogProviders>
   </DTS:LoggingOptions>
   <DTS:Executables>
@@ -463,7 +463,7 @@
       DTS:refId="Package\GDI  - Flight To Sequence Container"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{E0759EA8-5C0D-439D-9A61-81BF28B0CCE6}"
+      DTS:DTSID="{E45F7E23-66EC-4C66-A29D-A617C4DE1557}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="GDI  - Flight To Sequence Container">
@@ -474,14 +474,14 @@
           DTS:CreationName="STOCK:FOREACHLOOP"
           DTS:DelayValidation="True"
           DTS:Description="Foreach Loop Container"
-          DTS:DTSID="{2fcc9ffd-dbae-42eb-a9cc-4821ed4b17ee}"
+          DTS:DTSID="{6FCCC8A7-F00A-4699-B12E-E2AE6DEE2FAA}"
           DTS:ExecutableType="STOCK:FOREACHLOOP"
           DTS:LocaleID="-1"
           DTS:ObjectName="GDI  - Flight To Foreach Loop Container">
           <DTS:ForEachEnumerator
             DTS:CreationName="Microsoft.ForEachFileEnumerator"
-            DTS:DTSID="{58123B0F-5F2B-4C8D-ABA5-361800971EC2}"
-            DTS:ObjectName="{58123B0F-5F2B-4C8D-ABA5-361800971EC2}">
+            DTS:DTSID="{CACF59AB-0AF2-4CED-B426-1DCA4DA5ACE9}"
+            DTS:ObjectName="{CACF59AB-0AF2-4CED-B426-1DCA4DA5ACE9}">
             <DTS:PropertyExpression
               DTS:Name="Directory">@[User::flight_path_to]</DTS:PropertyExpression>
             <DTS:ObjectData>
@@ -503,7 +503,7 @@
               DTS:refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - flight_csv to sqlserver"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{43a6e9d7-5329-468f-a579-70e37bf32bed}"
+              DTS:DTSID="{11F50BF2-6E44-4735-8ED1-5DCDA2607C4B}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="GDI - flight_csv to sqlserver"
@@ -535,12 +535,12 @@
               DTS:refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - log loaded file(flight) KO"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{60df3411-00a3-4d29-ba7d-545e798569a1}"
+              DTS:DTSID="{B0046F2F-7693-4305-8FE7-2DC2EF6817A4}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="GDI - log loaded file(flight) KO"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:LoggingOptions
                 DTS:FilterKind="0" />
@@ -561,12 +561,12 @@
               DTS:refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - move flight_csv KO"
               DTS:CreationName="Microsoft.FileSystemTask"
               DTS:Description="File System Task"
-              DTS:DTSID="{7fe0d7e0-915f-43c3-83be-4a6a8efe4633}"
+              DTS:DTSID="{69E26698-5D57-4C29-B59C-DE4D0637E3FD}"
               DTS:ExecutableType="Microsoft.FileSystemTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="GDI - move flight_csv KO"
               DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:LoggingOptions
                 DTS:FilterKind="0" />
@@ -585,12 +585,12 @@
               DTS:CreationName="Microsoft.FileSystemTask"
               DTS:DelayValidation="True"
               DTS:Description="File System Task"
-              DTS:DTSID="{3357e42c-4bd9-4897-957a-0675a226d90c}"
+              DTS:DTSID="{AAC2DF00-461C-41AA-868F-A0E62969420B}"
               DTS:ExecutableType="Microsoft.FileSystemTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="GDI - move flight_csv OK"
               DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:LoggingOptions
                 DTS:FilterKind="0" />
@@ -609,7 +609,7 @@
               DTS:CreationName="Microsoft.Pipeline"
               DTS:DelayValidation="True"
               DTS:Description="Data Flow Task"
-              DTS:DTSID="{7C1C838B-E8C8-4A60-9D81-2B5F4F1D9B21}"
+              DTS:DTSID="{1DCB7D2F-4864-4F92-8D09-BCB98348A387}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
               DTS:ObjectName="Load CSV Data Flow Task"
@@ -1005,7 +1005,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container.PrecedenceConstraints[Constraint]"
               DTS:CreationName=""
-              DTS:DTSID="{ED5DBD4D-BF0B-4DAB-8C1A-F0DB4C5F63CC}"
+              DTS:DTSID="{BB5E1305-E68D-4334-A403-9A7C5207BE6F}"
               DTS:From="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint"
@@ -1013,7 +1013,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
               DTS:CreationName=""
-              DTS:DTSID="{AEB3B63E-771C-45F6-9355-E1B7FBC19316}"
+              DTS:DTSID="{1FA8FB80-A338-4CCC-94B5-6AB4E2453804}"
               DTS:From="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - flight_csv to sqlserver"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 1"
@@ -1021,7 +1021,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
               DTS:CreationName=""
-              DTS:DTSID="{6E99B228-92D9-4109-891A-21CB3E3104B9}"
+              DTS:DTSID="{069A3FA8-4E6D-4D72-9C09-6C48D0DE705C}"
               DTS:From="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - flight_csv to sqlserver"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 2"
@@ -1030,7 +1030,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
               DTS:CreationName=""
-              DTS:DTSID="{CC3E8168-CB55-46AC-9F1A-B987B36647E9}"
+              DTS:DTSID="{E0F608E8-CA09-477C-BC2F-C415549A7ABE}"
               DTS:From="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - move flight_csv KO"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 3"
@@ -1039,8 +1039,8 @@
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{10BBFAFA-7757-4178-895E-3BEAB36E9B25}"
-              DTS:ObjectName="{10BBFAFA-7757-4178-895E-3BEAB36E9B25}"
+              DTS:DTSID="{C8516E81-226E-4152-BEBD-22FC71D285BD}"
+              DTS:ObjectName="{C8516E81-226E-4152-BEBD-22FC71D285BD}"
               DTS:ValueIndex="0"
               DTS:VariableName="User::FileName" />
           </DTS:ForEachVariableMappings>
@@ -1049,7 +1049,7 @@
           DTS:refId="Package\GDI  - Flight To Sequence Container\GDI Insert flight_csv in demanda_comparaciones"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0D7524C7-B18E-4959-BF40-E3447830E625}"
+          DTS:DTSID="{87FDD3A2-BF20-41CB-AE65-62FE32184E93}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GDI Insert flight_csv in demanda_comparaciones"
@@ -1066,7 +1066,7 @@
           DTS:refId="Package\GDI  - Flight To Sequence Container\Update UTF-8 Execute SQL Task"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{9FD6812B-7D71-4F3E-A53D-EBADC52B0575}"
+          DTS:DTSID="{A275A888-0C26-4EFF-8D34-BC26C4032F7B}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update UTF-8 Execute SQL Task"
@@ -1084,7 +1084,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\GDI  - Flight To Sequence Container.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{301683D8-1DE4-4E2E-80A2-C5CC7B30A987}"
+          DTS:DTSID="{38FA9321-2FA6-45D6-B1EA-9D777509E05B}"
           DTS:From="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -1092,7 +1092,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\GDI  - Flight To Sequence Container.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{725A1992-2704-4F9E-BB58-66FD801A3450}"
+          DTS:DTSID="{81E7F89B-E4BD-40C9-95C9-54FB74638D95}"
           DTS:From="Package\GDI  - Flight To Sequence Container\Update UTF-8 Execute SQL Task"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -1103,7 +1103,7 @@
       DTS:refId="Package\GDI - compress files"
       DTS:CreationName="Microsoft.ExecuteProcess"
       DTS:Description="Execute Process Task"
-      DTS:DTSID="{7d6cce28-8309-4309-bc71-75bb9bec2101}"
+      DTS:DTSID="{6C9C953B-AC4E-4808-ABFA-F27A8CB1A91C}"
       DTS:ExecutableType="Microsoft.ExecuteProcess"
       DTS:LocaleID="-1"
       DTS:ObjectName="GDI - compress files"
@@ -1201,7 +1201,7 @@
       DTS:refId="Package\GDI - STG Execute SQL Task"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{D86EA429-55DA-4198-954A-C7E6F55564FE}"
+      DTS:DTSID="{175CEE88-45DE-4FBB-BC30-68E61C9A70B3}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="GDI - STG Execute SQL Task"
@@ -1219,7 +1219,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{0A9494B8-BE2E-4F7B-B1C0-71FD228EA818}"
+      DTS:DTSID="{3764688C-48D2-495C-BFBE-4817045CE4EF}"
       DTS:From="Package\GDI - STG Execute SQL Task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -1227,7 +1227,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{4B5F5381-1CB7-42DF-B9BF-8DED56E6D233}"
+      DTS:DTSID="{145FB4A7-69A1-4D68-AFD9-085158843DF5}"
       DTS:From="Package\GDI  - Flight To Sequence Container"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -1246,17 +1246,25 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="215,42"
-          Id="Package\GDI - STG Execute SQL Task"
-          TopLeft="248,71" />
+          Size="210,42"
+          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - flight_csv to sqlserver"
+          TopLeft="135,102" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - log loaded file(flight) KO"
+          TopLeft="282,266" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - move flight_csv KO"
+          TopLeft="290,190" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - move flight_csv OK"
+          TopLeft="12.5,187" />
         <NodeLayout
           Size="199,42"
           Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task"
           TopLeft="138,24" />
-        <NodeLayout
-          Size="210,42"
-          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - flight_csv to sqlserver"
-          TopLeft="135,102" />
         <EdgeLayout
           Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container.PrecedenceConstraints[Constraint]"
           TopLeft="238.75,66">
@@ -1279,10 +1287,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="203,42"
-          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - move flight_csv OK"
-          TopLeft="12.5,187" />
         <EdgeLayout
           Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
           TopLeft="240,144">
@@ -1317,10 +1321,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="199,42"
-          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - move flight_csv KO"
-          TopLeft="290,190" />
         <EdgeLayout
           Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
           TopLeft="273.666666666667,144">
@@ -1357,10 +1357,6 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="223,42"
-          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - log loaded file(flight) KO"
-          TopLeft="282,266" />
         <EdgeLayout
           Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
           TopLeft="391.5,232">
@@ -1391,13 +1387,13 @@
           Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container"
           TopLeft="42,36" />
         <NodeLayout
-          Size="232,42"
-          Id="Package\GDI  - Flight To Sequence Container\Update UTF-8 Execute SQL Task"
-          TopLeft="183,485" />
-        <NodeLayout
           Size="311,42"
           Id="Package\GDI  - Flight To Sequence Container\GDI Insert flight_csv in demanda_comparaciones"
           TopLeft="136.5,570" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\GDI  - Flight To Sequence Container\Update UTF-8 Execute SQL Task"
+          TopLeft="183,485" />
         <EdgeLayout
           Id="Package\GDI  - Flight To Sequence Container.PrecedenceConstraints[Constraint]"
           TopLeft="301.25,445">
@@ -1449,6 +1445,14 @@
           Size="617,710"
           Id="Package\GDI  - Flight To Sequence Container"
           TopLeft="52,177" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\GDI - compress files"
+          TopLeft="273,938" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\GDI - STG Execute SQL Task"
+          TopLeft="248,71" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="358,113">
@@ -1471,10 +1475,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="174,42"
-          Id="Package\GDI - compress files"
-          TopLeft="273,938" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="360.25,887">
