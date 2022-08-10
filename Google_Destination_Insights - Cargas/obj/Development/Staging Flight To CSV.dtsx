@@ -1,0 +1,1581 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/29/2021 2:53:16 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PC14886"
+  DTS:CreatorName="MITYC\ddiego"
+  DTS:DTSID="{09EE820E-D9E6-4F6F-9298-6F6097D9C7BA}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.521.0"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Staging Flight To CSV"
+  DTS:PackageType="5"
+  DTS:VersionBuild="219"
+  DTS:VersionGUID="{377B499E-D333-4AC0-9B18-40261C6020A4}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Fichero Accomm JSON]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0843D59F-8658-42C5-85C1-DC86127DA27D}"
+      DTS:ObjectName="Fichero Accomm JSON">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::accommodation_json]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\sgtic01\R_SGCET\Datos\GDI\DES\Temporal\json\accommodation_AE_20227410_30.json">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 0"
+              DTS:DTSID="{A9F620D5-4EE9-4E52-A6AF-108B23F9F68D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Fichero Flight JSON]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{638E701D-9CD9-4A0E-97AE-FD6D147809FE}"
+      DTS:ObjectName="Fichero Flight JSON">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::flight_json]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\sgtic01\R_SGCET\Datos\GDI\DES\Temporal\json\flight_AE_202274_30.json">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 0"
+              DTS:DTSID="{A9F620D5-4EE9-4E52-A6AF-108B23F9F68D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Fichero Flight JSON 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{9CA9FE8C-F65D-4CAA-8381-FEACCAE71D08}"
+      DTS:ObjectName="Fichero Flight JSON 1">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::flight_json]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\sgtic01\R_SGCET\Datos\GDI\DES\Temporal\json\flight_AE_202274_30.json">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna 0"
+              DTS:DTSID="{E827B1C8-1444-4E1E-B947-8935F195BFD9}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Fichero Flight_To CSV]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{74685FC2-40BF-419C-AB81-B6FE451808D7}"
+      DTS:ObjectName="Fichero Flight_To CSV">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::flight_path_to]+"\\"+ @[User::FileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\sgtic01\R_SGCET\Datos\GDI\DES\Temporal\Vuelos\To\">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="rank"
+              DTS:DTSID="{006C574F-F58C-40DE-B707-796C587BF7FD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="origin_country"
+              DTS:DTSID="{CDD5B02D-436C-4075-893B-F167C290FDA4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="destination_country"
+              DTS:DTSID="{313D3C30-49E0-4B1C-99DA-482D1C7E8485}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ratio"
+              DTS:DTSID="{B7393C82-DCBE-4F9B-B619-2A30C72CE4CD}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="DB_LOG"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Escribe entradas del registro sobre eventos en una base de datos de SQL Server"
+      DTS:DTSID="{5C585FD4-8786-4E0C-B3AC-3370711F2328}"
+      DTS:ObjectName="Proveedor de registro SSIS para SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F9EA1833-E6C0-40EE-B7BD-CB9DC1E2F508}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::temporal] + &quot;accommodation_&quot;+ @[User::alpha2] + &quot;_&quot; + &#xA;@[User::fecha] + &quot;10_30.json&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="accommodation_json">
+      <DTS:VariableValue
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Temporal\json\accommodation_AE_20227410_30.json</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5BE7C890-FB9F-461A-BCDA-0B421A225295}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="accommodation_path_to">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E238C9A4-5BAB-47B0-A058-BB2CAFA0001E}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;https://destinationinsights.withgoogle.com/data/demand-comparisons?country_code=&quot;+  @[User::alpha2]   +&quot;&amp;travel_type=ACCOMMODATION&amp;days_back=30&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="accommodation_url">
+      <DTS:VariableValue
+        DTS:DataType="8">https://destinationinsights.withgoogle.com/data/demand-comparisons?country_code=AE&amp;travel_type=ACCOMMODATION&amp;days_back=30</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{314AEA1E-240B-4113-A17B-67B5137E4D17}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;AE&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="alpha2">
+      <DTS:VariableValue
+        DTS:DataType="8">AE</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{805C72B6-5494-48E7-AB72-68D379551D35}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="alpha2_list">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AC9FF67D-2D46-48F9-BA7B-D05B564AD8D3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="cantidad_filas">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{802A6A66-F69C-41B4-8BA3-6C24298960AC}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(@[$Project::fecha_proc]  == &quot;&quot; ?&#xA;&#x9;&#x9;((DT_STR,4,1252)DATEPART( &quot;yyyy&quot; , DATEADD(&quot;d&quot;,0, GETDATE()))+RIGHT(&quot;0&quot; + (DT_STR,4,1252)DATEPART( &quot;mm&quot; , DATEADD(&quot;d&quot;,0, GETDATE()) ), 2)+RIGHT(&quot;0&quot; + (DT_STR,4,1252)DATEPART( &quot;dd&quot; , DATEADD(&quot;d&quot;,0, GETDATE())), 2)) : &#xA;&#x9;&#x9;@[$Project::fecha_proc])"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="fecha">
+      <DTS:VariableValue
+        DTS:DataType="8">202274</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{874F6052-535A-434F-B727-2E898BDFA0EC}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FB230052-764C-4574-A449-C77DA955E99A}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::flight_path_to]+&quot;\\&quot;+ @[User::FileName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="flight_csv">
+      <DTS:VariableValue
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Temporal\Vuelos\To\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{81391528-BDB4-495A-BC06-F5187AA088DE}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::temporal] +  &quot;flight_&quot;+ @[User::alpha2] + &quot;_&quot; + @[User::fecha]  + &quot;_30.json&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="flight_json">
+      <DTS:VariableValue
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Temporal\json\flight_AE_202274_30.json</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5000DAE3-E9F5-44A3-9040-279A738C0A04}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="flight_path_to">
+      <DTS:VariableValue
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Temporal\Vuelos\To</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{08CF1F57-E333-4E88-9D46-2DFAA7882F58}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;https://destinationinsights.withgoogle.com/data/demand-comparisons?country_code=&quot;+  @[User::alpha2]   +&quot;&amp;travel_type=FLIGHT&amp;days_back=30&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="flight_url">
+      <DTS:VariableValue
+        DTS:DataType="8">https://destinationinsights.withgoogle.com/data/demand-comparisons?country_code=AE&amp;travel_type=FLIGHT&amp;days_back=30</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{02302EF2-BDF8-43B6-84CC-7F23217C04FA}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::ruta_fichero_base] + &quot;GDI\\&quot; + @[$Project::Entorno]  + &quot;\\&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="gdi_folder">
+      <DTS:VariableValue
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0472830B-9F38-43C6-A374-00B4E4712BF3}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::gdi_folder] + &quot;Procesado KO\\&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="procesado_ko">
+      <DTS:VariableValue
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado KO\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D7AE1ABB-6037-4BC3-9D07-45D3F7EAFB3C}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::gdi_folder] + &quot;Procesado OK\\&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="procesado_ok">
+      <DTS:VariableValue
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{07E825C5-D13D-46BB-92B6-5D85A6575C24}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::gdi_folder] + &quot;Procesando\\&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="procesando">
+      <DTS:VariableValue
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Procesando\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FD46EAF0-9EFC-4AD9-B1CB-CFD6E79DAF62}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::gdi_folder] + &quot;Temporal\\json\\&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="temporal">
+      <DTS:VariableValue
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Temporal\json\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A44D2423-C196-4E87-8DA8-1AC941616838}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::procesado_ok]+ &quot;GDI_&quot; + LEFT((DT_WSTR, 50)GETDATE() , 10)  + &quot;.zip&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="zip_files">
+      <DTS:VariableValue
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-08-04.zip</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">4,7,OnError,13,OnPostExecute,12,OnPreExecute,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{5C585FD4-8786-4E0C-B3AC-3370711F2328}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\GDI  - Flight To Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{E45F7E23-66EC-4C66-A29D-A617C4DE1557}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GDI  - Flight To Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:DelayValidation="True"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{6FCCC8A7-F00A-4699-B12E-E2AE6DEE2FAA}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="GDI  - Flight To Foreach Loop Container">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="Microsoft.ForEachFileEnumerator"
+            DTS:DTSID="{CACF59AB-0AF2-4CED-B426-1DCA4DA5ACE9}"
+            DTS:ObjectName="{CACF59AB-0AF2-4CED-B426-1DCA4DA5ACE9}">
+            <DTS:PropertyExpression
+              DTS:Name="Directory">@[User::flight_path_to]</DTS:PropertyExpression>
+            <DTS:ObjectData>
+              <ForEachFileEnumeratorProperties>
+                <FEFEProperty
+                  Folder="\\sgtic01\R_SGCET\Datos\GDI\DES\Temporal\Vuelos\To" />
+                <FEFEProperty
+                  FileSpec="*.*" />
+                <FEFEProperty
+                  FileNameRetrievalType="1" />
+                <FEFEProperty
+                  Recurse="0" />
+              </ForEachFileEnumeratorProperties>
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - flight_csv to sqlserver"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{11F50BF2-6E44-4735-8ED1-5DCDA2607C4B}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="GDI - flight_csv to sqlserver"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:LoggingOptions
+                DTS:FilterKind="0" />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+                  SQLTask:SqlStatementSource="declare @filepath nvarchar(max)&#xA;declare @filas int&#xA;set @filepath = ?&#xA;set @filas = ?&#xA;&#xA;--exec (@sql)&#xA;&#xA;IF EXISTS (SELECT * FROM [stg].[ficheros_cargados] WHERE [fichero] = @filepath)&#xA;BEGIN&#xA; UPDATE [stg].[ficheros_cargados]&#xA; SET    [carga_numero] = [carga_numero] +1&#xA; WHERE  [fichero] = @filepath&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;INSERT INTO [stg].[ficheros_cargados] ([fichero],[filas_numero],[carga_numero],[carga_estado])&#xA;VALUES (@filepath,@filas,1,1)&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::flight_csv"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::cantidad_filas"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - log loaded file(flight) KO"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{B0046F2F-7693-4305-8FE7-2DC2EF6817A4}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="GDI - log loaded file(flight) KO"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:LoggingOptions
+                DTS:FilterKind="0" />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+                  SQLTask:SqlStatementSource="UPDATE [stg].[ficheros_cargados]&#xA;SET [carga_estado] = 0&#xA;WHERE [fichero] = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::flight_csv"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - move flight_csv KO"
+              DTS:CreationName="Microsoft.FileSystemTask"
+              DTS:Description="File System Task"
+              DTS:DTSID="{69E26698-5D57-4C29-B59C-DE4D0637E3FD}"
+              DTS:ExecutableType="Microsoft.FileSystemTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="GDI - move flight_csv KO"
+              DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:LoggingOptions
+                DTS:FilterKind="0" />
+              <DTS:ObjectData>
+                <FileSystemData
+                  TaskOperationType="MoveFile"
+                  TaskOverwriteDestFile="True"
+                  TaskSourcePath="User::flight_json"
+                  TaskIsSourceVariable="True"
+                  TaskDestinationPath="User::procesado_ko"
+                  TaskIsDestinationVariable="True" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - move flight_csv OK"
+              DTS:CreationName="Microsoft.FileSystemTask"
+              DTS:DelayValidation="True"
+              DTS:Description="File System Task"
+              DTS:DTSID="{AAC2DF00-461C-41AA-868F-A0E62969420B}"
+              DTS:ExecutableType="Microsoft.FileSystemTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="GDI - move flight_csv OK"
+              DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="1">
+              <DTS:Variables />
+              <DTS:LoggingOptions
+                DTS:FilterKind="0" />
+              <DTS:ObjectData>
+                <FileSystemData
+                  TaskOperationType="MoveFile"
+                  TaskOverwriteDestFile="True"
+                  TaskSourcePath="User::flight_csv"
+                  TaskIsSourceVariable="True"
+                  TaskDestinationPath="User::procesado_ok"
+                  TaskIsDestinationVariable="True" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task"
+              DTS:CreationName="Microsoft.Pipeline"
+              DTS:DelayValidation="True"
+              DTS:Description="Data Flow Task"
+              DTS:DTSID="{1DCB7D2F-4864-4F92-8D09-BCB98348A387}"
+              DTS:ExecutableType="Microsoft.Pipeline"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Load CSV Data Flow Task"
+              DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <pipeline
+                  version="1">
+                  <components>
+                    <component
+                      refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV"
+                      componentClassID="Microsoft.OLEDBDestination"
+                      contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                      description="OLE DB Destination"
+                      name="Flight FicheroCSV"
+                      usesDispositions="true"
+                      version="4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                          name="CommandTimeout">0</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the name of the database object used to open a rowset."
+                          name="OpenRowset">[stg].[FicheroCSV]</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the variable that contains the name of the database object used to open a rowset."
+                          name="OpenRowsetVariable"></property>
+                        <property
+                          dataType="System.String"
+                          description="The SQL command to be executed."
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column code page to use when code page information is unavailable from the data source."
+                          name="DefaultCodePage">20285</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Forces the use of the DefaultCodePage property value when describing character data."
+                          name="AlwaysUseDefaultCodePage">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the mode used to access the database."
+                          name="AccessMode"
+                          typeConverter="AccessMode">3</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepIdentity">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepNulls">false</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                          name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                          name="FastLoadMaxInsertCommitSize">2147483647</property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Connections[OleDbConnection]"
+                          connectionManagerID="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[Destination_Insights]"
+                          description="The OLE DB runtime connection used to access the database."
+                          name="OleDbConnection" />
+                      </connections>
+                      <inputs>
+                        <input
+                          refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Inputs[OLE DB Destination Input]"
+                          errorOrTruncationOperation="Insert"
+                          errorRowDisposition="FailComponent"
+                          hasSideEffects="true"
+                          name="OLE DB Destination Input">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Inputs[OLE DB Destination Input].Columns[rank]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="rank"
+                              externalMetadataColumnId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[rank]"
+                              lineageId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output].Columns[rank]" />
+                            <inputColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Inputs[OLE DB Destination Input].Columns[origin_country]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="origin_country"
+                              externalMetadataColumnId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[origin_country]"
+                              lineageId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output].Columns[origin_country]" />
+                            <inputColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Inputs[OLE DB Destination Input].Columns[destination_country]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="destination_country"
+                              externalMetadataColumnId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[destination_country]"
+                              lineageId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output].Columns[destination_country]" />
+                            <inputColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Inputs[OLE DB Destination Input].Columns[ratio]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="ratio"
+                              externalMetadataColumnId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[ratio]"
+                              lineageId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output].Columns[ratio]" />
+                          </inputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[rank]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="rank" />
+                            <externalMetadataColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[origin_country]"
+                              codePage="1252"
+                              dataType="str"
+                              length="100"
+                              name="origin_country" />
+                            <externalMetadataColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[destination_country]"
+                              codePage="1252"
+                              dataType="str"
+                              length="100"
+                              name="destination_country" />
+                            <externalMetadataColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[ratio]"
+                              codePage="1252"
+                              dataType="str"
+                              length="100"
+                              name="ratio" />
+                          </externalMetadataColumns>
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Outputs[OLE DB Destination Error Output]"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="OLE DB Destination Error Output"
+                          synchronousInputId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Inputs[OLE DB Destination Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight"
+                      componentClassID="Microsoft.FlatFileSource"
+                      contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                      description="Flat File Source"
+                      localeId="3082"
+                      name="Lee Fichros Flight"
+                      usesDispositions="true"
+                      version="1">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Specifies whether zero-length columns are treated as null."
+                          name="RetainNulls">false</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                          name="FileNameColumnName"></property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Connections[FlatFileConnection]"
+                          connectionManagerID="Package.ConnectionManagers[Fichero Flight_To CSV]"
+                          connectionManagerRefId="Package.ConnectionManagers[Fichero Flight_To CSV]"
+                          name="FlatFileConnection" />
+                      </connections>
+                      <outputs>
+                        <output
+                          refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output]"
+                          name="Flat File Source Output">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output].Columns[rank]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output].ExternalColumns[rank]"
+                              length="50"
+                              lineageId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output].Columns[rank]"
+                              name="rank"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output].Columns[origin_country]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output].ExternalColumns[origin_country]"
+                              length="50"
+                              lineageId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output].Columns[origin_country]"
+                              name="origin_country"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output].Columns[destination_country]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output].ExternalColumns[destination_country]"
+                              length="50"
+                              lineageId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output].Columns[destination_country]"
+                              name="destination_country"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output].Columns[ratio]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output].ExternalColumns[ratio]"
+                              length="50"
+                              lineageId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output].Columns[ratio]"
+                              name="ratio"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                          </outputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output].ExternalColumns[rank]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="rank" />
+                            <externalMetadataColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output].ExternalColumns[origin_country]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="origin_country" />
+                            <externalMetadataColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output].ExternalColumns[destination_country]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="destination_country" />
+                            <externalMetadataColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output].ExternalColumns[ratio]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="ratio" />
+                          </externalMetadataColumns>
+                        </output>
+                        <output
+                          refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Error Output]"
+                          isErrorOut="true"
+                          name="Flat File Source Error Output">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                              codePage="20285"
+                              dataType="text"
+                              description="Flat File Source Error Output Column"
+                              lineageId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                              name="Flat File Source Error Output Column" />
+                            <outputColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Row Count"
+                      componentClassID="Microsoft.RowCount"
+                      contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                      description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                      name="Row Count">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the variable to hold the row count."
+                          name="VariableName">User::cantidad_filas</property>
+                      </properties>
+                      <inputs>
+                        <input
+                          refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Row Count.Inputs[Row Count Input 1]"
+                          hasSideEffects="true"
+                          name="Row Count Input 1">
+                          <externalMetadataColumns />
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Row Count.Outputs[Row Count Output 1]"
+                          name="Row Count Output 1"
+                          synchronousInputId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Row Count.Inputs[Row Count Input 1]">
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                  </components>
+                  <paths>
+                    <path
+                      refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task.Paths[Flat File Source Output]"
+                      endId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Row Count.Inputs[Row Count Input 1]"
+                      name="Flat File Source Output"
+                      startId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight.Outputs[Flat File Source Output]" />
+                    <path
+                      refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task.Paths[Row Count Output 1]"
+                      endId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV.Inputs[OLE DB Destination Input]"
+                      name="Row Count Output 1"
+                      startId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Row Count.Outputs[Row Count Output 1]" />
+                  </paths>
+                </pipeline>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{BB5E1305-E68D-4334-A403-9A7C5207BE6F}"
+              DTS:From="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - flight_csv to sqlserver" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{1FA8FB80-A338-4CCC-94B5-6AB4E2453804}"
+              DTS:From="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - flight_csv to sqlserver"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - move flight_csv OK" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
+              DTS:CreationName=""
+              DTS:DTSID="{069A3FA8-4E6D-4D72-9C09-6C48D0DE705C}"
+              DTS:From="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - flight_csv to sqlserver"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 2"
+              DTS:To="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - move flight_csv KO"
+              DTS:Value="1" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
+              DTS:CreationName=""
+              DTS:DTSID="{E0F608E8-CA09-477C-BC2F-C415549A7ABE}"
+              DTS:From="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - move flight_csv KO"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 3"
+              DTS:To="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - log loaded file(flight) KO" />
+          </DTS:PrecedenceConstraints>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{C8516E81-226E-4152-BEBD-22FC71D285BD}"
+              DTS:ObjectName="{C8516E81-226E-4152-BEBD-22FC71D285BD}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::FileName" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GDI  - Flight To Sequence Container\GDI Insert flight_csv in demanda_comparaciones"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{87FDD3A2-BF20-41CB-AE65-62FE32184E93}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="GDI Insert flight_csv in demanda_comparaciones"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022 CTP2.0; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+              SQLTask:SqlStatementSource="INSERT INTO [stg].[demanda_comparaciones]&#xA;(&#xA;&#x9; [fecha]&#xA;&#x9;,[demanda_tipo]&#xA;&#x9;,[demanda_categoria]&#xA;&#x9;,[origen_mercado]&#xA;&#x9;,[destino_mercado]&#xA;&#x9;,[rank]&#xA;&#x9;,[ratio]&#xA;)&#xA;SELECT &#xA;&#x9;GETDATE() AS [fecha], &#xA;&#x9;'Salidas' AS [demanda_tipo], &#xA;&#x9;'Vuelos' AS [demanda_categoria]&#xA;&#x9;,b.alpha2 AS [origen_mercado]&#xA;&#x9;,c.alpha2 AS [destino_mercado]&#xA;&#x9;,[rank]&#xA;&#x9;,[ratio]&#xA;FROM [Destination_Insights].[stg].[FicheroCSV] a&#xA;&#x9;INNER JOIN [DATATUR].[dbo].[DimMercado] b ON a.origin_country = b.countries_es&#xA;&#x9;INNER JOIN [DATATUR].[dbo].[DimMercado] c ON a.destination_country = c.countries_es" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GDI  - Flight To Sequence Container\Update UTF-8 Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{A275A888-0C26-4EFF-8D34-BC26C4032F7B}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update UTF-8 Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022 CTP2.0; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+              SQLTask:SqlStatementSource="UPDATE [Destination_Insights].[stg].[FicheroCSV] SET [origin_country] = &#xA;REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE([origin_country], '&quot;',''), 'Ã','Á'), 'Ã±','ñ'), 'Ã¡','á'), 'Ã©','é'), 'Ã­','í'), 'Ã³','ó'),'Ãº','ú')&#xA;&#xA;&#xA;UPDATE [Destination_Insights].[stg].[FicheroCSV] SET [destination_country] = &#xA;REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE([destination_country], '&quot;',''), 'Ã','Á'), 'Ã±','ñ'), 'Ã¡','á'), 'Ã©','é'), 'Ã­','í'), 'Ã³','ó'),'Ãº','ú')&#xA;&#xA;DELETE FROM [Destination_Insights].[stg].[FicheroCSV]&#xA;WHERE ratio = '0'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GDI  - Flight To Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{38FA9321-2FA6-45D6-B1EA-9D777509E05B}"
+          DTS:From="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\GDI  - Flight To Sequence Container\Update UTF-8 Execute SQL Task" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GDI  - Flight To Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{81E7F89B-E4BD-40C9-95C9-54FB74638D95}"
+          DTS:From="Package\GDI  - Flight To Sequence Container\Update UTF-8 Execute SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\GDI  - Flight To Sequence Container\GDI Insert flight_csv in demanda_comparaciones" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GDI - compress files"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{6C9C953B-AC4E-4808-ABFA-F27A8CB1A91C}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GDI - compress files"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="1">
+        <DTS:Property
+          DTS:DataType="8"
+          DTS:Name="EventFilter">4,7,OnError,13,OnPostExecute,12,OnPreExecute,12,OnTaskFailed</DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnError"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnPostExecute"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnPreExecute"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnTaskFailed"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+      </DTS:LoggingOptions>
+      <DTS:PropertyExpression
+        DTS:Name="Arguments">"a -t7z " + "\"" +  @[User::zip_files] + "\" " + "\"" + @[User::procesado_ok]+  "*.csv\"" + " -sdel"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Program Files\7-Zip\7z.exe"
+          Arguments="a -t7z &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-08-04.zip&quot; &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\*.csv&quot; -sdel" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GDI - STG Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{175CEE88-45DE-4FBB-BC30-68E61C9A70B3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GDI - STG Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022 CTP2.0; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [stg].[FicheroCSV]&#xA;&#xA;TRUNCATE TABLE [stg].[demanda_comparaciones]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3764688C-48D2-495C-BFBE-4817045CE4EF}"
+      DTS:From="Package\GDI - STG Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\GDI  - Flight To Sequence Container" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{145FB4A7-69A1-4D68-AFD9-085158843DF5}"
+      DTS:From="Package\GDI  - Flight To Sequence Container"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\GDI - compress files" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="210,42"
+          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - flight_csv to sqlserver"
+          TopLeft="135,102" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - log loaded file(flight) KO"
+          TopLeft="282,266" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - move flight_csv KO"
+          TopLeft="290,190" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\GDI - move flight_csv OK"
+          TopLeft="12.5,187" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task"
+          TopLeft="138,24" />
+        <EdgeLayout
+          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          TopLeft="238.75,66">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="240,144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-126,43"
+              Start="0,0"
+              End="-126,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5"
+                    Point2="0,21.5"
+                    Point3="-4,21.5" />
+                  <mssgle:LineSegment
+                    End="-122,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-122,21.5"
+                    Point2="-126,21.5"
+                    Point3="-126,25.5" />
+                  <mssgle:LineSegment
+                    End="-126,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="273.666666666667,144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="115.833333333333,46"
+              Start="0,0"
+              End="115.833333333333,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.6086956521739" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.6086956521739"
+                    Point2="0,18.6086956521739"
+                    Point3="4,18.6086956521739" />
+                  <mssgle:LineSegment
+                    End="111.833333333333,18.6086956521739" />
+                  <mssgle:CubicBezierSegment
+                    Point1="111.833333333333,18.6086956521739"
+                    Point2="115.833333333333,18.6086956521739"
+                    Point3="115.833333333333,22.6086956521739" />
+                  <mssgle:LineSegment
+                    End="115.833333333333,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="42.6753190104167,23.6086956521739,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
+          TopLeft="391.5,232">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="523,366"
+          Size="523,409"
+          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container"
+          TopLeft="42,36" />
+        <NodeLayout
+          Size="311,42"
+          Id="Package\GDI  - Flight To Sequence Container\GDI Insert flight_csv in demanda_comparaciones"
+          TopLeft="136.5,570" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\GDI  - Flight To Sequence Container\Update UTF-8 Execute SQL Task"
+          TopLeft="183,485" />
+        <EdgeLayout
+          Id="Package\GDI  - Flight To Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="301.25,445">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GDI  - Flight To Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="295.5,527">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="617,667"
+          Size="617,710"
+          Id="Package\GDI  - Flight To Sequence Container"
+          TopLeft="52,177" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\GDI - compress files"
+          TopLeft="273,938" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\GDI - STG Execute SQL Task"
+          TopLeft="248,71" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="358,113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64"
+              Start="0,0"
+              End="0,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="360.25,887">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="161,42"
+          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Lee Fichros Flight"
+          TopLeft="111,77" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV"
+          TopLeft="110,282" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Row Count"
+          TopLeft="124,179" />
+        <EdgeLayout
+          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="190.25,119">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task.Paths[Row Count Output 1]"
+          TopLeft="189.75,221">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\GDI  - Flight To Sequence Container\GDI  - Flight To Foreach Loop Container\Load CSV Data Flow Task\Flight FicheroCSV">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
