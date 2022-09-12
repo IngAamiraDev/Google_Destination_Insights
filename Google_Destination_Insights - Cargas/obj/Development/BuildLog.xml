@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectInfo>
+    <Name>Google_Destination_Insights - Cargas</Name>
+    <LastWriteTime>2022-08-05T11:33:47.3555734Z</LastWriteTime>
+    <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+  </ProjectInfo>
+  <LastBuildInfos>
+    <ProjectBuildItemInfo>
+      <Name>GDI - Main.dtsx</Name>
+      <LastWriteTime>2022-08-17T16:54:04.5643718Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>01 GDI - Work.dtsx</Name>
+      <LastWriteTime>2022-08-05T11:09:01.6401581Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>02 GDI - Datawarehouse.dtsx</Name>
+      <LastWriteTime>2022-08-05T11:09:33.2980222Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Staging Flight To CSV.dtsx</Name>
+      <LastWriteTime>2022-08-04T12:38:28.798662Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Staging Flight From CSV.dtsx</Name>
+      <LastWriteTime>2022-08-04T12:38:24.7889029Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>00 GDI - Staging.dtsx</Name>
+      <LastWriteTime>2022-08-17T12:28:37.432773Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Staging Test.dtsx</Name>
+      <LastWriteTime>2022-08-04T12:15:00.036983Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>00.1 GDI - Staging CSV.dtsx</Name>
+      <LastWriteTime>2022-08-17T12:28:37.4192991Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>00.1.1 GDI - Staging Flight CSV.dtsx</Name>
+      <LastWriteTime>2022-08-17T13:03:42.2224096Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>00.1.2 GDI - Staging Accomm CSV.dtsx</Name>
+      <LastWriteTime>2022-08-17T13:03:58.799391Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>GDI - Main CSV.dtsx</Name>
+      <LastWriteTime>2022-08-17T16:54:04.3332372Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+  </LastBuildInfos>
+</BuildLog>
