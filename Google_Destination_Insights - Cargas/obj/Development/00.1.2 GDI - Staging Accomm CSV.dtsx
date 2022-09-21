@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="PC14886"
   DTS:CreatorName="MITYC\ddiego"
-  DTS:DTSID="{6860B8C9-7279-414E-8423-F91EC45C81F0}"
+  DTS:DTSID="{DCD3F4C2-E91B-405C-9B5A-5FC8227356C3}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.521.0"
   DTS:LocaleID="3082"
   DTS:ObjectName="00 1 2 GDI - Staging Accomm CSV"
   DTS:PackageType="5"
-  DTS:VersionBuild="257"
-  DTS:VersionGUID="{1A2F64D7-9308-47AA-B53B-042674D20220}">
+  DTS:VersionBuild="267"
+  DTS:VersionGUID="{13E25984-1C97-483D-BE4C-EA759F94834F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Fichero Accomm CSV]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{7177BC54-A06B-410D-9384-335D3E2AA4B3}"
+      DTS:DTSID="{088E9866-E74D-481D-A385-1577CDD8E401}"
       DTS:ObjectName="Fichero Accomm CSV">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::accomm_path_csv]+"\\"+ @[User::FileName]</DTS:PropertyExpression>
@@ -41,7 +41,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="rank"
-              DTS:DTSID="{FAB9EDDD-496B-49A3-BA17-9818EB5E8328}"
+              DTS:DTSID="{2A443E6C-E7B3-4ECB-A2AB-7B836B119DD2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="origin_country"
-              DTS:DTSID="{2500B8EB-5380-4CDD-AABB-2F072BC892B3}"
+              DTS:DTSID="{2BE643C1-D684-498A-9BE9-4DC3654FB2EE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="destination_country"
-              DTS:DTSID="{3EF00C9F-B5D8-4385-98E1-D428B650637E}"
+              DTS:DTSID="{4D65C8DB-90C6-45B3-8A96-CF37499D3601}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ratio"
-              DTS:DTSID="{A81B24E8-6037-40C2-AA4A-C5A0CD94B12D}"
+              DTS:DTSID="{2FD7FC29-48F2-46CE-86FC-60EC5C79324B}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -80,7 +80,7 @@
       DTS:ConfigString="DB_LOG"
       DTS:CreationName="Microsoft.LogProviderSQLServer"
       DTS:Description="Escribe entradas del registro sobre eventos en una base de datos de SQL Server"
-      DTS:DTSID="{D9F8E5B8-8AC9-4EB8-B96E-7474D4A2AD8F}"
+      DTS:DTSID="{1FA1136C-8D93-422C-A7C9-8C92EC34C6C5}"
       DTS:ObjectName="Proveedor de registro SSIS para SQL Server">
       <DTS:ObjectData>
         <InnerObject />
@@ -90,7 +90,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6EE445C4-D15D-4EBA-BD17-4761A9490CEA}"
+      DTS:DTSID="{093B9B54-2E75-4B19-860A-1868FDA138AD}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::accomm_path_csv]+&quot;\\&quot;+ @[User::FileName]"
       DTS:IncludeInDebugDump="2345"
@@ -101,7 +101,18 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{80C25D64-E22C-42C9-AC55-B2819FC0D249}"
+      DTS:DTSID="{263374FF-84B5-49FB-AA9A-8CEB9C27D4F6}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="accomm_folder">
+      <DTS:VariableValue
+        DTS:DataType="8">Temporal\Alojamientos</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2B382B52-88DC-4914-B54A-A9DB6C8B030E}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::gdi_folder]+ @[User::accomm_folder]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="accomm_path_csv">
@@ -110,7 +121,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{30CC249C-4A14-441A-8676-23EBA05C6080}"
+      DTS:DTSID="{EB462938-B04D-402F-9218-76A9C06E04E8}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="cantidad_filas">
@@ -119,7 +130,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{2AE9DBE1-06F5-4A57-BF4B-9C960B7DC9B6}"
+      DTS:DTSID="{1DE96CB5-E27D-484C-9BE9-CE810AEE966A}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="FileName">
@@ -129,7 +140,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D28D93D2-99EB-4ED3-A128-94B54DAFCF0A}"
+      DTS:DTSID="{EEFFC57C-BE73-4D98-81CB-5E2CB23872DC}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[$Project::ruta_fichero_base] + &quot;GDI\\&quot; + @[$Project::Entorno]  + &quot;\\&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -140,7 +151,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C8662E87-CEEB-4F82-9CE8-D21FAB39F652}"
+      DTS:DTSID="{6DC091D8-5C9E-4B68-81AD-BBD7F93231F1}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::gdi_folder] + &quot;Procesado KO\\&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -151,7 +162,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4B3A2A4A-B1F7-44F4-83FF-B5ED4758FEF3}"
+      DTS:DTSID="{B7E5ECBA-30B5-45BD-BB79-AB20785D8945}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::gdi_folder] + &quot;Procesado OK\\&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -162,7 +173,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{08356E67-2FB5-4FD5-BA53-46B2906531A8}"
+      DTS:DTSID="{B6DBAABF-F722-4FAB-A0DA-FE8895F4763D}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::gdi_folder] + &quot;Procesando\\&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -173,14 +184,14 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{CF2A628D-D3EE-4CAB-AD15-7DF5B00183CF}"
+      DTS:DTSID="{D15E6BDA-9018-4C5D-B05A-891E954E0FBB}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::procesado_ok]+ &quot;GDI_&quot; + LEFT((DT_WSTR, 50)GETDATE() , 10)  + &quot;.zip&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="zip_files">
       <DTS:VariableValue
-        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-08-17.zip</DTS:VariableValue>
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-09-21.zip</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:LoggingOptions
@@ -263,7 +274,7 @@
     </DTS:Property>
     <DTS:SelectedLogProviders>
       <DTS:SelectedLogProvider
-        DTS:InstanceID="{D9F8E5B8-8AC9-4EB8-B96E-7474D4A2AD8F}" />
+        DTS:InstanceID="{1FA1136C-8D93-422C-A7C9-8C92EC34C6C5}" />
     </DTS:SelectedLogProviders>
   </DTS:LoggingOptions>
   <DTS:Executables>
@@ -271,7 +282,7 @@
       DTS:refId="Package\GDI  - Accomm CSV Sequence Container"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{EAD61364-C3B4-4654-A428-9551873017C7}"
+      DTS:DTSID="{5E5C3B64-114B-419E-A450-AA8C7A09692A}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="GDI  - Accomm CSV Sequence Container">
@@ -282,14 +293,14 @@
           DTS:CreationName="STOCK:FOREACHLOOP"
           DTS:DelayValidation="True"
           DTS:Description="Foreach Loop Container"
-          DTS:DTSID="{A675D033-9969-42D6-8118-0A269EDB0DA6}"
+          DTS:DTSID="{EA82ADE2-E0F3-4F85-946B-38C78D74EE47}"
           DTS:ExecutableType="STOCK:FOREACHLOOP"
           DTS:LocaleID="-1"
           DTS:ObjectName="GDI  - Accomm CSV Foreach Loop Container">
           <DTS:ForEachEnumerator
             DTS:CreationName="Microsoft.ForEachFileEnumerator"
-            DTS:DTSID="{38AF3383-F554-4467-9CAA-F34059FAC809}"
-            DTS:ObjectName="{38AF3383-F554-4467-9CAA-F34059FAC809}">
+            DTS:DTSID="{B1D38DBD-07FF-4DA1-BCFB-3DA4A9FC1832}"
+            DTS:ObjectName="{B1D38DBD-07FF-4DA1-BCFB-3DA4A9FC1832}">
             <DTS:PropertyExpression
               DTS:Name="Directory">@[User::accomm_path_csv]</DTS:PropertyExpression>
             <DTS:ObjectData>
@@ -311,7 +322,7 @@
               DTS:refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - accomm_csv to sqlserver"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{56C85850-3749-4B3F-8FE9-26BE603857BD}"
+              DTS:DTSID="{3136E67A-AEC6-4A5D-AA08-626325555066}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="GDI - accomm_csv to sqlserver"
@@ -322,7 +333,7 @@
                 DTS:FilterKind="0" />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+                  SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
                   SQLTask:SqlStatementSource="declare @filepath nvarchar(max)&#xA;declare @filas int&#xA;set @filepath = ?&#xA;set @filas = ?&#xA;&#xA;--exec (@sql)&#xA;&#xA;IF EXISTS (SELECT * FROM [stg].[ficheros_cargados] WHERE [fichero] = @filepath)&#xA;BEGIN&#xA; UPDATE [stg].[ficheros_cargados]&#xA; SET    [carga_numero] = [carga_numero] +1&#xA; WHERE  [fichero] = @filepath&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;INSERT INTO [stg].[ficheros_cargados] ([fichero],[filas_numero],[carga_numero],[carga_estado])&#xA;VALUES (@filepath,@filas,1,1)&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="0"
@@ -340,14 +351,14 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv"
+              DTS:refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv"
               DTS:CreationName="Microsoft.Pipeline"
               DTS:DelayValidation="True"
               DTS:Description="Data Flow Task"
-              DTS:DTSID="{15071564-D520-4FA3-9A6C-BE24361218EF}"
+              DTS:DTSID="{4ADFBAE2-D8E1-4DE8-80F1-3F28C5829660}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
-              DTS:ObjectName="GDI - load csv"
+              DTS:ObjectName="GDI - load ficherocsv"
               DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
               <DTS:Variables />
               <DTS:ObjectData>
@@ -355,7 +366,7 @@
                   version="1">
                   <components>
                     <component
-                      refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV"
+                      refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV"
                       componentClassID="Microsoft.OLEDBDestination"
                       contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                       description="OLE DB Destination"
@@ -379,7 +390,7 @@
                           dataType="System.String"
                           description="The SQL command to be executed."
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -412,75 +423,75 @@
                       </properties>
                       <connections>
                         <connection
-                          refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Connections[OleDbConnection]"
-                          connectionManagerID="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}:external"
+                          refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Connections[OleDbConnection]"
+                          connectionManagerID="{988ACCED-E98F-462E-9F4C-36069689DCBD}:external"
                           connectionManagerRefId="Project.ConnectionManagers[Destination_Insights]"
                           description="The OLE DB runtime connection used to access the database."
                           name="OleDbConnection" />
                       </connections>
                       <inputs>
                         <input
-                          refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Inputs[OLE DB Destination Input]"
+                          refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Inputs[OLE DB Destination Input]"
                           errorOrTruncationOperation="Insert"
                           errorRowDisposition="FailComponent"
                           hasSideEffects="true"
                           name="OLE DB Destination Input">
                           <inputColumns>
                             <inputColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].Columns[rank]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].Columns[rank]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="rank"
-                              externalMetadataColumnId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[rank]"
-                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[rank]" />
+                              externalMetadataColumnId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[rank]"
+                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[rank]" />
                             <inputColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].Columns[origin_country]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].Columns[origin_country]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="origin_country"
-                              externalMetadataColumnId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[origin_country]"
-                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[origin_country]" />
+                              externalMetadataColumnId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[origin_country]"
+                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[origin_country]" />
                             <inputColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].Columns[destination_country]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].Columns[destination_country]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="destination_country"
-                              externalMetadataColumnId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[destination_country]"
-                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[destination_country]" />
+                              externalMetadataColumnId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[destination_country]"
+                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[destination_country]" />
                             <inputColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].Columns[ratio]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].Columns[ratio]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="ratio"
-                              externalMetadataColumnId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[ratio]"
-                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[ratio]" />
+                              externalMetadataColumnId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[ratio]"
+                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[ratio]" />
                           </inputColumns>
                           <externalMetadataColumns
                             isUsed="True">
                             <externalMetadataColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[rank]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[rank]"
                               codePage="1252"
                               dataType="str"
                               length="50"
                               name="rank" />
                             <externalMetadataColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[origin_country]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[origin_country]"
                               codePage="1252"
                               dataType="str"
                               length="100"
                               name="origin_country" />
                             <externalMetadataColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[destination_country]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[destination_country]"
                               codePage="1252"
                               dataType="str"
                               length="100"
                               name="destination_country" />
                             <externalMetadataColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[ratio]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[ratio]"
                               codePage="1252"
                               dataType="str"
                               length="100"
@@ -490,22 +501,22 @@
                       </inputs>
                       <outputs>
                         <output
-                          refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Outputs[OLE DB Destination Error Output]"
+                          refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Outputs[OLE DB Destination Error Output]"
                           exclusionGroup="1"
                           isErrorOut="true"
                           name="OLE DB Destination Error Output"
-                          synchronousInputId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Inputs[OLE DB Destination Input]">
+                          synchronousInputId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Inputs[OLE DB Destination Input]">
                           <outputColumns>
                             <outputColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                               dataType="i4"
-                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                               name="ErrorCode"
                               specialFlags="1" />
                             <outputColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                               dataType="i4"
-                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                               name="ErrorColumn"
                               specialFlags="2" />
                           </outputColumns>
@@ -514,7 +525,7 @@
                       </outputs>
                     </component>
                     <component
-                      refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm"
+                      refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm"
                       componentClassID="Microsoft.FlatFileSource"
                       contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                       description="Flat File Source"
@@ -534,25 +545,25 @@
                       </properties>
                       <connections>
                         <connection
-                          refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Connections[FlatFileConnection]"
+                          refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Connections[FlatFileConnection]"
                           connectionManagerID="Package.ConnectionManagers[Fichero Accomm CSV]"
                           connectionManagerRefId="Package.ConnectionManagers[Fichero Accomm CSV]"
                           name="FlatFileConnection" />
                       </connections>
                       <outputs>
                         <output
-                          refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output]"
+                          refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output]"
                           name="Flat File Source Output">
                           <outputColumns>
                             <outputColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[rank]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[rank]"
                               codePage="1252"
                               dataType="str"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output].ExternalColumns[rank]"
+                              externalMetadataColumnId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output].ExternalColumns[rank]"
                               length="50"
-                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[rank]"
+                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[rank]"
                               name="rank"
                               truncationRowDisposition="FailComponent">
                               <properties>
@@ -567,14 +578,14 @@
                               </properties>
                             </outputColumn>
                             <outputColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[origin_country]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[origin_country]"
                               codePage="1252"
                               dataType="str"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output].ExternalColumns[origin_country]"
+                              externalMetadataColumnId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output].ExternalColumns[origin_country]"
                               length="50"
-                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[origin_country]"
+                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[origin_country]"
                               name="origin_country"
                               truncationRowDisposition="FailComponent">
                               <properties>
@@ -589,14 +600,14 @@
                               </properties>
                             </outputColumn>
                             <outputColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[destination_country]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[destination_country]"
                               codePage="1252"
                               dataType="str"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output].ExternalColumns[destination_country]"
+                              externalMetadataColumnId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output].ExternalColumns[destination_country]"
                               length="50"
-                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[destination_country]"
+                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[destination_country]"
                               name="destination_country"
                               truncationRowDisposition="FailComponent">
                               <properties>
@@ -611,14 +622,14 @@
                               </properties>
                             </outputColumn>
                             <outputColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[ratio]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[ratio]"
                               codePage="1252"
                               dataType="str"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output].ExternalColumns[ratio]"
+                              externalMetadataColumnId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output].ExternalColumns[ratio]"
                               length="50"
-                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[ratio]"
+                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output].Columns[ratio]"
                               name="ratio"
                               truncationRowDisposition="FailComponent">
                               <properties>
@@ -636,25 +647,25 @@
                           <externalMetadataColumns
                             isUsed="True">
                             <externalMetadataColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output].ExternalColumns[rank]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output].ExternalColumns[rank]"
                               codePage="1252"
                               dataType="str"
                               length="50"
                               name="rank" />
                             <externalMetadataColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output].ExternalColumns[origin_country]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output].ExternalColumns[origin_country]"
                               codePage="1252"
                               dataType="str"
                               length="50"
                               name="origin_country" />
                             <externalMetadataColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output].ExternalColumns[destination_country]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output].ExternalColumns[destination_country]"
                               codePage="1252"
                               dataType="str"
                               length="50"
                               name="destination_country" />
                             <externalMetadataColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output].ExternalColumns[ratio]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output].ExternalColumns[ratio]"
                               codePage="1252"
                               dataType="str"
                               length="50"
@@ -662,27 +673,27 @@
                           </externalMetadataColumns>
                         </output>
                         <output
-                          refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Error Output]"
+                          refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Error Output]"
                           isErrorOut="true"
                           name="Flat File Source Error Output">
                           <outputColumns>
                             <outputColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                               codePage="20285"
                               dataType="text"
                               description="Flat File Source Error Output Column"
-                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                               name="Flat File Source Error Output Column" />
                             <outputColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                               dataType="i4"
-                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                               name="ErrorCode"
                               specialFlags="1" />
                             <outputColumn
-                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                              refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                               dataType="i4"
-                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                              lineageId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                               name="ErrorColumn"
                               specialFlags="2" />
                           </outputColumns>
@@ -691,7 +702,7 @@
                       </outputs>
                     </component>
                     <component
-                      refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Row Count"
+                      refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Row Count"
                       componentClassID="Microsoft.RowCount"
                       contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                       description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
@@ -704,7 +715,7 @@
                       </properties>
                       <inputs>
                         <input
-                          refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Row Count.Inputs[Row Count Input 1]"
+                          refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Row Count.Inputs[Row Count Input 1]"
                           hasSideEffects="true"
                           name="Row Count Input 1">
                           <externalMetadataColumns />
@@ -712,9 +723,9 @@
                       </inputs>
                       <outputs>
                         <output
-                          refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Row Count.Outputs[Row Count Output 1]"
+                          refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Row Count.Outputs[Row Count Output 1]"
                           name="Row Count Output 1"
-                          synchronousInputId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Row Count.Inputs[Row Count Input 1]">
+                          synchronousInputId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Row Count.Inputs[Row Count Input 1]">
                           <externalMetadataColumns />
                         </output>
                       </outputs>
@@ -722,15 +733,15 @@
                   </components>
                   <paths>
                     <path
-                      refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv.Paths[Flat File Source Output]"
-                      endId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Row Count.Inputs[Row Count Input 1]"
+                      refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv.Paths[Flat File Source Output]"
+                      endId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Row Count.Inputs[Row Count Input 1]"
                       name="Flat File Source Output"
-                      startId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm.Outputs[Flat File Source Output]" />
+                      startId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm.Outputs[Flat File Source Output]" />
                     <path
-                      refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv.Paths[Row Count Output 1]"
-                      endId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV.Inputs[OLE DB Destination Input]"
+                      refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv.Paths[Row Count Output 1]"
+                      endId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV.Inputs[OLE DB Destination Input]"
                       name="Row Count Output 1"
-                      startId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Row Count.Outputs[Row Count Output 1]" />
+                      startId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Row Count.Outputs[Row Count Output 1]" />
                   </paths>
                 </pipeline>
               </DTS:ObjectData>
@@ -739,7 +750,7 @@
               DTS:refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - log loaded file(accomm) KO"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{CD53339E-A830-4DD7-AB23-15549068648F}"
+              DTS:DTSID="{56B4FD3A-07CE-4124-B10A-5E81F8F61225}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="GDI - log loaded file(accomm) KO"
@@ -750,7 +761,7 @@
                 DTS:FilterKind="0" />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+                  SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
                   SQLTask:SqlStatementSource="UPDATE [stg].[ficheros_cargados]&#xA;SET [carga_estado] = 0&#xA;WHERE [fichero] = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="0"
@@ -765,7 +776,7 @@
               DTS:refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - move accomm_csv KO"
               DTS:CreationName="Microsoft.FileSystemTask"
               DTS:Description="File System Task"
-              DTS:DTSID="{5F9F12F5-F60F-4AC8-B4C6-00EADA16C0A2}"
+              DTS:DTSID="{18B691C4-2E01-4FE9-8014-7C4DE71BB075}"
               DTS:ExecutableType="Microsoft.FileSystemTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="GDI - move accomm_csv KO"
@@ -789,7 +800,7 @@
               DTS:CreationName="Microsoft.FileSystemTask"
               DTS:DelayValidation="True"
               DTS:Description="File System Task"
-              DTS:DTSID="{2E446665-7802-4C5E-969B-9E0DDD60538A}"
+              DTS:DTSID="{A345A5AB-38EC-44C0-BE7F-818AE685F55A}"
               DTS:ExecutableType="Microsoft.FileSystemTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="GDI - move accomm_csv OK"
@@ -813,15 +824,15 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container.PrecedenceConstraints[Constraint]"
               DTS:CreationName=""
-              DTS:DTSID="{676B4FA5-582D-41F0-892B-05BB30AE0363}"
-              DTS:From="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv"
+              DTS:DTSID="{19878B8C-1453-4FCA-9E7A-6DDD79B4A6F8}"
+              DTS:From="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint"
               DTS:To="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - accomm_csv to sqlserver" />
             <DTS:PrecedenceConstraint
               DTS:refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
               DTS:CreationName=""
-              DTS:DTSID="{C83412F4-CFAD-4B9E-855C-BC7A7E0CC930}"
+              DTS:DTSID="{6B19860B-5FF1-4190-8AE6-99C81416DACD}"
               DTS:From="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - accomm_csv to sqlserver"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 1"
@@ -829,7 +840,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
               DTS:CreationName=""
-              DTS:DTSID="{C3122CE2-F213-4740-B608-3A2E97107BAD}"
+              DTS:DTSID="{8029C0C5-CF58-4277-B46D-B54053B96095}"
               DTS:From="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - accomm_csv to sqlserver"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 2"
@@ -838,7 +849,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
               DTS:CreationName=""
-              DTS:DTSID="{048B3DCD-FD2D-4D36-AA51-8D6989281192}"
+              DTS:DTSID="{70E82341-7181-4EE3-86AB-42AA54139AA4}"
               DTS:From="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - move accomm_csv KO"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 3"
@@ -847,8 +858,8 @@
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{853C2A62-6BA6-489B-A8B7-ADD863606BE3}"
-              DTS:ObjectName="{853C2A62-6BA6-489B-A8B7-ADD863606BE3}"
+              DTS:DTSID="{49D90BC8-B01A-4887-8655-8DC4DC2B918F}"
+              DTS:ObjectName="{49D90BC8-B01A-4887-8655-8DC4DC2B918F}"
               DTS:ValueIndex="0"
               DTS:VariableName="User::FileName" />
           </DTS:ForEachVariableMappings>
@@ -857,7 +868,7 @@
           DTS:refId="Package\GDI  - Accomm CSV Sequence Container\GDI - insert accomm_csv in demanda_comparaciones"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{6517A9BB-36A5-4BA1-B4A5-CDDCFC6986F9}"
+          DTS:DTSID="{F7D762C6-E02E-44CF-BC09-B47F02AEA71F}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GDI - insert accomm_csv in demanda_comparaciones"
@@ -866,15 +877,32 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
-              SQLTask:SqlStatementSource="INSERT INTO [stg].[demanda_comparaciones]&#xA;(&#xA;&#x9; [fecha]&#xA;&#x9;,[demanda_tipo]&#xA;&#x9;,[demanda_categoria]&#xA;&#x9;,[origen_mercado]&#xA;&#x9;,[destino_mercado]&#xA;&#x9;,[rank]&#xA;&#x9;,[ratio]&#xA;)&#xA;SELECT &#xA;&#x9;'2022-08-16 14:17:27.783' AS [fecha], &#xA;&#x9;'Salidas' AS [demanda_tipo], &#xA;&#x9;'Alojamiento' AS [demanda_categoria]&#xA;&#x9;,b.alpha2 AS [origen_mercado]&#xA;&#x9;,c.alpha2 AS [destino_mercado]&#xA;&#x9;,[rank]&#xA;&#x9;,[ratio]&#xA;FROM [Destination_Insights].[stg].[FicheroCSV] a&#xA;&#x9;INNER JOIN [DATATUR].[dbo].[DimMercado] b ON a.origin_country = b.countries_es&#xA;&#x9;INNER JOIN [DATATUR].[dbo].[DimMercado] c ON a.destination_country = c.countries_es" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
+              SQLTask:SqlStatementSource="INSERT INTO [stg].[demanda_comparaciones]&#xA;(&#xA;&#x9; [fecha]&#xA;&#x9;,[demanda_tipo]&#xA;&#x9;,[demanda_categoria]&#xA;&#x9;,[origen_mercado]&#xA;&#x9;,[destino_mercado]&#xA;&#x9;,[rank]&#xA;&#x9;,[ratio]&#xA;)&#xA;SELECT &#xA;&#x9;[fecha] = DATEADD(dd, -(DATEPART(dw, GETDATE()-1)),GETDATE()), &#xA;&#x9;'Salidas' AS [demanda_tipo], &#xA;&#x9;'Alojamiento' AS [demanda_categoria]&#xA;&#x9;,b.alpha2 AS [origen_mercado]&#xA;&#x9;,c.alpha2 AS [destino_mercado]&#xA;&#x9;,[rank]&#xA;&#x9;,[ratio]&#xA;FROM [Destination_Insights].[stg].[FicheroCSV] a&#xA;&#x9;INNER JOIN [DATATUR].[dbo].[DimMercado] b ON a.origin_country = b.countries_es&#xA;&#x9;INNER JOIN [DATATUR].[dbo].[DimMercado] c ON a.destination_country = c.countries_es" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GDI  - Accomm CSV Sequence Container\GDI - update countries"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{a61dd5cb-46fa-49c5-a415-3c78a20adbc4}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="GDI - update countries"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022 CTP2.0; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
+              SQLTask:SqlStatementSource="UPDATE [stg].[FicheroCSV]&#xA;   SET [origin_country] = b.[countries_es]&#xA;      ,[destination_country] = c.[countries_es]&#xA;FROM [Destination_Insights].[stg].[FicheroCSV] a&#xA; INNER JOIN [DATATUR].[dbo].[DimMercado] b ON a.origin_country = b.countries_en&#xA; INNER JOIN [DATATUR].[dbo].[DimMercado] c ON a.destination_country = c.countries_en" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\GDI  - Accomm CSV Sequence Container\GDI - update UTF-8"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{C29EEE3D-25DF-4399-BE90-2676206EE471}"
+          DTS:DTSID="{67D75615-A211-4EBA-BEF8-2CC639918ACD}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GDI - update UTF-8"
@@ -883,7 +911,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+              SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
               SQLTask:SqlStatementSource="UPDATE [Destination_Insights].[stg].[FicheroCSV] SET [origin_country] = &#xA;REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE([origin_country], '&quot;',''), 'Ã','Á'), 'Ã±','ñ'), 'Ã¡','á'), 'Ã©','é'), 'Ã­','í'), 'Ã³','ó'),'Ãº','ú')&#xA;&#xA;&#xA;UPDATE [Destination_Insights].[stg].[FicheroCSV] SET [destination_country] = &#xA;REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE([destination_country], '&quot;',''), 'Ã','Á'), 'Ã±','ñ'), 'Ã¡','á'), 'Ã©','é'), 'Ã­','í'), 'Ã³','ó'),'Ãº','ú')&#xA;&#xA;&#xA;UPDATE [Destination_Insights].[stg].[FicheroCSV] SET [rank] = REPLACE([rank], '&quot;&quot;',0)&#xA;&#xA;&#xA;DELETE FROM [Destination_Insights].[stg].[FicheroCSV]&#xA;WHERE [rank] = 0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -892,7 +920,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\GDI  - Accomm CSV Sequence Container.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{E293CB69-FCE5-48D9-98EB-1A612BCB7BB2}"
+          DTS:DTSID="{C8B32E06-B441-4B07-8D1B-182564A8D2A5}"
           DTS:From="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -900,10 +928,18 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\GDI  - Accomm CSV Sequence Container.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{957BFD40-7644-4885-B4F0-7590842FE8A1}"
+          DTS:DTSID="{35472833-B1C3-4211-BAE3-AEBBCD6A4776}"
           DTS:From="Package\GDI  - Accomm CSV Sequence Container\GDI - update UTF-8"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
+          DTS:To="Package\GDI  - Accomm CSV Sequence Container\GDI - update countries" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GDI  - Accomm CSV Sequence Container.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{598D2090-F843-4C44-99AB-698379AC7C0F}"
+          DTS:From="Package\GDI  - Accomm CSV Sequence Container\GDI - update countries"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
           DTS:To="Package\GDI  - Accomm CSV Sequence Container\GDI - insert accomm_csv in demanda_comparaciones" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
@@ -911,7 +947,7 @@
       DTS:refId="Package\GDI - compress files"
       DTS:CreationName="Microsoft.ExecuteProcess"
       DTS:Description="Execute Process Task"
-      DTS:DTSID="{28363B01-00D5-4656-8BC2-D9CB94FA07FF}"
+      DTS:DTSID="{8DFC88AD-C50D-4658-9395-80E12425B096}"
       DTS:ExecutableType="Microsoft.ExecuteProcess"
       DTS:LocaleID="-1"
       DTS:ObjectName="GDI - compress files"
@@ -1002,14 +1038,14 @@
       <DTS:ObjectData>
         <ExecuteProcessData
           Executable="C:\Program Files\7-Zip\7z.exe"
-          Arguments="a -t7z &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-08-17.zip&quot; &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\*.csv&quot; -sdel" />
+          Arguments="a -t7z &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-09-21.zip&quot; &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\*.csv&quot; -sdel" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\GDI - truncate STG"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{14A462E5-4B25-4278-90EA-E3FF497E4D6B}"
+      DTS:DTSID="{C06DB8E3-083F-4C9B-BF71-6586C759CD55}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="GDI - truncate STG"
@@ -1018,7 +1054,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+          SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE [stg].[FicheroCSV]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1027,7 +1063,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{837FA588-07DE-4BBD-A372-C1B1C7579134}"
+      DTS:DTSID="{1191DB4E-124B-4624-95E8-1390EB8BD6FD}"
       DTS:From="Package\GDI - truncate STG"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -1035,7 +1071,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{F4041AA3-8F2A-4ACD-81D5-62A34F1F773E}"
+      DTS:DTSID="{DC0B2E28-BEA3-4443-9831-3867BA4815B4}"
       DTS:From="Package\GDI  - Accomm CSV Sequence Container"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -1058,9 +1094,9 @@
           Id="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - accomm_csv to sqlserver"
           TopLeft="135,102" />
         <NodeLayout
-          Size="146,42"
-          Id="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv"
-          TopLeft="181,23" />
+          Size="178,42"
+          Id="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv"
+          TopLeft="159,21" />
         <NodeLayout
           Size="238,42"
           Id="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - log loaded file(accomm) KO"
@@ -1075,18 +1111,18 @@
           TopLeft="12.5,187" />
         <EdgeLayout
           Id="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container.PrecedenceConstraints[Constraint]"
-          TopLeft="251,65">
+          TopLeft="248,63">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37"
+              EndConnector="0,39"
               Start="0,0"
-              End="0,29.5">
+              End="0,31.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.5" />
+                    End="0,31.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1197,7 +1233,7 @@
         <NodeLayout
           Size="332,42"
           Id="Package\GDI  - Accomm CSV Sequence Container\GDI - insert accomm_csv in demanda_comparaciones"
-          TopLeft="143.5,569" />
+          TopLeft="140.5,682" />
         <NodeLayout
           Size="172,42"
           Id="Package\GDI  - Accomm CSV Sequence Container\GDI - update UTF-8"
@@ -1224,20 +1260,46 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="187,42"
+          Id="Package\GDI  - Accomm CSV Sequence Container\GDI - update countries"
+          TopLeft="210,580" />
         <EdgeLayout
           Id="Package\GDI  - Accomm CSV Sequence Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="309.75,527">
+          TopLeft="306.75,527">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42"
+              EndConnector="0,53"
               Start="0,0"
-              End="0,34.5">
+              End="0,45.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.5" />
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GDI  - Accomm CSV Sequence Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="305,622">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1249,14 +1311,14 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="614,667"
-          Size="614,710"
+          PanelSize="614,779"
+          Size="614,822"
           Id="Package\GDI  - Accomm CSV Sequence Container"
           TopLeft="52,177" />
         <NodeLayout
           Size="174,42"
           Id="Package\GDI - compress files"
-          TopLeft="273,938" />
+          TopLeft="269,1043" />
         <NodeLayout
           Size="170,42"
           Id="Package\GDI - truncate STG"
@@ -1285,18 +1347,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="359.5,887">
+          TopLeft="357.5,999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51"
+              EndConnector="0,44"
               Start="0,0"
-              End="0,43.5">
+              End="0,36.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.5" />
+                    End="0,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1309,24 +1371,24 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv">
+    design-time-name="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="175,42"
-          Id="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Lee Fichros Accomm"
+          Id="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm"
           TopLeft="101,77" />
         <NodeLayout
           Size="130,42"
-          Id="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Row Count"
+          Id="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Row Count"
           TopLeft="124,179" />
         <NodeLayout
           Size="175,42"
-          Id="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV"
+          Id="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV"
           TopLeft="106,282" />
         <EdgeLayout
-          Id="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv.Paths[Row Count Output 1]"
+          Id="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv.Paths[Row Count Output 1]"
           TopLeft="191.25,221">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1350,7 +1412,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv.Paths[Flat File Source Output]"
+          Id="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv.Paths[Flat File Source Output]"
           TopLeft="188.75,119">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1377,7 +1439,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load csv\Accomm FicheroCSV">
+    design-time-name="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Accomm FicheroCSV">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

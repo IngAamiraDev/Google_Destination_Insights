@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="PC14886"
   DTS:CreatorName="MITYC\ddiego"
-  DTS:DTSID="{931AEDFE-2451-4AF1-AA4A-EF232BDFB6BD}"
+  DTS:DTSID="{69D03E46-4411-431F-A247-F6429C503B0E}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.521.0"
   DTS:LocaleID="3082"
   DTS:ObjectName="00 GDI - Staging"
   DTS:PackageType="5"
-  DTS:VersionBuild="163"
-  DTS:VersionGUID="{321EF456-4287-47E1-BFC7-1887AEFD6995}">
+  DTS:VersionBuild="149"
+  DTS:VersionGUID="{7E62B8A0-F3AC-44F5-B15B-7C8946333F09}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Fichero Accomm JSON]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{D8753B9C-1560-4146-A62C-8ADF6A104FAC}"
+      DTS:DTSID="{fd7a1c29-af99-4503-8b36-0204f73c7150}"
       DTS:ObjectName="Fichero Accomm JSON">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::accommodation_json]</DTS:PropertyExpression>
@@ -31,7 +31,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="\\sgtic01\R_SGCET\Datos\GDI\DES\Temporal\json\accommodation__20227410_30.json">
+          DTS:ConnectionString="\\sgtic01\R_SGCET\Datos\GDI\DES\Procesando\accommodation__202292113_30.json">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="Columna 0"
-              DTS:DTSID="{FFA25ADC-D719-4554-BD31-FE8C2BD233DD}"
+              DTS:DTSID="{BCEDCA0F-215D-45D6-B62E-77F74E47FB6B}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -48,7 +48,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Fichero Flight JSON]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{8B7012A0-36A6-4EE5-ACBE-94D51D08E1DA}"
+      DTS:DTSID="{79A36DD0-B1EF-4D38-8060-4788BB0C89C0}"
       DTS:ObjectName="Fichero Flight JSON">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::flight_json]</DTS:PropertyExpression>
@@ -60,7 +60,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="\\sgtic01\R_SGCET\Datos\GDI\DES\Temporal\json\flight__202274_30.json">
+          DTS:ConnectionString="\\sgtic01\R_SGCET\Datos\GDI\DES\Procesando\flight__2022921_30.json">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="Columna 0"
-              DTS:DTSID="{FFA25ADC-D719-4554-BD31-FE8C2BD233DD}"
+              DTS:DTSID="{BCEDCA0F-215D-45D6-B62E-77F74E47FB6B}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -80,7 +80,7 @@
       DTS:ConfigString="DB_LOG"
       DTS:CreationName="Microsoft.LogProviderSQLServer"
       DTS:Description="Escribe entradas del registro sobre eventos en una base de datos de SQL Server"
-      DTS:DTSID="{B4AAE3C2-9AF2-4C67-BAF0-90EA88675ED3}"
+      DTS:DTSID="{CC7E600D-0C8E-4A1E-A810-3A6B7A3863A7}"
       DTS:ObjectName="Proveedor de registro SSIS para SQL Server">
       <DTS:ObjectData>
         <InnerObject />
@@ -90,18 +90,18 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{ACADAF5C-C47C-46B0-B538-506A089D63BE}"
+      DTS:DTSID="{C900522C-38F3-4DE3-BF44-32194B4C21FE}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[User::temporal] + &quot;accommodation_&quot;+ @[User::alpha2] + &quot;_&quot; + &#xA;@[User::fecha] + &quot;10_30.json&quot;"
+      DTS:Expression="@[User::procesando] + &quot;accommodation_&quot;+ @[User::alpha2] + &quot;_&quot; + (DT_STR, 4, 1252)DATEPART(&quot;YYYY&quot;, GETDATE())+(DT_STR,2,1252)DATEPART(&quot;MM&quot;, GETDATE())+(DT_STR,2,1252)DATEPART(&quot;DD&quot;, GETDATE())+(DT_STR,2,1252)DATEPART(&quot;HH&quot;, GETDATE())&#xA; + &quot;_30.json&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="accommodation_json">
       <DTS:VariableValue
-        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Temporal\json\accommodation__20227410_30.json</DTS:VariableValue>
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Procesando\accommodation__202292113_30.json</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4D09111A-B15B-4BEE-8F0B-7AD9E0F72586}"
+      DTS:DTSID="{FEF626D9-D258-4F07-8956-8B1C130881F4}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;https://destinationinsights.withgoogle.com/data/demand-comparisons?country_code=&quot;+  @[User::alpha2]   +&quot;&amp;travel_type=ACCOMMODATION&amp;days_back=30&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -112,7 +112,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7533CC82-056C-44AE-BE60-B4F8907879B1}"
+      DTS:DTSID="{EEC917D8-B319-447A-A89A-55B4B795548B}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="alpha2">
@@ -122,7 +122,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{968AE18D-C365-48A4-98CC-2CC20AC8AEE6}"
+      DTS:DTSID="{2D022FB0-8E0B-4068-BC60-CB086CAD2DE7}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="alpha2_list">
@@ -140,29 +140,18 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{88EE87A2-63EB-4CA1-BC8D-0CBF9399923B}"
+      DTS:DTSID="{CD315D3B-BFE9-4330-BD08-EE751EC551C6}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="(@[$Project::fecha_proc]  == &quot;&quot; ?&#xA;&#x9;&#x9;((DT_STR,4,1252)DATEPART( &quot;yyyy&quot; , DATEADD(&quot;d&quot;,0, GETDATE()))+RIGHT(&quot;0&quot; + (DT_STR,4,1252)DATEPART( &quot;mm&quot; , DATEADD(&quot;d&quot;,0, GETDATE()) ), 2)+RIGHT(&quot;0&quot; + (DT_STR,4,1252)DATEPART( &quot;dd&quot; , DATEADD(&quot;d&quot;,0, GETDATE())), 2)) : &#xA;&#x9;&#x9;@[$Project::fecha_proc])"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="fecha">
-      <DTS:VariableValue
-        DTS:DataType="8">202274</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{4E19A07E-AFE0-474B-A641-C1A3000DC98B}"
-      DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[User::temporal] +  &quot;flight_&quot;+ @[User::alpha2] + &quot;_&quot; + @[User::fecha]  + &quot;_30.json&quot;"
+      DTS:Expression="@[User::procesando] +  &quot;flight_&quot;+ @[User::alpha2] + &quot;_&quot; + (DT_STR, 4, 1252)DATEPART(&quot;YYYY&quot;, GETDATE())+(DT_STR,2,1252)DATEPART(&quot;MM&quot;, GETDATE())+(DT_STR,2,1252)DATEPART(&quot;DD&quot;, GETDATE())+ &quot;_30.json&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="flight_json">
       <DTS:VariableValue
-        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Temporal\json\flight__202274_30.json</DTS:VariableValue>
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Procesando\flight__2022921_30.json</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{05BFE617-DF4F-4B26-B52C-5FE6E80840E7}"
+      DTS:DTSID="{6E3DE785-DAF5-4EFD-99AF-B357192CC8FD}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;https://destinationinsights.withgoogle.com/data/demand-comparisons?country_code=&quot;+  @[User::alpha2]   +&quot;&amp;travel_type=FLIGHT&amp;days_back=30&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -173,7 +162,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{80C86CB0-FF55-4A89-AB4D-09F4A41DABD1}"
+      DTS:DTSID="{6F297136-0081-4243-95B1-63E7455343CE}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[$Project::ruta_fichero_base] + &quot;GDI\\&quot; + @[$Project::Entorno]  + &quot;\\&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -184,7 +173,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{AB50CB35-355C-4A80-ADCB-8332EFD99EA8}"
+      DTS:DTSID="{3751D56E-E1B5-4510-9FB4-54D22640825E}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::gdi_folder] + &quot;Procesado KO\\&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -195,7 +184,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F9B6DD8C-6C08-4B8C-A1D2-F0FA0CB98591}"
+      DTS:DTSID="{D52FA1F0-F557-44D6-B0A4-7DF8CA14D978}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::gdi_folder] + &quot;Procesado OK\\&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -206,7 +195,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{CB4C6A41-805E-430A-A5DF-CC2788082D2F}"
+      DTS:DTSID="{EDCF71B3-6313-420D-BE71-019ADDD70BFB}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::gdi_folder] + &quot;Procesando\\&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -217,25 +206,14 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{491A34CE-3C22-40E1-BA3C-B7004952735A}"
-      DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[User::gdi_folder] + &quot;Temporal\\json\\&quot;"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="temporal">
-      <DTS:VariableValue
-        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Temporal\json\</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{60CAB0CC-0AC4-4D78-921E-350357A5B24C}"
+      DTS:DTSID="{F1B53428-1692-4AD4-A243-F0EF9A820A91}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::procesado_ok]+ &quot;GDI_&quot; + LEFT((DT_WSTR, 50)GETDATE() , 10)  + &quot;.zip&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="zip_files">
       <DTS:VariableValue
-        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-08-17.zip</DTS:VariableValue>
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-09-21.zip</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:LoggingOptions
@@ -318,7 +296,7 @@
     </DTS:Property>
     <DTS:SelectedLogProviders>
       <DTS:SelectedLogProvider
-        DTS:InstanceID="{B4AAE3C2-9AF2-4C67-BAF0-90EA88675ED3}" />
+        DTS:InstanceID="{CC7E600D-0C8E-4A1E-A810-3A6B7A3863A7}" />
     </DTS:SelectedLogProviders>
   </DTS:LoggingOptions>
   <DTS:Executables>
@@ -326,7 +304,7 @@
       DTS:refId="Package\GDI - compress files"
       DTS:CreationName="Microsoft.ExecuteProcess"
       DTS:Description="Execute Process Task"
-      DTS:DTSID="{D373850E-3FC1-4365-AAC3-76DA1E1B872D}"
+      DTS:DTSID="{7A85B4FA-2F58-4D1C-9756-7716FA7C2D72}"
       DTS:ExecutableType="Microsoft.ExecuteProcess"
       DTS:LocaleID="-1"
       DTS:ObjectName="GDI - compress files"
@@ -413,7 +391,7 @@
         </DTS:Property>
         <DTS:SelectedLogProviders>
           <DTS:SelectedLogProvider
-            DTS:InstanceID="{B4AAE3C2-9AF2-4C67-BAF0-90EA88675ED3}" />
+            DTS:InstanceID="{CC7E600D-0C8E-4A1E-A810-3A6B7A3863A7}" />
         </DTS:SelectedLogProviders>
       </DTS:LoggingOptions>
       <DTS:PropertyExpression
@@ -421,21 +399,21 @@
       <DTS:ObjectData>
         <ExecuteProcessData
           Executable="C:\Program Files\7-Zip\7z.exe"
-          Arguments="a -t7z &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-08-17.zip&quot; &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\*.json&quot; -sdel" />
+          Arguments="a -t7z &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-09-21.zip&quot; &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\*.json&quot; -sdel" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\GDI - Foreach Loop countries"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
-      DTS:DTSID="{42EE3624-962C-4425-A670-FA5C3494044A}"
+      DTS:DTSID="{5D59CCA6-3EBC-4322-BBCC-84C802BA379A}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="GDI - Foreach Loop countries">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachADOEnumerator"
-        DTS:DTSID="{44611895-5B2B-48C8-BCCF-DC6A60678865}"
-        DTS:ObjectName="{44611895-5B2B-48C8-BCCF-DC6A60678865}">
+        DTS:DTSID="{977CAFAC-C3B2-4ED3-B3D1-C2CD6DDCE4E8}"
+        DTS:ObjectName="{977CAFAC-C3B2-4ED3-B3D1-C2CD6DDCE4E8}">
         <DTS:ObjectData>
           <FEEADO
             EnumType="EnumerateRowsInFirstTable"
@@ -523,7 +501,7 @@
         </DTS:Property>
         <DTS:SelectedLogProviders>
           <DTS:SelectedLogProvider
-            DTS:InstanceID="{B4AAE3C2-9AF2-4C67-BAF0-90EA88675ED3}" />
+            DTS:InstanceID="{CC7E600D-0C8E-4A1E-A810-3A6B7A3863A7}" />
         </DTS:SelectedLogProviders>
       </DTS:LoggingOptions>
       <DTS:Executables>
@@ -531,7 +509,7 @@
           DTS:refId="Package\GDI - Foreach Loop countries\Carga tabla Accommodation_json"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Tarea Flujo de datos"
-          DTS:DTSID="{CA6BB247-4FFD-491C-958C-1578FFD84E86}"
+          DTS:DTSID="{ac6d04ad-c2b3-434d-b47c-88958991621f}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Carga tabla Accommodation_json"
@@ -568,7 +546,7 @@
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -581,7 +559,7 @@
                       dataType="System.Int32"
                       description="Especifica el modo utilizado para obtener acceso a la base de datos."
                       name="AccessMode"
-                      typeConverter="AccessMode">3</property>
+                      typeConverter="AccessMode">0</property>
                     <property
                       dataType="System.Boolean"
                       description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
@@ -602,7 +580,7 @@
                   <connections>
                     <connection
                       refId="Package\GDI - Foreach Loop countries\Carga tabla Accommodation_json\Accommodation FicheroJSON.Connections[OleDbConnection]"
-                      connectionManagerID="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}:external"
+                      connectionManagerID="{988ACCED-E98F-462E-9F4C-36069689DCBD}:external"
                       connectionManagerRefId="Project.ConnectionManagers[Destination_Insights]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
@@ -764,7 +742,7 @@
           DTS:refId="Package\GDI - Foreach Loop countries\Carga tabla flight_json"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Tarea Flujo de datos"
-          DTS:DTSID="{A7080E1F-EBE4-4CEE-A486-749D9105F206}"
+          DTS:DTSID="{23BB520D-1D0C-495C-9586-5880DC984B1B}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Carga tabla flight_json"
@@ -802,7 +780,7 @@
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -815,7 +793,7 @@
                       dataType="System.Int32"
                       description="Especifica el modo utilizado para obtener acceso a la base de datos."
                       name="AccessMode"
-                      typeConverter="AccessMode">3</property>
+                      typeConverter="AccessMode">0</property>
                     <property
                       dataType="System.Boolean"
                       description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
@@ -836,7 +814,7 @@
                   <connections>
                     <connection
                       refId="Package\GDI - Foreach Loop countries\Carga tabla flight_json\Flight FicheroJSON.Connections[OleDbConnection]"
-                      connectionManagerID="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}:external"
+                      connectionManagerID="{988ACCED-E98F-462E-9F4C-36069689DCBD}:external"
                       connectionManagerRefId="Project.ConnectionManagers[Destination_Insights]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
@@ -998,18 +976,18 @@
           DTS:refId="Package\GDI - Foreach Loop countries\GDI - accommodation_json to sqlserver"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{D1ED73F9-FCF8-4F3C-8B8B-A4858CF0AC5B}"
+          DTS:DTSID="{13b6176f-75d6-4561-852a-be200d0a4781}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GDI - accommodation_json to sqlserver"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+              SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
               SQLTask:SqlStatementSource="declare  @JSON nvarchar(max)&#xA;declare @filepath nvarchar(max)&#xA;set @filepath = ?&#xA;--declare @sql nvarchar(max)&#xA;--set @sql =&#xA;&#xA;select @JSON=Datos&#xA;from stg.ficheroJSON&#xA;&#xA;INSERT INTO [stg].[demanda_comparaciones](&#xA;[fecha]&#xA;,[demanda_tipo]&#xA;,[demanda_categoria]&#xA;,[origen_mercado]&#xA;,[destino_mercado]&#xA;,[rank]&#xA;,[ratio]&#xA;)&#xA;&#xA; SELECT GETDATE() as [fecha], 'Salidas' as [demanda_tipo], 'Alojamiento' as [demanda_categoria], * &#xA; FROM OPENJSON (@JSON, '$.demand_from')&#xA; WITH &#xA; (&#xA;   [origen_mercado] nvarchar(20) N'$.origin_country', &#xA;   [destino_mercado] nvarchar(20) N'$.destination_country', &#xA;   [rank] int N'$.rank', &#xA;   [ratio] float N'$.ratio'&#xA;   )&#xA;&#xA; UNION ALL&#xA;&#xA; SELECT GETDATE() as [query_date], 'Entradas' as [demande_type], 'Alojamiento' as [demande_category], *&#xA; FROM OPENJSON (@JSON, '$.demand_to')&#xA; WITH &#xA; (&#xA;   [origen_mercado] nvarchar(20) N'$.origin_country', &#xA;   [destino_mercado] nvarchar(20) N'$.destination_country', &#xA;   [rank] int N'$.rank', &#xA;   [ratio] float N'$.ratio'&#xA;   )&#xA;&#xA;--exec (@sql)&#xA;&#xA;IF EXISTS (SELECT * FROM [stg].[ficheros_cargados] WHERE [fichero] = @filepath)&#xA;BEGIN&#xA;&#x9;UPDATE [stg].[ficheros_cargados]&#xA;&#x9;SET&#x9;   [carga_numero] = [carga_numero] +1&#xA;&#x9;WHERE  [fichero] = @filepath&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#x9;INSERT INTO [stg].[ficheros_cargados]([fichero], [filas_numero], [carga_numero], [carga_estado])&#xA;&#x9;SELECT @filepath  as [fichero], count(*) as [filas_numero], 1 as [carga_numero], 1 as [carga_estado] &#xA;&#x9;FROM  [stg].[demanda_comparaciones] &#xA;&#x9;WHERE demanda_categoria = 'Alojamiento'&#xA;END&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
@@ -1024,7 +1002,7 @@
           DTS:refId="Package\GDI - Foreach Loop countries\GDI - download accommodation_json"
           DTS:CreationName="Microsoft.ScriptTask"
           DTS:Description="Script Task"
-          DTS:DTSID="{73CD0EB7-752B-4B66-A08E-129C8FBB0B64}"
+          DTS:DTSID="{bbf8b68d-a707-458b-9b66-2d0b75aa925b}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GDI - download accommodation_json"
@@ -1035,10 +1013,40 @@
           <DTS:ObjectData>
             <ScriptProject
               Name="ST_de07cf55d5964a638dc87743ad283350"
-              VSTAMajorVersion="16"
+              VSTAMajorVersion="15"
               VSTAMinorVersion="0"
               Language="CSharp"
               ReadOnlyVariables="User::accommodation_json,User::accommodation_url">
+              <ProjectItem
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_c2a679933e9945279fdbbe7872e25f78")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_c2a679933e9945279fdbbe7872e25f78")]
+[assembly: AssemblyCopyright("Copyright @  2021")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1176,7 +1184,8 @@
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
-    <TargetFrameworkProfile></TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -1240,8 +1249,8 @@
     </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=16.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=16.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
   </ItemGroup>
   <ItemGroup>
     <AppDesigner Include="Properties\" />
@@ -1278,41 +1287,12 @@
         <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
         <Host Name="ScriptTask" />
         <ProjectClient>
-          <HostIdentifier>SSIS_ST160</HostIdentifier>
+          <HostIdentifier>SSIS_ST150</HostIdentifier>
         </ProjectClient>
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
 </Project>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_c2a679933e9945279fdbbe7872e25f78.Properties.Settings.get_Default():ST_c2a679933e9945279fdbbe7872e25f78.Properties.Sett" +
-    "ings")]
-
-namespace ST_c2a679933e9945279fdbbe7872e25f78.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
               <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[using System;
@@ -1417,12 +1397,6 @@ namespace ST_c2a679933e9945279fdbbe7872e25f78
   </runtime>
 </configuration>]]></ProjectItem>
               <ProjectItem
-                Name="packages.config"
-                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="System.Buffers" version="4.5.1" targetFramework="net47" />
-</packages>]]></ProjectItem>
-              <ProjectItem
                 Name="Project"
                 Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
@@ -1430,7 +1404,7 @@ namespace ST_c2a679933e9945279fdbbe7872e25f78
     <msb:CodeName>ST_de07cf55d5964a638dc87743ad283350</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_de07cf55d5964a638dc87743ad283350</msb:DisplayName>
-    <msb:ProjectId>{BBC6570C-57F0-4C3F-8121-EE416A4393FF}</msb:ProjectId>
+    <msb:ProjectId>{6F27E5FF-9B49-48BE-A0F1-F3DDFB8AF2BF}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_de07cf55d5964a638dc87743ad283350.csproj" />
@@ -1445,35 +1419,40 @@ namespace ST_c2a679933e9945279fdbbe7872e25f78
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
+                Name="packages.config"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="System.Buffers" version="4.5.1" targetFramework="net47" />
+</packages>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
 
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_c2a679933e9945279fdbbe7872e25f78")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_c2a679933e9945279fdbbe7872e25f78")]
-[assembly: AssemblyCopyright("Copyright @  2021")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_c2a679933e9945279fdbbe7872e25f78.Properties.Settings.get_Default():ST_c2a679933e9945279fdbbe7872e25f78.Properties.Sett" +
+    "ings")]
 
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+namespace ST_c2a679933e9945279fdbbe7872e25f78.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Settings.settings"
                 Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -1554,7 +1533,7 @@ namespace ST_c2a679933e9945279fdbbe7872e25f78.Properties {
               <BinaryItem
                 Name="ST_de07cf55d5964a638dc87743ad283350.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAEfD52IAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAejIA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDACAEiWEAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAejIA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAACgyAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1590,8 +1569,8 @@ QgAJAZsGSAB5AIQETwAhAW0DVgCZAJcDWgDxAPAGXgAxAVoHZAAxAfsGZwApAboEbgAJARkBeQDx
 ACAHAQCBANAAWgApAW4FfwBxAHgFBgCZAHgFBgA5AQcBiAA5ATkHkQDJAHgFlwDpAHgFBgAIABQA
 sQAIABgAtgApAHsAMQEuAAsACQEuABMAEgEuABsAMQEuACMAOgEuACsAYwEuADMAYwEuADsAYwEu
 AEMAOgEuAEsAaQEuAFMAYwEuAFsAgAFDAGMAtgBJAHsAMQFhAGsAtgBjAHMAtgDDAGsAtgAbAAMA
-AQAEAAMAAAAgBfoAAABzAf8AAAAYBwQBAgAEAAMAAgAFAAUAAQAGAAUAAgAHAAcABIAAAAEAAAA4
-IPNjAAAAAAAAAQAAAAQAAAAAAAAAAAAAAJ8ApwAAAAAAEAAAAAAAAAAAAAAAqADsAwAAAAAQAAAA
+AQAEAAMAAAAgBfoAAABzAf8AAAAYBwQBAgAEAAMAAgAFAAUAAQAGAAUAAgAHAAcABIAAAAEAAAAu
+H9hUAAAAAAAAAQAAAAQAAAAAAAAAAAAAAJ8ApwAAAAAADwAAAAAAAAAAAAAAqADsAwAAAAAPAAAA
 AAAAAAAAAACoAIAAAAAAAAQAAAAAAAAAAAAAAJ8AjQQAAAAAAAAAAAEAAADJBQAABQACAAYAAgAA
 AAAAAFNUX2RlMDdjZjU1ZDU5NjRhNjM4ZGM4Nzc0M2FkMjgzMzUwADw+OV9fMV8wADxNYWluPmJf
 XzFfMABTVF9jMmE2Nzk5MzNlOTk0NTI3OWZkYmJlNzg3MmUyNWY3OAA8PjkAPHAwPgA8cDE+ADxw
@@ -1630,8 +1609,8 @@ aXR5AEVtcHR5AAAvVQBzAGUAcgA6ADoAYQBjAGMAbwBtAG0AbwBkAGEAdABpAG8AbgBfAHUAcgBs
 AAAxVQBzAGUAcgA6ADoAYQBjAGMAbwBtAG0AbwBkAGEAdABpAG8AbgBfAGoAcwBvAG4AADlEAG8A
 dwBuAGwAbwBhAGQAaQBuAGcAIAAnAHsAMAB9ACcAIABmAHIAbwBtACAAJwB7ADEAfQAnAAFxUwBU
 AF8AYwAyAGEANgA3ADkAOQAzADMAZQA5ADkANAA1ADIANwA5AGYAZABiAGIAZQA3ADgANwAyAGUA
-MgA1AGYANwA4AC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAA/a/p
-61n4SUqormh/ELyEwgAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERbQkHBQ4OAhI9EkEEIAASeQQg
+MgA1AGYANwA4AC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAM8ER
+xwjw9U6YsAB20HJ6NgAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERbQkHBQ4OAhI9EkEEIAASeQQg
 ABJ9BiABARASPQUgAgEcGAUAAQESUQUAABKAjQYgAQESgI0GIAESgJEcAyAAHAMgAA4FIAASgJUC
 Bg4GAAMODhwcCiAGAQgODg4IEAIFIAIBDg4IIAUCCA4ODggIAAESgJ0RgKEFIAASgKUHIAIBDhKA
 pQi3elxWGTTgiQiJhF3NgIDMkQQAAAAABAEAAAADBhJlAwYSaQMGEhACBggDBhEUAwYSGAMGElEE
@@ -1653,14 +1632,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAA
 SAAAAFhAAAAaBAAAAAAAAAAAAAAaBDQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAA
-AAAAvQTv/gAAAQAAAAEA82M4IAAAAQDzYzggPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA
+AAAAvQTv/gAAAQAAAAEA2FQuHwAAAQDYVC4fPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA
 AAABAFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBu
 AAAAAAAAALAEegMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAVgMAAAEAMAAwADAA
 MAAwADQAYgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBu
 AHkATgBhAG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAA
 AABTAFQAXwBjADIAYQA2ADcAOQA5ADMAMwBlADkAOQA0ADUAMgA3ADkAZgBkAGIAYgBlADcAOAA3
 ADIAZQAyADUAZgA3ADgAAAA+AA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4A
-OAAyADQAOAAuADIANQA1ADgANwAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABT
+NwA5ADgAMgAuADIAMQA3ADIAMAAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABT
 AFQAXwBkAGUAMAA3AGMAZgA1ADUAZAA1ADkANgA0AGEANgAzADgAZABjADgANwA3ADQAMwBhAGQA
 MgA4ADMAMwA1ADAALgBkAGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAA
 AEMAbwBwAHkAcgBpAGcAaAB0ACAAQAAgACAAMgAwADIAMQAAACoAAQABAEwAZQBnAGEAbABUAHIA
@@ -1669,8 +1648,8 @@ AG0AZQAAAFMAVABfAGQAZQAwADcAYwBmADUANQBkADUAOQA2ADQAYQA2ADMAOABkAGMAOAA3ADcA
 NAAzAGEAZAAyADgAMwAzADUAMAAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBl
 AAAAAABTAFQAXwBjADIAYQA2ADcAOQA5ADMAMwBlADkAOQA0ADUAMgA3ADkAZgBkAGIAYgBlADcA
 OAA3ADIAZQAyADUAZgA3ADgAAABCAA8AAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAx
-AC4AMAAuADgAMgA0ADgALgAyADUANQA4ADcAAAAAAEYADwABAEEAcwBzAGUAbQBiAGwAeQAgAFYA
-ZQByAHMAaQBvAG4AAAAxAC4AMAAuADgAMgA0ADgALgAyADUANQA4ADcAAAAAAAAAAAAAAAAAAAAA
+AC4AMAAuADcAOQA4ADIALgAyADEANwAyADAAAAAAAEYADwABAEEAcwBzAGUAbQBiAGwAeQAgAFYA
+ZQByAHMAaQBvAG4AAAAxAC4AMAAuADcAOQA4ADIALgAyADEANwAyADAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1694,7 +1673,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           DTS:refId="Package\GDI - Foreach Loop countries\GDI - download flight_json"
           DTS:CreationName="Microsoft.ScriptTask"
           DTS:Description="Script Task"
-          DTS:DTSID="{F817FFCD-95A8-4105-9A44-853E894B2C46}"
+          DTS:DTSID="{B32D8C9A-F02D-457B-97C9-7EEFA2F26B32}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GDI - download flight_json"
@@ -1705,10 +1684,40 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           <DTS:ObjectData>
             <ScriptProject
               Name="ST_c2a679933e9945279fdbbe7872e25f78"
-              VSTAMajorVersion="16"
+              VSTAMajorVersion="15"
               VSTAMinorVersion="0"
               Language="CSharp"
               ReadOnlyVariables="User::flight_json,User::flight_url">
+              <ProjectItem
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_c2a679933e9945279fdbbe7872e25f78")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_c2a679933e9945279fdbbe7872e25f78")]
+[assembly: AssemblyCopyright("Copyright @  2021")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1846,7 +1855,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
-    <TargetFrameworkProfile></TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -1910,8 +1920,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=16.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=16.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
   </ItemGroup>
   <ItemGroup>
     <AppDesigner Include="Properties\" />
@@ -1948,47 +1958,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
         <Host Name="ScriptTask" />
         <ProjectClient>
-          <HostIdentifier>SSIS_ST160</HostIdentifier>
+          <HostIdentifier>SSIS_ST150</HostIdentifier>
         </ProjectClient>
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
 </Project>]]></ProjectItem>
-              <ProjectItem
-                Name="packages.config"
-                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="System.Buffers" version="4.5.1" targetFramework="net47" />
-</packages>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_c2a679933e9945279fdbbe7872e25f78.Properties.Settings.get_Default():ST_c2a679933e9945279fdbbe7872e25f78.Properties.Sett" +
-    "ings")]
-
-namespace ST_c2a679933e9945279fdbbe7872e25f78.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
               <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[using System;
@@ -2100,7 +2075,7 @@ namespace ST_c2a679933e9945279fdbbe7872e25f78
     <msb:CodeName>ST_c2a679933e9945279fdbbe7872e25f78</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_c2a679933e9945279fdbbe7872e25f78</msb:DisplayName>
-    <msb:ProjectId>{2013741D-067B-4BCB-88FC-40B730A9F5EE}</msb:ProjectId>
+    <msb:ProjectId>{4DEAFB95-51A3-4792-AC58-E67FF9673049}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_c2a679933e9945279fdbbe7872e25f78.csproj" />
@@ -2115,35 +2090,40 @@ namespace ST_c2a679933e9945279fdbbe7872e25f78
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
+                Name="packages.config"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="System.Buffers" version="4.5.1" targetFramework="net47" />
+</packages>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
 
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_c2a679933e9945279fdbbe7872e25f78")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_c2a679933e9945279fdbbe7872e25f78")]
-[assembly: AssemblyCopyright("Copyright @  2021")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_c2a679933e9945279fdbbe7872e25f78.Properties.Settings.get_Default():ST_c2a679933e9945279fdbbe7872e25f78.Properties.Sett" +
+    "ings")]
 
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+namespace ST_c2a679933e9945279fdbbe7872e25f78.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Settings.settings"
                 Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -2224,7 +2204,7 @@ namespace ST_c2a679933e9945279fdbbe7872e25f78.Properties {
               <BinaryItem
                 Name="ST_c2a679933e9945279fdbbe7872e25f78.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAErD52IAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAOjIA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDANIDiWEAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAOjIA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAOgxAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -2260,8 +2240,8 @@ QgAJAXcGSAB5AGAETwAhAUkDVgCZAHMDWgDxAMwGXgAxATYHZAAxAdcGZwApAZYEbgAJAfUAeQDx
 APwGAQCBAKwAWgApAUoFfwBxAFQFBgCZAFQFBgA5AeMAiAA5ARUHkQDJAFQFlwDpAFQFBgAIABQA
 sQAIABgAtgApAHsAMQEuAAsACQEuABMAEgEuABsAMQEuACMAOgEuACsAYwEuADMAYwEuADsAYwEu
 AEMAOgEuAEsAaQEuAFMAYwEuAFsAgAFDAGMAtgBJAHsAMQFhAGsAtgBjAHMAtgDDAGsAtgAbAAMA
-AQAEAAMAAAD8BPoAAABPAf8AAAD0BgQBAgAEAAMAAgAFAAUAAQAGAAUAAgAHAAcABIAAAAEAAAA4
-IPVjAAAAAAAAFwAAAAQAAAAAAAAAAAAAAJ8AgwAAAAAAEAAAAAAAAAAAAAAAqADIAwAAAAAQAAAA
+AQAEAAMAAAD8BPoAAABPAf8AAAD0BgQBAgAEAAMAAgAFAAUAAQAGAAUAAgAHAAcABIAAAAEAAAAu
+H7FUAAAAAAAAFwAAAAQAAAAAAAAAAAAAAJ8AgwAAAAAADwAAAAAAAAAAAAAAqADIAwAAAAAPAAAA
 AAAAAAAAAACoAFwAAAAAAAQAAAAAAAAAAAAAAJ8AaQQAAAAAAAAAAAEAAAClBQAABQACAAYAAgAA
 AAAAADw+OV9fMV8wADxNYWluPmJfXzFfMABTVF9jMmE2Nzk5MzNlOTk0NTI3OWZkYmJlNzg3MmUy
 NWY3OAA8PjkAPHAwPgA8cDE+ADxwMj4APHAzPgA8TW9kdWxlPgBNaWNyb3NvZnQuU3FsU2VydmVy
@@ -2299,8 +2279,8 @@ bWJseQBTeXN0ZW0uTmV0LlNlY3VyaXR5AEVtcHR5AAAhVQBzAGUAcgA6ADoAZgBsAGkAZwBoAHQA
 XwB1AHIAbAAAI1UAcwBlAHIAOgA6AGYAbABpAGcAaAB0AF8AagBzAG8AbgAAOUQAbwB3AG4AbABv
 AGEAZABpAG4AZwAgACcAewAwAH0AJwAgAGYAcgBvAG0AIAAnAHsAMQB9ACcAAXFTAFQAXwBjADIA
 YQA2ADcAOQA5ADMAMwBlADkAOQA0ADUAMgA3ADkAZgBkAGIAYgBlADcAOAA3ADIAZQAyADUAZgA3
-ADgALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAAAeKY81lBPFTLNk
-w0to8X3YAAQgAQEIAyAAAQUgAQEREQQgAQEOBSABARFtCQcFDg4CEj0SQQQgABJ5BCAAEn0GIAEB
+ADgALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAAAvAhjFVNM8QLOT
+s3t04Dx4AAQgAQEIAyAAAQUgAQEREQQgAQEOBSABARFtCQcFDg4CEj0SQQQgABJ5BCAAEn0GIAEB
 EBI9BSACARwYBQABARJRBQAAEoCNBiABARKAjQYgARKAkRwDIAAcAyAADgUgABKAlQIGDgYAAw4O
 HBwKIAYBCA4ODggQAgUgAgEODgggBQIIDg4OCAgAARKAnRGAoQUgABKApQcgAgEOEoClCLd6XFYZ
 NOCJCImEXc2AgMyRBAAAAAAEAQAAAAMGEmUDBhJpAwYSEAIGCAMGERQDBhIYAwYSUQQAABJlBAAA
@@ -2323,14 +2303,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAA
 SAAAAFhAAAAaBAAAAAAAAAAAAAAaBDQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAA
-AAAAvQTv/gAAAQAAAAEA9WM4IAAAAQD1YzggPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA
+AAAAvQTv/gAAAQAAAAEAsVQuHwAAAQCxVC4fPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA
 AAABAFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBu
 AAAAAAAAALAEegMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAVgMAAAEAMAAwADAA
 MAAwADQAYgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBu
 AHkATgBhAG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAA
 AABTAFQAXwBjADIAYQA2ADcAOQA5ADMAMwBlADkAOQA0ADUAMgA3ADkAZgBkAGIAYgBlADcAOAA3
 ADIAZQAyADUAZgA3ADgAAAA+AA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4A
-OAAyADQAOAAuADIANQA1ADgAOQAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABT
+NwA5ADgAMgAuADIAMQA2ADgAMQAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABT
 AFQAXwBjADIAYQA2ADcAOQA5ADMAMwBlADkAOQA0ADUAMgA3ADkAZgBkAGIAYgBlADcAOAA3ADIA
 ZQAyADUAZgA3ADgALgBkAGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAA
 AEMAbwBwAHkAcgBpAGcAaAB0ACAAQAAgACAAMgAwADIAMQAAACoAAQABAEwAZQBnAGEAbABUAHIA
@@ -2339,8 +2319,8 @@ AG0AZQAAAFMAVABfAGMAMgBhADYANwA5ADkAMwAzAGUAOQA5ADQANQAyADcAOQBmAGQAYgBiAGUA
 NwA4ADcAMgBlADIANQBmADcAOAAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBl
 AAAAAABTAFQAXwBjADIAYQA2ADcAOQA5ADMAMwBlADkAOQA0ADUAMgA3ADkAZgBkAGIAYgBlADcA
 OAA3ADIAZQAyADUAZgA3ADgAAABCAA8AAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAx
-AC4AMAAuADgAMgA0ADgALgAyADUANQA4ADkAAAAAAEYADwABAEEAcwBzAGUAbQBiAGwAeQAgAFYA
-ZQByAHMAaQBvAG4AAAAxAC4AMAAuADgAMgA0ADgALgAyADUANQA4ADkAAAAAAAAAAAAAAAAAAAAA
+AC4AMAAuADcAOQA4ADIALgAyADEANgA4ADEAAAAAAEYADwABAEEAcwBzAGUAbQBiAGwAeQAgAFYA
+ZQByAHMAaQBvAG4AAAAxAC4AMAAuADcAOQA4ADIALgAyADEANgA4ADEAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -2364,7 +2344,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           DTS:refId="Package\GDI - Foreach Loop countries\GDI - flight_json to sqlserver"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{42CBD9BA-B11D-414F-AA81-84A495993307}"
+          DTS:DTSID="{909E377D-6F59-40AB-B383-90271FE7C1D3}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GDI - flight_json to sqlserver"
@@ -2375,7 +2355,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+              SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
               SQLTask:SqlStatementSource="declare  @JSON nvarchar(max)&#xA;declare @filepath nvarchar(max)&#xA;set @filepath = ?&#xA;--declare @sql nvarchar(max)&#xA;--set @sql =&#xA;&#xA;select @JSON=Datos&#xA;from stg.ficheroJSON&#xA;&#xA;INSERT INTO [stg].[demanda_comparaciones](&#xA;[fecha]&#xA;,[demanda_tipo]&#xA;,[demanda_categoria]&#xA;,[origen_mercado]&#xA;,[destino_mercado]&#xA;,[rank]&#xA;,[ratio]&#xA;)&#xA;&#xA;SELECT GETDATE() as [fecha], 'Salidas' as [demanda_tipo], 'Vuelos' as [demanda_categoria],*&#xA;FROM OPENJSON (@JSON, '$.demand_from')&#xA;WITH&#xA;(&#xA;[origen_mercado] nvarchar(20) N'$.origin_country',&#xA;[destino_mercado] nvarchar(20) N'$.destination_country',&#xA;[rank] int N'$.rank',&#xA;[ratio] float N'$.ratio'&#xA;)&#xA;&#xA;UNION ALL&#xA;&#xA;SELECT GETDATE() as [query_date], 'Entradas' as [demande_type], 'Vuelos' as [demande_category], *&#xA;FROM OPENJSON (@JSON, '$.demand_to')&#xA;WITH&#xA;(&#xA;[origen_mercado] nvarchar(20) N'$.origin_country',&#xA;[destino_mercado] nvarchar(20) N'$.destination_country',&#xA;[rank] int N'$.rank',&#xA;[ratio] float N'$.ratio'&#xA;)&#xA;&#xA;--exec (@sql)&#xA;&#xA;IF EXISTS (SELECT * FROM [stg].[ficheros_cargados] WHERE [fichero] = @filepath)&#xA;BEGIN&#xA;&#x9;UPDATE [stg].[ficheros_cargados]&#xA;&#x9;SET&#x9;   [carga_numero] = [carga_numero] +1&#xA;&#x9;WHERE  [fichero] = @filepath&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#x9;INSERT INTO [stg].[ficheros_cargados]([fichero], [filas_numero], [carga_numero], [carga_estado])&#xA;&#x9;SELECT @filepath  as [fichero], count(*) as [filas_numero], 1 as [carga_numero], 1 as [carga_estado] &#xA;&#x9;FROM  [stg].[demanda_comparaciones] &#xA;&#x9;WHERE demanda_categoria = 'Vuelos'&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
@@ -2390,18 +2370,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           DTS:refId="Package\GDI - Foreach Loop countries\GDI - log loaded file(accommodation) KO"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{6B1210C6-62C9-448D-81E2-4A3F54920A60}"
+          DTS:DTSID="{3145fbe8-0b93-4610-a5f0-0f31277b1fcb}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GDI - log loaded file(accommodation) KO"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+              SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
               SQLTask:SqlStatementSource="UPDATE [stg].[ficheros_cargados]&#xA;SET [carga_estado] = 0&#xA;WHERE [fichero] = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
@@ -2416,18 +2396,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           DTS:refId="Package\GDI - Foreach Loop countries\GDI - log loaded file(flight) KO"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{5C161CB0-C2F1-44A6-8E4C-0606040D2025}"
+          DTS:DTSID="{abc731db-9ea6-4918-ac9e-d9a54c4b30bf}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GDI - log loaded file(flight) KO"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+              SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
               SQLTask:SqlStatementSource="UPDATE [stg].[ficheros_cargados]&#xA;SET [carga_estado] = 0&#xA;WHERE [fichero] = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
@@ -2442,12 +2422,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           DTS:refId="Package\GDI - Foreach Loop countries\GDI - move accommodation_json KO"
           DTS:CreationName="Microsoft.FileSystemTask"
           DTS:Description="File System Task"
-          DTS:DTSID="{FD549A68-7CE8-4BAD-A8A9-081B05C6FF37}"
+          DTS:DTSID="{e29c5713-9d56-4c8d-bb4c-27462577d92b}"
           DTS:ExecutableType="Microsoft.FileSystemTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GDI - move accommodation_json KO"
           DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -2466,12 +2446,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           DTS:CreationName="Microsoft.FileSystemTask"
           DTS:DelayValidation="True"
           DTS:Description="File System Task"
-          DTS:DTSID="{1B7737CB-651C-42FE-820E-F1D0330F0832}"
+          DTS:DTSID="{ba3017fe-e5f2-4307-ba40-7a9d005517c3}"
           DTS:ExecutableType="Microsoft.FileSystemTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GDI - move accommodation_json OK"
           DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -2489,12 +2469,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           DTS:refId="Package\GDI - Foreach Loop countries\GDI - move flight_json KO"
           DTS:CreationName="Microsoft.FileSystemTask"
           DTS:Description="File System Task"
-          DTS:DTSID="{C165C7F9-F81C-451A-AD1F-2320A2B9B123}"
+          DTS:DTSID="{81a429de-5a9c-4ecb-8ff6-2d75c26208f1}"
           DTS:ExecutableType="Microsoft.FileSystemTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GDI - move flight_json KO"
           DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -2513,12 +2493,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           DTS:CreationName="Microsoft.FileSystemTask"
           DTS:DelayValidation="True"
           DTS:Description="File System Task"
-          DTS:DTSID="{CA5AD6BD-0C7D-40B7-9A5D-821A98CB33DE}"
+          DTS:DTSID="{E9B41251-3619-464A-8277-0F2A2BB0D3AB}"
           DTS:ExecutableType="Microsoft.FileSystemTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GDI - move flight_json OK"
           DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -2536,18 +2516,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           DTS:refId="Package\GDI - Foreach Loop countries\TRUNCATE TABLE  stg FicheroJSON2"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Tarea Ejecutar SQL"
-          DTS:DTSID="{24582280-978A-41D5-BB11-229860E01CE5}"
+          DTS:DTSID="{a72d89ef-f5e0-46c6-b4f4-d5d50eac0b94}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="TRUNCATE TABLE  stg FicheroJSON2"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+              SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE [stg].[FicheroJSON];  &#xA;GO " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -2555,7 +2535,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           DTS:refId="Package\GDI - Foreach Loop countries\TRUNCATE TABLE stg FicheroJSON"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Tarea Ejecutar SQL"
-          DTS:DTSID="{471D6F32-8E9E-40FA-8E1C-F7BC63856C5C}"
+          DTS:DTSID="{DE89EDF0-0281-4EA8-8F63-9A16F57AEA8D}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="TRUNCATE TABLE stg FicheroJSON"
@@ -2566,7 +2546,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+              SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE [stg].[FicheroJSON];  &#xA;GO " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -2575,7 +2555,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\GDI - Foreach Loop countries.PrecedenceConstraints[Constraint 10]"
           DTS:CreationName=""
-          DTS:DTSID="{F2695A6D-3CF1-4BA5-AAD0-D7A160CFC5E0}"
+          DTS:DTSID="{C604BC68-F5AA-4255-8E84-824AFD101873}"
           DTS:From="Package\GDI - Foreach Loop countries\GDI - move accommodation_json KO"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 10"
@@ -2583,7 +2563,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\GDI - Foreach Loop countries.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{A98441A1-3EFF-4C94-AFC8-D2F8ACA6B432}"
+          DTS:DTSID="{76161F55-C0DE-4A88-84AB-89B3B49AC6E3}"
           DTS:From="Package\GDI - Foreach Loop countries\GDI - flight_json to sqlserver"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
@@ -2591,7 +2571,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\GDI - Foreach Loop countries.PrecedenceConstraints[Constraint 4]"
           DTS:CreationName=""
-          DTS:DTSID="{EDC11CD7-B5A7-4A91-99C3-D8A160A477CC}"
+          DTS:DTSID="{8CFD95F0-3851-49DD-A8A4-A36CABD888F3}"
           DTS:From="Package\GDI - Foreach Loop countries\GDI - flight_json to sqlserver"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
@@ -2600,7 +2580,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\GDI - Foreach Loop countries.PrecedenceConstraints[Constraint 5]"
           DTS:CreationName=""
-          DTS:DTSID="{FEFF6ECB-AE2E-4A31-9D44-9EAFC2F053BB}"
+          DTS:DTSID="{86f63f30-fe5a-4ce4-9c55-a1fd64cbd277}"
           DTS:From="Package\GDI - Foreach Loop countries\GDI - accommodation_json to sqlserver"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 5"
@@ -2608,7 +2588,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\GDI - Foreach Loop countries.PrecedenceConstraints[Constraint 6]"
           DTS:CreationName=""
-          DTS:DTSID="{05B5C127-256C-4DAC-A30C-FE5F4F50CAF4}"
+          DTS:DTSID="{be105b7e-4080-4eae-9815-d2854a07bdac}"
           DTS:From="Package\GDI - Foreach Loop countries\GDI - accommodation_json to sqlserver"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 6"
@@ -2617,7 +2597,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\GDI - Foreach Loop countries.PrecedenceConstraints[Constraint 9]"
           DTS:CreationName=""
-          DTS:DTSID="{A9ECEC7A-DAB7-4422-B6C8-C4C04F43058A}"
+          DTS:DTSID="{6B4D5291-DAAE-42AC-A855-F6D50C441894}"
           DTS:From="Package\GDI - Foreach Loop countries\GDI - move flight_json KO"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 9"
@@ -2625,7 +2605,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\GDI - Foreach Loop countries.PrecedenceConstraints[Restricción]"
           DTS:CreationName=""
-          DTS:DTSID="{02451E11-4C69-4FC6-AC2D-F87739E8EC3B}"
+          DTS:DTSID="{5011A67F-68CC-4E07-810D-F4B853027131}"
           DTS:From="Package\GDI - Foreach Loop countries\GDI - download flight_json"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restricción"
@@ -2633,7 +2613,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\GDI - Foreach Loop countries.PrecedenceConstraints[Restricción 1]"
           DTS:CreationName=""
-          DTS:DTSID="{233D6528-F699-4FBF-A0FA-C121C3FE5EC3}"
+          DTS:DTSID="{3ABA586E-7D6A-41CD-B6F4-56542AB749B0}"
           DTS:From="Package\GDI - Foreach Loop countries\Carga tabla flight_json"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restricción 1"
@@ -2641,7 +2621,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\GDI - Foreach Loop countries.PrecedenceConstraints[Restricción 2]"
           DTS:CreationName=""
-          DTS:DTSID="{F745F479-C80B-4F55-BE4B-85F81DD86FA6}"
+          DTS:DTSID="{8B4F0B07-06F9-4DB5-8E65-44A4CAA4A812}"
           DTS:From="Package\GDI - Foreach Loop countries\TRUNCATE TABLE stg FicheroJSON"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restricción 2"
@@ -2649,7 +2629,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\GDI - Foreach Loop countries.PrecedenceConstraints[Restricción 3]"
           DTS:CreationName=""
-          DTS:DTSID="{228E37DF-3042-4639-8E81-DC86CB67CA6D}"
+          DTS:DTSID="{A1123BC8-79D9-49F5-9A88-88A0F879C903}"
           DTS:From="Package\GDI - Foreach Loop countries\GDI - move flight_json OK"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restricción 3"
@@ -2657,7 +2637,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\GDI - Foreach Loop countries.PrecedenceConstraints[Restricción 4]"
           DTS:CreationName=""
-          DTS:DTSID="{A4207899-6AFD-4C97-B640-8E8AFFB77A23}"
+          DTS:DTSID="{7A4BC76F-32DA-4B4E-9B0C-86538CC2B1ED}"
           DTS:From="Package\GDI - Foreach Loop countries\TRUNCATE TABLE  stg FicheroJSON2"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restricción 4"
@@ -2665,7 +2645,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\GDI - Foreach Loop countries.PrecedenceConstraints[Restricción 5]"
           DTS:CreationName=""
-          DTS:DTSID="{DF510A9D-7847-4AC6-BB28-699B3830DBF5}"
+          DTS:DTSID="{C0BC7AE9-64B9-4957-AC78-D91E92B3BCFA}"
           DTS:From="Package\GDI - Foreach Loop countries\Carga tabla Accommodation_json"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restricción 5"
@@ -2673,7 +2653,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\GDI - Foreach Loop countries.PrecedenceConstraints[Restricción 6]"
           DTS:CreationName=""
-          DTS:DTSID="{C8F923D4-9A98-444C-A215-0445979EF3A1}"
+          DTS:DTSID="{E2D55459-C65F-49E0-84EE-850E2BD33027}"
           DTS:From="Package\GDI - Foreach Loop countries\GDI - download accommodation_json"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restricción 6"
@@ -2682,8 +2662,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{78375D97-3C6B-42D5-BC3A-8635937A7635}"
-          DTS:ObjectName="{78375D97-3C6B-42D5-BC3A-8635937A7635}"
+          DTS:DTSID="{8DA1FA01-9344-407C-9586-79677F9BA651}"
+          DTS:ObjectName="{8DA1FA01-9344-407C-9586-79677F9BA651}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::alpha2" />
       </DTS:ForEachVariableMappings>
@@ -2692,7 +2672,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       DTS:refId="Package\GDI - get alpha2 list"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{D0E59F13-36F9-41A3-94BE-79CDA310EB4C}"
+      DTS:DTSID="{C526237B-1224-46DB-A767-3E334A6FB48F}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="GDI - get alpha2 list"
@@ -2779,12 +2759,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </DTS:Property>
         <DTS:SelectedLogProviders>
           <DTS:SelectedLogProvider
-            DTS:InstanceID="{B4AAE3C2-9AF2-4C67-BAF0-90EA88675ED3}" />
+            DTS:InstanceID="{CC7E600D-0C8E-4A1E-A810-3A6B7A3863A7}" />
         </DTS:SelectedLogProviders>
       </DTS:LoggingOptions>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+          SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
           SQLTask:BypassPrepare="False"
           SQLTask:SqlStatementSource="SELECT [alpha2] FROM [dwh].[Vw_etl_mercado]"
           SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
@@ -2798,7 +2778,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       DTS:refId="Package\GDI - truncate STG"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{4DE09AB2-837F-412A-B163-ECC42E94B07D}"
+      DTS:DTSID="{7C1AB8C3-1DFC-4AB7-B876-248FCFCD255B}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="GDI - truncate STG"
@@ -2885,12 +2865,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </DTS:Property>
         <DTS:SelectedLogProviders>
           <DTS:SelectedLogProvider
-            DTS:InstanceID="{B4AAE3C2-9AF2-4C67-BAF0-90EA88675ED3}" />
+            DTS:InstanceID="{CC7E600D-0C8E-4A1E-A810-3A6B7A3863A7}" />
         </DTS:SelectedLogProviders>
       </DTS:LoggingOptions>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+          SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE [stg].[demanda_comparaciones]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -2899,7 +2879,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{57D5607D-E2DB-447D-83A4-7221C3F7EC4E}"
+      DTS:DTSID="{1E52F1E8-E09B-4D44-9B07-FB528C6766DF}"
       DTS:From="Package\GDI - get alpha2 list"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -2907,7 +2887,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{815AE9B7-5CEB-4363-A7FF-D3EC23A03AC6}"
+      DTS:DTSID="{29287663-7518-4636-BBD1-4F4DF2EA297F}"
       DTS:From="Package\GDI - truncate STG"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -2915,19 +2895,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{BC669B6F-58C8-42CC-9904-62D863BA7F40}"
+      DTS:DTSID="{F3E178F3-467A-479C-96CB-037230FCEB95}"
       DTS:From="Package\GDI - Foreach Loop countries"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\GDI - compress files" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
 <Objects
   Version="8">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
@@ -3081,7 +3061,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-32.49134765625,29.2659279778393,30.4826953125,9.7490234375"
+              BoundingBox="-28.77869140625,29.2659279778393,23.0573828125,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3151,7 +3131,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-36.74134765625,29.2152466367713,30.4826953125,9.7490234375"
+              BoundingBox="-33.02869140625,29.2152466367713,23.0573828125,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3415,7 +3395,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Id="Package\GDI - get alpha2 list"
           TopLeft="332.5,107.5" />
         <NodeLayout
-          Size="170,42"
+          Size="163,42"
           Id="Package\GDI - truncate STG"
           TopLeft="338,5.5" />
         <EdgeLayout
@@ -3442,7 +3422,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="421.25,47.5">
+          TopLeft="419.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3491,7 +3471,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     design-time-name="Package\GDI - Foreach Loop countries\Carga tabla Accommodation_json">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="216,42"
           Id="Package\GDI - Foreach Loop countries\Carga tabla Accommodation_json\Accommodation FicheroJSON"
@@ -3531,9 +3511,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3558,39 +3536,27 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="167,42"
+          Size="168,42"
           Id="Package\GDI - Foreach Loop countries\Carga tabla flight_json\Flight FicheroJSON"
           TopLeft="18,160" />
         <NodeLayout
-          Size="161,42"
+          Size="191,42"
           Id="Package\GDI - Foreach Loop countries\Carga tabla flight_json\Lee Fichros Flight"
           TopLeft="5.5,5.5" />
         <EdgeLayout
           Id="Package\GDI - Foreach Loop countries\Carga tabla flight_json.Paths[Salida de origen de archivo plano]"
-          TopLeft="86,47.5">
+          TopLeft="101.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="15.5,112.5"
+              EndConnector="0,112.5"
               Start="0,0"
-              End="15.5,105">
+              End="0,105">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,52.25"
-                    Point2="0,56.25"
-                    Point3="4,56.25" />
-                  <mssgle:LineSegment
-                    End="11.5,56.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="11.5,56.25"
-                    Point2="15.5,56.25"
-                    Point3="15.5,60.25" />
-                  <mssgle:LineSegment
-                    End="15.5,105" />
+                    End="0,105" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

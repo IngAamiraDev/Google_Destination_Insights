@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="PC14886"
   DTS:CreatorName="MITYC\ddiego"
-  DTS:DTSID="{1C94832E-545F-4357-9CF8-D659978543F5}"
+  DTS:DTSID="{01A64984-C18F-46D4-852B-FBB102CAECE8}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.521.0"
   DTS:LocaleID="3082"
   DTS:ObjectName="01 GDI - Work"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{8446D772-49EE-4A3C-BA5F-1A3EA29A0082}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{81895B7C-0BFD-4F78-9C59-ACB11D78B96A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:LogProviders>
@@ -20,7 +20,7 @@
       DTS:ConfigString="DB_LOG"
       DTS:CreationName="Microsoft.LogProviderSQLServer"
       DTS:Description="Escribe entradas del registro sobre eventos en una base de datos de SQL Server"
-      DTS:DTSID="{F97530BD-66A8-4549-8632-2B4F286563DD}"
+      DTS:DTSID="{6AE61294-A66C-494C-BB3E-3B1E7FA226BB}"
       DTS:ObjectName="Proveedor de registro SSIS para SQL Server">
       <DTS:ObjectData>
         <InnerObject />
@@ -108,7 +108,7 @@
     </DTS:Property>
     <DTS:SelectedLogProviders>
       <DTS:SelectedLogProvider
-        DTS:InstanceID="{F97530BD-66A8-4549-8632-2B4F286563DD}" />
+        DTS:InstanceID="{6AE61294-A66C-494C-BB3E-3B1E7FA226BB}" />
     </DTS:SelectedLogProviders>
   </DTS:LoggingOptions>
   <DTS:Executables>
@@ -116,7 +116,7 @@
       DTS:refId="Package\GDI - truncate fact stg"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{AEA04035-D0EC-48F8-920E-949DA465DD50}"
+      DTS:DTSID="{D9494C8D-0CFE-4400-9914-B22D4AA43E39}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="GDI - truncate fact stg"
@@ -203,12 +203,12 @@
         </DTS:Property>
         <DTS:SelectedLogProviders>
           <DTS:SelectedLogProvider
-            DTS:InstanceID="{F97530BD-66A8-4549-8632-2B4F286563DD}" />
+            DTS:InstanceID="{6AE61294-A66C-494C-BB3E-3B1E7FA226BB}" />
         </DTS:SelectedLogProviders>
       </DTS:LoggingOptions>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+          SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE [stg].[fact_demanda_comparaciones]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -216,7 +216,7 @@
       DTS:refId="Package\GDI - wrk"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarea Flujo de datos"
-      DTS:DTSID="{AE540D3C-4D34-46C2-BEA6-F5769ACE483B}"
+      DTS:DTSID="{0A54C316-E132-4A23-A5AD-2DC0FA896FDE}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="GDI - wrk">
@@ -301,7 +301,7 @@
         </DTS:Property>
         <DTS:SelectedLogProviders>
           <DTS:SelectedLogProvider
-            DTS:InstanceID="{F97530BD-66A8-4549-8632-2B4F286563DD}" />
+            DTS:InstanceID="{6AE61294-A66C-494C-BB3E-3B1E7FA226BB}" />
         </DTS:SelectedLogProviders>
       </DTS:LoggingOptions>
       <DTS:ObjectData>
@@ -322,13 +322,13 @@
                   description="Especifica la instrucción SQL que genera la tabla de búsqueda."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dwh].[dim_demanda_categoria]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dwh].[dim_demanda_categoria]</property>
                 <property
                   dataType="System.String"
                   description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dwh].[dim_demanda_categoria]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dwh].[dim_demanda_categoria]) [refTable]
 where [refTable].[categoria] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -378,7 +378,7 @@ where [refTable].[categoria] = ?</property>
               <connections>
                 <connection
                   refId="Package\GDI - wrk\GDI - Búsqueda demand_category.Connections[OleDbConnection]"
-                  connectionManagerID="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}:external"
+                  connectionManagerID="{988ACCED-E98F-462E-9F4C-36069689DCBD}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Destination_Insights]"
                   description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
                   name="OleDbConnection" />
@@ -481,13 +481,13 @@ where [refTable].[categoria] = ?</property>
                   description="Especifica la instrucción SQL que genera la tabla de búsqueda."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dwh].[dim_demanda_tipo]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dwh].[dim_demanda_tipo]</property>
                 <property
                   dataType="System.String"
                   description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dwh].[dim_demanda_tipo]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dwh].[dim_demanda_tipo]) [refTable]
 where [refTable].[tipo] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -537,7 +537,7 @@ where [refTable].[tipo] = ?</property>
               <connections>
                 <connection
                   refId="Package\GDI - wrk\GDI - Búsqueda demand_type.Connections[OleDbConnection]"
-                  connectionManagerID="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}:external"
+                  connectionManagerID="{988ACCED-E98F-462E-9F4C-36069689DCBD}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Destination_Insights]"
                   description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
                   name="OleDbConnection" />
@@ -640,14 +640,14 @@ where [refTable].[tipo] = ?</property>
                   description="Especifica la instrucción SQL que genera la tabla de búsqueda."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT IdMercado, alpha2 
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT IdMercado, alpha2 
 FROM DATATUR.dbo.DimMercado</property>
                 <property
                   dataType="System.String"
                   description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT IdMercado, alpha2 
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT IdMercado, alpha2 
 FROM DATATUR.dbo.DimMercado) [refTable]
 where [refTable].[alpha2] = ?</property>
                 <property
@@ -698,7 +698,7 @@ where [refTable].[alpha2] = ?</property>
               <connections>
                 <connection
                   refId="Package\GDI - wrk\GDI - Búsqueda id_mercado_destino.Connections[OleDbConnection]"
-                  connectionManagerID="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}:external"
+                  connectionManagerID="{988ACCED-E98F-462E-9F4C-36069689DCBD}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Destination_Insights]"
                   description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
                   name="OleDbConnection" />
@@ -801,14 +801,14 @@ where [refTable].[alpha2] = ?</property>
                   description="Especifica la instrucción SQL que genera la tabla de búsqueda."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT IdMercado, alpha2 
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT IdMercado, alpha2 
 FROM DATATUR.dbo.DimMercado</property>
                 <property
                   dataType="System.String"
                   description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT IdMercado, alpha2 
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT IdMercado, alpha2 
 FROM DATATUR.dbo.DimMercado) [refTable]
 where [refTable].[alpha2] = ?</property>
                 <property
@@ -859,7 +859,7 @@ where [refTable].[alpha2] = ?</property>
               <connections>
                 <connection
                   refId="Package\GDI - wrk\GDI - Búsqueda id_mercado_origin.Connections[OleDbConnection]"
-                  connectionManagerID="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}:external"
+                  connectionManagerID="{988ACCED-E98F-462E-9F4C-36069689DCBD}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Destination_Insights]"
                   description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
                   name="OleDbConnection" />
@@ -878,11 +878,11 @@ where [refTable].[alpha2] = ?</property>
                       <properties>
                         <property
                           dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
                           name="JoinToReferenceColumn">alpha2</property>
                         <property
                           dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
                           name="CopyFromReferenceColumn" />
                       </properties>
                     </inputColumn>
@@ -902,14 +902,14 @@ where [refTable].[alpha2] = ?</property>
                     <outputColumn
                       refId="Package\GDI - wrk\GDI - Búsqueda id_mercado_origin.Outputs[Salida de entradas coincidentes de búsqueda].Columns[id_mercado_origin]"
                       dataType="i4"
-                      errorOrTruncationOperation="Copy Column"
+                      errorOrTruncationOperation="Copiar columna"
                       lineageId="Package\GDI - wrk\GDI - Búsqueda id_mercado_origin.Outputs[Salida de entradas coincidentes de búsqueda].Columns[id_mercado_origin]"
                       name="id_mercado_origin"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
                           name="CopyFromReferenceColumn">IdMercado</property>
                       </properties>
                     </outputColumn>
@@ -973,7 +973,7 @@ where [refTable].[alpha2] = ?</property>
                   dataType="System.String"
                   description="Comando SQL para ejecutar."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="Variable que contiene el comando SQL para ejecutar."
@@ -999,7 +999,7 @@ where [refTable].[alpha2] = ?</property>
               <connections>
                 <connection
                   refId="Package\GDI - wrk\GDI - stg_demand_comparisons.Connections[OleDbConnection]"
-                  connectionManagerID="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}:external"
+                  connectionManagerID="{988ACCED-E98F-462E-9F4C-36069689DCBD}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Destination_Insights]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
@@ -1217,7 +1217,7 @@ where [refTable].[alpha2] = ?</property>
                   dataType="System.String"
                   description="Comando SQL para ejecutar."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -1251,7 +1251,7 @@ where [refTable].[alpha2] = ?</property>
               <connections>
                 <connection
                   refId="Package\GDI - wrk\GDI - stg_fact_demand_comparisons.Connections[OleDbConnection]"
-                  connectionManagerID="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}:external"
+                  connectionManagerID="{988ACCED-E98F-462E-9F4C-36069689DCBD}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Destination_Insights]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
@@ -1419,19 +1419,19 @@ where [refTable].[alpha2] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{0831DAB5-3DB6-46AE-B8AD-F4ED262AF0B7}"
+      DTS:DTSID="{B4600602-76B8-413E-BDD0-F4A7824B6CCB}"
       DTS:From="Package\GDI - truncate fact stg"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\GDI - wrk" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
 <Objects
   Version="8">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
@@ -1440,14 +1440,14 @@ where [refTable].[alpha2] = ?</property>
         <NodeLayout
           Size="185,42"
           Id="Package\GDI - truncate fact stg"
-          TopLeft="37.5,28.5" />
+          TopLeft="5.50000000000001,5.5" />
         <NodeLayout
           Size="125,42"
           Id="Package\GDI - wrk"
-          TopLeft="67.5,130.5" />
+          TopLeft="35.5,107.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="130,70.5">
+          TopLeft="98,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1490,7 +1490,7 @@ where [refTable].[alpha2] = ?</property>
         <NodeLayout
           Size="241,42"
           Id="Package\GDI - wrk\GDI - Búsqueda demand_category"
-          TopLeft="12,102.5" />
+          TopLeft="12,107.5" />
         <NodeLayout
           Size="252,42"
           Id="Package\GDI - wrk\GDI - Búsqueda id_mercado_destino"
@@ -1505,14 +1505,14 @@ where [refTable].[alpha2] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,55"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,47.5">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.5" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1523,25 +1523,25 @@ where [refTable].[alpha2] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\GDI - wrk.Paths[Salida de entradas coincidentes de búsqueda3]"
-          TopLeft="132.5,144.5">
+          TopLeft="132.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,65"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,57.5">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,57.5" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-99.8190234375,22.65234375,199.638046875,12.1953125"
+              BoundingBox="-99.8190234375,20.15234375,199.638046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1589,7 +1589,7 @@ where [refTable].[alpha2] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-108.50701171875,16.75,217.0140234375,16"
+              BoundingBox="-99.8190234375,18.65234375,199.638046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

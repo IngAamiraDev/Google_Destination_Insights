@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="PC14886"
   DTS:CreatorName="MITYC\ddiego"
-  DTS:DTSID="{604B4EAC-D510-47E9-A3B3-A586869CAE8F}"
+  DTS:DTSID="{974292E6-6DC0-4147-A260-7426AFE1427E}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.521.0"
   DTS:LocaleID="3082"
   DTS:ObjectName="00 1 1 GDI - Staging Flight CSV"
   DTS:PackageType="5"
-  DTS:VersionBuild="247"
-  DTS:VersionGUID="{10118537-C3F5-4348-B97E-E223D3F224FC}">
+  DTS:VersionBuild="256"
+  DTS:VersionGUID="{6974D05E-B79B-4CB4-93CF-684DC302ABAD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Fichero Flight CSV]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{C54A5876-145B-495F-8381-AE0843440E7B}"
+      DTS:DTSID="{3383FB79-BEA5-41DB-8DCD-4C7E17D6B7BA}"
       DTS:ObjectName="Fichero Flight CSV">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::flight_path_csv]+"\\"+ @[User::FileName]</DTS:PropertyExpression>
@@ -41,7 +41,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="rank"
-              DTS:DTSID="{EB112F46-B286-499B-906F-6E7C9E8E475E}"
+              DTS:DTSID="{AE5A8AA9-3F33-4C47-8D13-0936511049A6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="origin_country"
-              DTS:DTSID="{F66C4163-2EF3-4736-BDF6-719D235C1DA4}"
+              DTS:DTSID="{C25E9092-B598-4361-95A2-C2CEC9BB2FE4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="destination_country"
-              DTS:DTSID="{2E181DE1-F6AD-4E30-A562-92FA0A9E2C31}"
+              DTS:DTSID="{2AB70F51-DABF-4726-9F5D-DF5EB2AE70CB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ratio"
-              DTS:DTSID="{F0F9F0FE-8484-4F68-9339-AADE7270ECB7}"
+              DTS:DTSID="{BA16DB47-36B1-43CE-8161-8508191315C0}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -80,7 +80,7 @@
       DTS:ConfigString="DB_LOG"
       DTS:CreationName="Microsoft.LogProviderSQLServer"
       DTS:Description="Escribe entradas del registro sobre eventos en una base de datos de SQL Server"
-      DTS:DTSID="{1AA554B2-5BD5-46F9-9F1E-3C633FFD4EDA}"
+      DTS:DTSID="{D2D3DAD5-0A42-48A6-A771-B96B6B28ADDB}"
       DTS:ObjectName="Proveedor de registro SSIS para SQL Server">
       <DTS:ObjectData>
         <InnerObject />
@@ -90,7 +90,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{51316382-1F55-4ACF-BCB6-E3981D4AB740}"
+      DTS:DTSID="{21C9D344-1A19-4E29-8106-32FFC56CF88F}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="cantidad_filas">
@@ -99,7 +99,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{189EE54F-12A4-4A5B-B11E-FF292764DD93}"
+      DTS:DTSID="{5BF447D3-FC6F-432D-A938-7FB701043DD8}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="FileName">
@@ -109,7 +109,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0021343D-CBFA-46F7-B5F7-2D75C55FEEB4}"
+      DTS:DTSID="{4100844F-9360-48BC-A93D-61DAFBA6EB5C}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::flight_path_csv]+&quot;\\&quot;+ @[User::FileName]"
       DTS:IncludeInDebugDump="2345"
@@ -120,7 +120,18 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C91444A1-C79C-4552-AA1B-C2E5499D84B0}"
+      DTS:DTSID="{BEFB215F-464F-4473-8D88-9EBD6DC82C73}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="flight_folder">
+      <DTS:VariableValue
+        DTS:DataType="8">Temporal\Vuelos</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{67038E84-D15D-4428-8159-F7ACD99CABC1}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::gdi_folder]+ @[User::flight_folder]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="flight_path_csv">
@@ -129,7 +140,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B5E42AA0-0B47-4750-A223-2F67F4764281}"
+      DTS:DTSID="{AAAEEEEB-BD55-400C-B1C7-99F7955550A6}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[$Project::ruta_fichero_base] + &quot;GDI\\&quot; + @[$Project::Entorno]  + &quot;\\&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -140,7 +151,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7D8858CD-5BC2-46EB-913D-8F0ABB392180}"
+      DTS:DTSID="{A79867DB-922F-4DA8-9445-473E28750B6B}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::gdi_folder] + &quot;Procesado KO\\&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -151,7 +162,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F7ECC56C-0D1E-4BD3-9803-DFE43592DE18}"
+      DTS:DTSID="{82AF3DB3-596C-4D19-A6CF-C1894D573786}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::gdi_folder] + &quot;Procesado OK\\&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -162,7 +173,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{CEC33B1A-212C-4467-8141-1F80539278A6}"
+      DTS:DTSID="{0A896E50-37F0-4A5E-A9A9-EA2B32CC60C6}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::gdi_folder] + &quot;Procesando\\&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -173,14 +184,14 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{277612C7-487C-46E4-8301-F382714EAA20}"
+      DTS:DTSID="{32EAD87B-EB98-4EB5-BD9C-13CD18F28FA7}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::procesado_ok]+ &quot;GDI_&quot; + LEFT((DT_WSTR, 50)GETDATE() , 10)  + &quot;.zip&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="zip_files">
       <DTS:VariableValue
-        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-08-17.zip</DTS:VariableValue>
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-09-21.zip</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:LoggingOptions
@@ -263,7 +274,7 @@
     </DTS:Property>
     <DTS:SelectedLogProviders>
       <DTS:SelectedLogProvider
-        DTS:InstanceID="{1AA554B2-5BD5-46F9-9F1E-3C633FFD4EDA}" />
+        DTS:InstanceID="{D2D3DAD5-0A42-48A6-A771-B96B6B28ADDB}" />
     </DTS:SelectedLogProviders>
   </DTS:LoggingOptions>
   <DTS:Executables>
@@ -271,7 +282,7 @@
       DTS:refId="Package\GDI  - Flight CSV Sequence Container"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{6B746040-3331-4B48-8FA1-9BEDBADC9355}"
+      DTS:DTSID="{300BE768-10B3-4648-9FD4-EF9934D08296}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="GDI  - Flight CSV Sequence Container">
@@ -282,14 +293,14 @@
           DTS:CreationName="STOCK:FOREACHLOOP"
           DTS:DelayValidation="True"
           DTS:Description="Foreach Loop Container"
-          DTS:DTSID="{0CB7F20B-BFF5-4503-9A10-C21535383D21}"
+          DTS:DTSID="{DDBD515B-3D56-4390-8372-33FA17745404}"
           DTS:ExecutableType="STOCK:FOREACHLOOP"
           DTS:LocaleID="-1"
           DTS:ObjectName="GDI  - Flight CSV Foreach Loop Container">
           <DTS:ForEachEnumerator
             DTS:CreationName="Microsoft.ForEachFileEnumerator"
-            DTS:DTSID="{92F21396-042A-4028-8256-C74442FE73FD}"
-            DTS:ObjectName="{92F21396-042A-4028-8256-C74442FE73FD}">
+            DTS:DTSID="{C82D6AA8-EE13-45A2-B83B-1B1F6E500241}"
+            DTS:ObjectName="{C82D6AA8-EE13-45A2-B83B-1B1F6E500241}">
             <DTS:PropertyExpression
               DTS:Name="Directory">@[User::flight_path_csv]</DTS:PropertyExpression>
             <DTS:ObjectData>
@@ -311,7 +322,7 @@
               DTS:refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - flight_csv to sqlserver"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{E3BED6E9-CDCB-4F0F-B893-E902BFEA75D6}"
+              DTS:DTSID="{9DA704EB-F325-43A9-9F5C-6C8F900DCE32}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="GDI - flight_csv to sqlserver"
@@ -322,7 +333,7 @@
                 DTS:FilterKind="0" />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+                  SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
                   SQLTask:SqlStatementSource="declare @filepath nvarchar(max)&#xA;declare @filas int&#xA;set @filepath = ?&#xA;set @filas = ?&#xA;&#xA;--exec (@sql)&#xA;&#xA;IF EXISTS (SELECT * FROM [stg].[ficheros_cargados] WHERE [fichero] = @filepath)&#xA;BEGIN&#xA; UPDATE [stg].[ficheros_cargados]&#xA; SET    [carga_numero] = [carga_numero] +1&#xA; WHERE  [fichero] = @filepath&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;INSERT INTO [stg].[ficheros_cargados] ([fichero],[filas_numero],[carga_numero],[carga_estado])&#xA;VALUES (@filepath,@filas,1,1)&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="0"
@@ -340,14 +351,14 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv"
+              DTS:refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv"
               DTS:CreationName="Microsoft.Pipeline"
               DTS:DelayValidation="True"
               DTS:Description="Data Flow Task"
-              DTS:DTSID="{5F77795E-2CCC-4D0D-BDC9-27E8712ECF95}"
+              DTS:DTSID="{03450146-94CE-4D8D-A308-1189CFB9CA65}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
-              DTS:ObjectName="GDI - load csv"
+              DTS:ObjectName="GDI - load ficherocsv"
               DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
               <DTS:Variables />
               <DTS:ObjectData>
@@ -355,7 +366,7 @@
                   version="1">
                   <components>
                     <component
-                      refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV"
+                      refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV"
                       componentClassID="Microsoft.OLEDBDestination"
                       contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                       description="OLE DB Destination"
@@ -379,7 +390,7 @@
                           dataType="System.String"
                           description="The SQL command to be executed."
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -412,75 +423,75 @@
                       </properties>
                       <connections>
                         <connection
-                          refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Connections[OleDbConnection]"
-                          connectionManagerID="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}:external"
+                          refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Connections[OleDbConnection]"
+                          connectionManagerID="{988ACCED-E98F-462E-9F4C-36069689DCBD}:external"
                           connectionManagerRefId="Project.ConnectionManagers[Destination_Insights]"
                           description="The OLE DB runtime connection used to access the database."
                           name="OleDbConnection" />
                       </connections>
                       <inputs>
                         <input
-                          refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Inputs[OLE DB Destination Input]"
+                          refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Inputs[OLE DB Destination Input]"
                           errorOrTruncationOperation="Insert"
                           errorRowDisposition="FailComponent"
                           hasSideEffects="true"
                           name="OLE DB Destination Input">
                           <inputColumns>
                             <inputColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Inputs[OLE DB Destination Input].Columns[rank]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Inputs[OLE DB Destination Input].Columns[rank]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="rank"
-                              externalMetadataColumnId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[rank]"
-                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[rank]" />
+                              externalMetadataColumnId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[rank]"
+                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[rank]" />
                             <inputColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Inputs[OLE DB Destination Input].Columns[origin_country]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Inputs[OLE DB Destination Input].Columns[origin_country]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="origin_country"
-                              externalMetadataColumnId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[origin_country]"
-                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[origin_country]" />
+                              externalMetadataColumnId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[origin_country]"
+                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[origin_country]" />
                             <inputColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Inputs[OLE DB Destination Input].Columns[destination_country]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Inputs[OLE DB Destination Input].Columns[destination_country]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="destination_country"
-                              externalMetadataColumnId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[destination_country]"
-                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[destination_country]" />
+                              externalMetadataColumnId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[destination_country]"
+                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[destination_country]" />
                             <inputColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Inputs[OLE DB Destination Input].Columns[ratio]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Inputs[OLE DB Destination Input].Columns[ratio]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="ratio"
-                              externalMetadataColumnId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[ratio]"
-                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[ratio]" />
+                              externalMetadataColumnId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[ratio]"
+                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[ratio]" />
                           </inputColumns>
                           <externalMetadataColumns
                             isUsed="True">
                             <externalMetadataColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[rank]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[rank]"
                               codePage="1252"
                               dataType="str"
                               length="50"
                               name="rank" />
                             <externalMetadataColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[origin_country]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[origin_country]"
                               codePage="1252"
                               dataType="str"
                               length="100"
                               name="origin_country" />
                             <externalMetadataColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[destination_country]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[destination_country]"
                               codePage="1252"
                               dataType="str"
                               length="100"
                               name="destination_country" />
                             <externalMetadataColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[ratio]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Inputs[OLE DB Destination Input].ExternalColumns[ratio]"
                               codePage="1252"
                               dataType="str"
                               length="100"
@@ -490,22 +501,22 @@
                       </inputs>
                       <outputs>
                         <output
-                          refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Outputs[OLE DB Destination Error Output]"
+                          refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Outputs[OLE DB Destination Error Output]"
                           exclusionGroup="1"
                           isErrorOut="true"
                           name="OLE DB Destination Error Output"
-                          synchronousInputId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Inputs[OLE DB Destination Input]">
+                          synchronousInputId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Inputs[OLE DB Destination Input]">
                           <outputColumns>
                             <outputColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                               dataType="i4"
-                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                               name="ErrorCode"
                               specialFlags="1" />
                             <outputColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                               dataType="i4"
-                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                               name="ErrorColumn"
                               specialFlags="2" />
                           </outputColumns>
@@ -514,7 +525,7 @@
                       </outputs>
                     </component>
                     <component
-                      refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From"
+                      refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From"
                       componentClassID="Microsoft.FlatFileSource"
                       contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                       description="Flat File Source"
@@ -534,25 +545,25 @@
                       </properties>
                       <connections>
                         <connection
-                          refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Connections[FlatFileConnection]"
+                          refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Connections[FlatFileConnection]"
                           connectionManagerID="Package.ConnectionManagers[Fichero Flight CSV]"
                           connectionManagerRefId="Package.ConnectionManagers[Fichero Flight CSV]"
                           name="FlatFileConnection" />
                       </connections>
                       <outputs>
                         <output
-                          refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output]"
+                          refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output]"
                           name="Flat File Source Output">
                           <outputColumns>
                             <outputColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[rank]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[rank]"
                               codePage="1252"
                               dataType="str"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output].ExternalColumns[rank]"
+                              externalMetadataColumnId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output].ExternalColumns[rank]"
                               length="50"
-                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[rank]"
+                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[rank]"
                               name="rank"
                               truncationRowDisposition="FailComponent">
                               <properties>
@@ -567,14 +578,14 @@
                               </properties>
                             </outputColumn>
                             <outputColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[origin_country]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[origin_country]"
                               codePage="1252"
                               dataType="str"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output].ExternalColumns[origin_country]"
+                              externalMetadataColumnId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output].ExternalColumns[origin_country]"
                               length="50"
-                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[origin_country]"
+                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[origin_country]"
                               name="origin_country"
                               truncationRowDisposition="FailComponent">
                               <properties>
@@ -589,14 +600,14 @@
                               </properties>
                             </outputColumn>
                             <outputColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[destination_country]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[destination_country]"
                               codePage="1252"
                               dataType="str"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output].ExternalColumns[destination_country]"
+                              externalMetadataColumnId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output].ExternalColumns[destination_country]"
                               length="50"
-                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[destination_country]"
+                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[destination_country]"
                               name="destination_country"
                               truncationRowDisposition="FailComponent">
                               <properties>
@@ -611,14 +622,14 @@
                               </properties>
                             </outputColumn>
                             <outputColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[ratio]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[ratio]"
                               codePage="1252"
                               dataType="str"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output].ExternalColumns[ratio]"
+                              externalMetadataColumnId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output].ExternalColumns[ratio]"
                               length="50"
-                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[ratio]"
+                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output].Columns[ratio]"
                               name="ratio"
                               truncationRowDisposition="FailComponent">
                               <properties>
@@ -636,25 +647,25 @@
                           <externalMetadataColumns
                             isUsed="True">
                             <externalMetadataColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output].ExternalColumns[rank]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output].ExternalColumns[rank]"
                               codePage="1252"
                               dataType="str"
                               length="50"
                               name="rank" />
                             <externalMetadataColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output].ExternalColumns[origin_country]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output].ExternalColumns[origin_country]"
                               codePage="1252"
                               dataType="str"
                               length="50"
                               name="origin_country" />
                             <externalMetadataColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output].ExternalColumns[destination_country]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output].ExternalColumns[destination_country]"
                               codePage="1252"
                               dataType="str"
                               length="50"
                               name="destination_country" />
                             <externalMetadataColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output].ExternalColumns[ratio]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output].ExternalColumns[ratio]"
                               codePage="1252"
                               dataType="str"
                               length="50"
@@ -662,27 +673,27 @@
                           </externalMetadataColumns>
                         </output>
                         <output
-                          refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Error Output]"
+                          refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Error Output]"
                           isErrorOut="true"
                           name="Flat File Source Error Output">
                           <outputColumns>
                             <outputColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                               codePage="20285"
                               dataType="text"
                               description="Flat File Source Error Output Column"
-                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                               name="Flat File Source Error Output Column" />
                             <outputColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                               dataType="i4"
-                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                               name="ErrorCode"
                               specialFlags="1" />
                             <outputColumn
-                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                              refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                               dataType="i4"
-                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                              lineageId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                               name="ErrorColumn"
                               specialFlags="2" />
                           </outputColumns>
@@ -691,7 +702,7 @@
                       </outputs>
                     </component>
                     <component
-                      refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Row Count"
+                      refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Row Count"
                       componentClassID="Microsoft.RowCount"
                       contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                       description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
@@ -704,7 +715,7 @@
                       </properties>
                       <inputs>
                         <input
-                          refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Row Count.Inputs[Row Count Input 1]"
+                          refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Row Count.Inputs[Row Count Input 1]"
                           hasSideEffects="true"
                           name="Row Count Input 1">
                           <externalMetadataColumns />
@@ -712,9 +723,9 @@
                       </inputs>
                       <outputs>
                         <output
-                          refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Row Count.Outputs[Row Count Output 1]"
+                          refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Row Count.Outputs[Row Count Output 1]"
                           name="Row Count Output 1"
-                          synchronousInputId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Row Count.Inputs[Row Count Input 1]">
+                          synchronousInputId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Row Count.Inputs[Row Count Input 1]">
                           <externalMetadataColumns />
                         </output>
                       </outputs>
@@ -722,15 +733,15 @@
                   </components>
                   <paths>
                     <path
-                      refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv.Paths[Flat File Source Output]"
-                      endId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Row Count.Inputs[Row Count Input 1]"
+                      refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv.Paths[Flat File Source Output]"
+                      endId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Row Count.Inputs[Row Count Input 1]"
                       name="Flat File Source Output"
-                      startId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From.Outputs[Flat File Source Output]" />
+                      startId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From.Outputs[Flat File Source Output]" />
                     <path
-                      refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv.Paths[Row Count Output 1]"
-                      endId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV.Inputs[OLE DB Destination Input]"
+                      refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv.Paths[Row Count Output 1]"
+                      endId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV.Inputs[OLE DB Destination Input]"
                       name="Row Count Output 1"
-                      startId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Row Count.Outputs[Row Count Output 1]" />
+                      startId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Row Count.Outputs[Row Count Output 1]" />
                   </paths>
                 </pipeline>
               </DTS:ObjectData>
@@ -739,7 +750,7 @@
               DTS:refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - log loaded file(flight) KO"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{027C3184-67E2-4613-A454-A07F415FCBB2}"
+              DTS:DTSID="{A9D41309-FC26-4381-8207-4D2586281237}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="GDI - log loaded file(flight) KO"
@@ -750,7 +761,7 @@
                 DTS:FilterKind="0" />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+                  SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
                   SQLTask:SqlStatementSource="UPDATE [stg].[ficheros_cargados]&#xA;SET [carga_estado] = 0&#xA;WHERE [fichero] = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="0"
@@ -765,7 +776,7 @@
               DTS:refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - move flight_csv KO"
               DTS:CreationName="Microsoft.FileSystemTask"
               DTS:Description="File System Task"
-              DTS:DTSID="{BCA2490A-4EBD-483A-A8DC-3E47BCC50D2F}"
+              DTS:DTSID="{2FB5E754-881E-491C-BDE7-1ED49AE295C2}"
               DTS:ExecutableType="Microsoft.FileSystemTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="GDI - move flight_csv KO"
@@ -789,7 +800,7 @@
               DTS:CreationName="Microsoft.FileSystemTask"
               DTS:DelayValidation="True"
               DTS:Description="File System Task"
-              DTS:DTSID="{3981829C-FE41-411A-BA1A-74D411973625}"
+              DTS:DTSID="{26BF230E-C0AB-486F-A0E6-2FE17FD1DD68}"
               DTS:ExecutableType="Microsoft.FileSystemTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="GDI - move flight_csv OK"
@@ -813,15 +824,15 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container.PrecedenceConstraints[Constraint]"
               DTS:CreationName=""
-              DTS:DTSID="{22C9D267-75B6-4FFD-8063-7022837BBC5A}"
-              DTS:From="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv"
+              DTS:DTSID="{45B1F09A-A697-4DF3-9326-6E163CEFC9A0}"
+              DTS:From="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint"
               DTS:To="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - flight_csv to sqlserver" />
             <DTS:PrecedenceConstraint
               DTS:refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
               DTS:CreationName=""
-              DTS:DTSID="{A8639409-BE7A-4AC6-9C26-E231A7C56443}"
+              DTS:DTSID="{BEAA8D17-5B71-456D-878C-A5C1C3C4770E}"
               DTS:From="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - flight_csv to sqlserver"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 1"
@@ -829,7 +840,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
               DTS:CreationName=""
-              DTS:DTSID="{1424D850-15EA-44CA-889F-1AF03E8CD1E5}"
+              DTS:DTSID="{3398C954-1313-466C-9EDB-EE11CFF706F1}"
               DTS:From="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - flight_csv to sqlserver"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 2"
@@ -838,7 +849,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
               DTS:CreationName=""
-              DTS:DTSID="{66284F44-946C-4FF4-AA50-C8E2715B109A}"
+              DTS:DTSID="{D5D24BC1-39F5-4C5D-AC24-EBBA5603CC49}"
               DTS:From="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - move flight_csv KO"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 3"
@@ -847,8 +858,8 @@
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{AD2A6D33-D661-4472-9BC1-C0007E39985B}"
-              DTS:ObjectName="{AD2A6D33-D661-4472-9BC1-C0007E39985B}"
+              DTS:DTSID="{B2AE39E9-C883-4258-ADA6-F9808440FFD1}"
+              DTS:ObjectName="{B2AE39E9-C883-4258-ADA6-F9808440FFD1}"
               DTS:ValueIndex="0"
               DTS:VariableName="User::FileName" />
           </DTS:ForEachVariableMappings>
@@ -857,7 +868,7 @@
           DTS:refId="Package\GDI  - Flight CSV Sequence Container\GDI - insert flight_csv in demanda_comparaciones"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{DDAB8344-49E4-4217-9A45-C1A41A1DA389}"
+          DTS:DTSID="{6C74A608-5454-4982-B2C1-DCAB1C0D8063}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GDI - insert flight_csv in demanda_comparaciones"
@@ -866,15 +877,32 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
-              SQLTask:SqlStatementSource="INSERT INTO [stg].[demanda_comparaciones]&#xA;(&#xA;&#x9; [fecha]&#xA;&#x9;,[demanda_tipo]&#xA;&#x9;,[demanda_categoria]&#xA;&#x9;,[origen_mercado]&#xA;&#x9;,[destino_mercado]&#xA;&#x9;,[rank]&#xA;&#x9;,[ratio]&#xA;)&#xA;SELECT &#xA;&#x9;'2022-08-16 14:17:27.783' AS [fecha], &#xA;&#x9;'Salidas' AS [demanda_tipo], &#xA;&#x9;'Vuelos' AS [demanda_categoria]&#xA;&#x9;,b.alpha2 AS [origen_mercado]&#xA;&#x9;,c.alpha2 AS [destino_mercado]&#xA;&#x9;,[rank]&#xA;&#x9;,[ratio]&#xA;FROM [Destination_Insights].[stg].[FicheroCSV] a&#xA;&#x9;INNER JOIN [DATATUR].[dbo].[DimMercado] b ON a.origin_country = b.countries_es&#xA;&#x9;INNER JOIN [DATATUR].[dbo].[DimMercado] c ON a.destination_country = c.countries_es" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
+              SQLTask:SqlStatementSource="INSERT INTO [stg].[demanda_comparaciones]&#xA;(&#xA;&#x9; [fecha]&#xA;&#x9;,[demanda_tipo]&#xA;&#x9;,[demanda_categoria]&#xA;&#x9;,[origen_mercado]&#xA;&#x9;,[destino_mercado]&#xA;&#x9;,[rank]&#xA;&#x9;,[ratio]&#xA;)&#xA;SELECT &#xA;&#x9;[fecha] = DATEADD(dd, -(DATEPART(dw, GETDATE()-1)),GETDATE()), &#xA;&#x9;'Salidas' AS [demanda_tipo], &#xA;&#x9;'Vuelos' AS [demanda_categoria]&#xA;&#x9;,b.alpha2 AS [origen_mercado]&#xA;&#x9;,c.alpha2 AS [destino_mercado]&#xA;&#x9;,[rank]&#xA;&#x9;,[ratio]&#xA;FROM [Destination_Insights].[stg].[FicheroCSV] a&#xA;&#x9;INNER JOIN [DATATUR].[dbo].[DimMercado] b ON a.origin_country = b.countries_es&#xA;&#x9;INNER JOIN [DATATUR].[dbo].[DimMercado] c ON a.destination_country = c.countries_es" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GDI  - Flight CSV Sequence Container\GDI - update countries"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{56fffd41-7199-4e9d-b49c-ff0cd7555f9b}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="GDI - update countries"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022 CTP2.0; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
+              SQLTask:SqlStatementSource="UPDATE [stg].[FicheroCSV]&#xA;   SET [origin_country] = b.[countries_es]&#xA;      ,[destination_country] = c.[countries_es]&#xA;FROM [Destination_Insights].[stg].[FicheroCSV] a&#xA;&#x9;INNER JOIN [DATATUR].[dbo].[DimMercado] b ON a.origin_country = b.countries_en&#xA;&#x9;INNER JOIN [DATATUR].[dbo].[DimMercado] c ON a.destination_country = c.countries_en" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\GDI  - Flight CSV Sequence Container\GDI - update UTF-8"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{9EF7C1BE-BB00-4C56-8DC9-E476C1EC9ABA}"
+          DTS:DTSID="{0C0B539A-A5ED-4080-A9B3-634AB5C4595D}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GDI - update UTF-8"
@@ -883,7 +911,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+              SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
               SQLTask:SqlStatementSource="UPDATE [Destination_Insights].[stg].[FicheroCSV] SET [origin_country] = &#xA;REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE([origin_country], '&quot;',''), 'Ã','Á'), 'Ã±','ñ'), 'Ã¡','á'), 'Ã©','é'), 'Ã­','í'), 'Ã³','ó'),'Ãº','ú')&#xA;&#xA;&#xA;UPDATE [Destination_Insights].[stg].[FicheroCSV] SET [destination_country] = &#xA;REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE([destination_country], '&quot;',''), 'Ã','Á'), 'Ã±','ñ'), 'Ã¡','á'), 'Ã©','é'), 'Ã­','í'), 'Ã³','ó'),'Ãº','ú')&#xA;&#xA;&#xA;UPDATE [Destination_Insights].[stg].[FicheroCSV] SET [rank] = REPLACE([rank], '&quot;&quot;',0)&#xA;&#xA;&#xA;DELETE FROM [Destination_Insights].[stg].[FicheroCSV]&#xA;WHERE [rank] = 0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -892,7 +920,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\GDI  - Flight CSV Sequence Container.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{0013D5DA-1390-44DE-AB1A-D40422A6DB25}"
+          DTS:DTSID="{52D8EDE9-71FD-4753-B8B4-DB2799B53D52}"
           DTS:From="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -900,10 +928,18 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\GDI  - Flight CSV Sequence Container.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{8B76C29E-C4FB-4F87-AEEF-048F2D9C41EB}"
+          DTS:DTSID="{CB61BCC6-F24E-4D9D-9745-B8FA4FBAFF77}"
           DTS:From="Package\GDI  - Flight CSV Sequence Container\GDI - update UTF-8"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
+          DTS:To="Package\GDI  - Flight CSV Sequence Container\GDI - update countries" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GDI  - Flight CSV Sequence Container.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{E64BF018-B7AB-436D-95A0-C5815F57DA20}"
+          DTS:From="Package\GDI  - Flight CSV Sequence Container\GDI - update countries"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
           DTS:To="Package\GDI  - Flight CSV Sequence Container\GDI - insert flight_csv in demanda_comparaciones" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
@@ -911,7 +947,7 @@
       DTS:refId="Package\GDI - compress files"
       DTS:CreationName="Microsoft.ExecuteProcess"
       DTS:Description="Execute Process Task"
-      DTS:DTSID="{3B5CB2ED-1660-4885-87D1-E2D37C6541ED}"
+      DTS:DTSID="{C210C307-7477-4F3A-8B0C-7DE2195510F5}"
       DTS:ExecutableType="Microsoft.ExecuteProcess"
       DTS:LocaleID="-1"
       DTS:ObjectName="GDI - compress files"
@@ -1002,14 +1038,14 @@
       <DTS:ObjectData>
         <ExecuteProcessData
           Executable="C:\Program Files\7-Zip\7z.exe"
-          Arguments="a -t7z &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-08-17.zip&quot; &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\*.csv&quot; -sdel" />
+          Arguments="a -t7z &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-09-21.zip&quot; &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\*.csv&quot; -sdel" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\GDI - STG Execute SQL Task"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{E371B4CA-E512-41A8-8A1F-7373F02CE987}"
+      DTS:DTSID="{57903632-60B7-4780-A6E1-E7E0E8E03F5D}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="GDI - STG Execute SQL Task"
@@ -1018,7 +1054,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+          SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE [stg].[FicheroCSV]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1027,7 +1063,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{BC52A644-984B-47F0-A3ED-E44AEA37579A}"
+      DTS:DTSID="{23FDB037-5914-4BFC-AD77-F123AE1B9646}"
       DTS:From="Package\GDI - STG Execute SQL Task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -1035,7 +1071,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{C9C6292A-50C1-401A-AE54-41A4ADAF38C7}"
+      DTS:DTSID="{FE8AD690-2ABD-4331-B2AB-A974C8F5A70F}"
       DTS:From="Package\GDI  - Flight CSV Sequence Container"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -1058,9 +1094,9 @@
           Id="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - flight_csv to sqlserver"
           TopLeft="135,102" />
         <NodeLayout
-          Size="146,42"
-          Id="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv"
-          TopLeft="165,23" />
+          Size="178,42"
+          Id="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv"
+          TopLeft="155,23" />
         <NodeLayout
           Size="223,42"
           Id="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - log loaded file(flight) KO"
@@ -1075,7 +1111,7 @@
           TopLeft="12.5,187" />
         <EdgeLayout
           Id="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container.PrecedenceConstraints[Constraint]"
-          TopLeft="239,65">
+          TopLeft="242,65">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1197,7 +1233,11 @@
         <NodeLayout
           Size="316,42"
           Id="Package\GDI  - Flight CSV Sequence Container\GDI - insert flight_csv in demanda_comparaciones"
-          TopLeft="136.5,570" />
+          TopLeft="135.5,688" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\GDI  - Flight CSV Sequence Container\GDI - update countries"
+          TopLeft="202,586" />
         <NodeLayout
           Size="172,42"
           Id="Package\GDI  - Flight CSV Sequence Container\GDI - update UTF-8"
@@ -1226,18 +1266,40 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\GDI  - Flight CSV Sequence Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="295.25,527">
+          TopLeft="295.75,527">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43"
+              EndConnector="0,59"
               Start="0,0"
-              End="0,35.5">
+              End="0,51.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.5" />
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GDI  - Flight CSV Sequence Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="294.5,628">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1249,14 +1311,14 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="617,667"
-          Size="617,710"
+          PanelSize="617,784"
+          Size="617,827"
           Id="Package\GDI  - Flight CSV Sequence Container"
           TopLeft="52,177" />
         <NodeLayout
           Size="174,42"
           Id="Package\GDI - compress files"
-          TopLeft="273,938" />
+          TopLeft="267,1063" />
         <NodeLayout
           Size="215,42"
           Id="Package\GDI - STG Execute SQL Task"
@@ -1285,18 +1347,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="360.25,887">
+          TopLeft="357.25,1004">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51"
+              EndConnector="0,59"
               Start="0,0"
-              End="0,43.5">
+              End="0,51.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.5" />
+                    End="0,51.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1309,24 +1371,24 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv">
+    design-time-name="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="189,42"
-          Id="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Lee Fichros Flight From"
+          Id="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Flight From"
           TopLeft="101,77" />
         <NodeLayout
           Size="130,42"
-          Id="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Row Count"
+          Id="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Row Count"
           TopLeft="124,179" />
         <NodeLayout
           Size="161,42"
-          Id="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV"
+          Id="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV"
           TopLeft="110,282" />
         <EdgeLayout
-          Id="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv.Paths[Row Count Output 1]"
+          Id="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv.Paths[Row Count Output 1]"
           TopLeft="189.75,221">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1344,13 +1406,11 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv.Paths[Flat File Source Output]"
+          Id="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv.Paths[Flat File Source Output]"
           TopLeft="192.25,119">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1368,16 +1428,14 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load csv\Flight FicheroCSV">
+    design-time-name="Package\GDI  - Flight CSV Sequence Container\GDI  - Flight CSV Foreach Loop Container\GDI - load ficherocsv\Flight FicheroCSV">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

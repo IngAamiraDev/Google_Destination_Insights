@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="PC14886"
   DTS:CreatorName="MITYC\ddiego"
-  DTS:DTSID="{A397AF7A-01A0-4F6A-83CD-6D10A8C0D5D9}"
+  DTS:DTSID="{94F516A7-442B-4535-83C8-60C647DA574C}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.521.0"
+  DTS:LastModifiedProductVersion="15.0.2000.121"
   DTS:LocaleID="3082"
   DTS:ObjectName="02  GDI - Datawarehouse"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{AD5A00F6-735E-4C8D-8FB2-243E45BCCF14}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{4A74ECDD-4E09-4812-8740-522CA4978E4C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:LogProviders>
@@ -20,7 +20,7 @@
       DTS:ConfigString="DB_LOG"
       DTS:CreationName="Microsoft.LogProviderSQLServer"
       DTS:Description="Escribe entradas del registro sobre eventos en una base de datos de SQL Server"
-      DTS:DTSID="{3E9DEC37-7B32-4E2D-AEDE-60EB24949C9D}"
+      DTS:DTSID="{CED99303-E097-4A49-A063-F7E9DC8D01DE}"
       DTS:ObjectName="Proveedor de registro SSIS para SQL Server">
       <DTS:ObjectData>
         <InnerObject />
@@ -108,7 +108,7 @@
     </DTS:Property>
     <DTS:SelectedLogProviders>
       <DTS:SelectedLogProvider
-        DTS:InstanceID="{3E9DEC37-7B32-4E2D-AEDE-60EB24949C9D}" />
+        DTS:InstanceID="{CED99303-E097-4A49-A063-F7E9DC8D01DE}" />
     </DTS:SelectedLogProviders>
   </DTS:LoggingOptions>
   <DTS:Executables>
@@ -116,7 +116,7 @@
       DTS:refId="Package\GDI - delete same data as wrk"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{949B565C-E399-46CE-AE48-67165357CE21}"
+      DTS:DTSID="{225ACD42-04C7-4511-AEBF-1D905A447627}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="GDI - delete same data as wrk"
@@ -203,12 +203,12 @@
         </DTS:Property>
         <DTS:SelectedLogProviders>
           <DTS:SelectedLogProvider
-            DTS:InstanceID="{3E9DEC37-7B32-4E2D-AEDE-60EB24949C9D}" />
+            DTS:InstanceID="{CED99303-E097-4A49-A063-F7E9DC8D01DE}" />
         </DTS:SelectedLogProviders>
       </DTS:LoggingOptions>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+          SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
           SQLTask:SqlStatementSource="declare @f1 date,&#xA;@f2 date,&#xA;@fecha date&#xA;&#xA;set @fecha=getdate()&#xA;&#xA;&#xA;&#xA;select @f1=DATEADD(d,(DATEPART(dw, @fecha)-1)*-1, @fecha)&#xA;select @f2=DATEADD(d, 6, DATEADD(d,(DATEPART(dw, @fecha)-1)*-1, @fecha))&#xA;&#xA;&#xA;&#xA;delete from aa&#xA;from dwh.fact_demanda_comparaciones aa&#xA;where fecha between @f1 and @f2&#xA;--&#xA;&#xA;delete a&#xA;from [dwh].[fact_demanda_comparaciones] a&#xA;where exists (&#xA;select 1&#xA;from [stg].[fact_demanda_comparaciones] b&#xA;where 1=1&#xA;&#x9;and a.fecha = b.fecha&#xA;&#x9;and a.id_tipo = b.id_tipo&#xA;&#x9;and a.id_categoria = b.id_categoria&#xA;&#x9;and a.id_origen_mercado = b.id_origen_mercado&#xA;&#x9;and a.id_destino_mercado = b.id_destino_mercado&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -216,7 +216,7 @@
       DTS:refId="Package\GDI - insert into dwh"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{DF638259-1953-412E-B30E-D2FEFFD36BE3}"
+      DTS:DTSID="{29CB0BC0-FD02-49D6-9AC9-9C2D888093ED}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="GDI - insert into dwh"
@@ -303,12 +303,12 @@
         </DTS:Property>
         <DTS:SelectedLogProviders>
           <DTS:SelectedLogProvider
-            DTS:InstanceID="{3E9DEC37-7B32-4E2D-AEDE-60EB24949C9D}" />
+            DTS:InstanceID="{CED99303-E097-4A49-A063-F7E9DC8D01DE}" />
         </DTS:SelectedLogProviders>
       </DTS:LoggingOptions>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{66BCDFAF-1330-4AE7-8EB1-897F4ADCBC88}"
+          SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
           SQLTask:SqlStatementSource="INSERT INTO [dwh].[fact_demanda_comparaciones](&#xA;&#x9; [fecha]&#xA;&#x9;,[id_tipo]&#xA;&#x9;,[id_categoria]&#xA;&#x9;,[id_origen_mercado]&#xA;&#x9;,[id_destino_mercado]&#xA;&#x9;,[ratio]&#xA;&#x9;,[rank]&#xA;)&#xA;SELECT &#xA;&#x9; [fecha]&#xA;&#x9;,[id_tipo]&#xA;&#x9;,[id_categoria]&#xA;&#x9;,[id_origen_mercado]&#xA;&#x9;,[id_destino_mercado]&#xA;&#x9;,[ratio]&#xA;&#x9;,[rank]&#xA;  FROM [stg].[fact_demanda_comparaciones]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -317,19 +317,19 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{FD8E5DF2-0C2F-4E64-87D7-6FF154B725C2}"
+      DTS:DTSID="{0C67D1D0-3407-441A-9A7C-DA6C98FEB2C8}"
       DTS:From="Package\GDI - delete same data as wrk"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\GDI - insert into dwh" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
 <Objects
   Version="8">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
@@ -342,10 +342,10 @@
         <NodeLayout
           Size="178,42"
           Id="Package\GDI - insert into dwh"
-          TopLeft="193,198" />
+          TopLeft="194,198" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="282.25,129">
+          TopLeft="282.75,129">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"

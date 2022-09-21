@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="00 1 2 GDI - Staging Accomm CSV"
   DTS:PackageType="5"
-  DTS:VersionBuild="265"
-  DTS:VersionGUID="{131E0511-05B4-4082-80ED-E28B0B7145D7}">
+  DTS:VersionBuild="267"
+  DTS:VersionGUID="{13E25984-1C97-483D-BE4C-EA759F94834F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="\\sgtic01\R_SGCET\Datos\GDI\PRE\Temporal\Alojamientos\">
+          DTS:ConnectionString="\\sgtic01\R_SGCET\Datos\GDI\DES\Temporal\Alojamientos\">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -97,7 +97,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="accomm_csv">
       <DTS:VariableValue
-        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\PRE\Temporal\Alojamientos\</DTS:VariableValue>
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Temporal\Alojamientos\</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -117,7 +117,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="accomm_path_csv">
       <DTS:VariableValue
-        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\PRE\Temporal\Alojamientos</DTS:VariableValue>
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Temporal\Alojamientos</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -147,7 +147,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="gdi_folder">
       <DTS:VariableValue
-        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\PRE\</DTS:VariableValue>
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -158,7 +158,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="procesado_ko">
       <DTS:VariableValue
-        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\PRE\Procesado KO\</DTS:VariableValue>
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado KO\</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -169,7 +169,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="procesado_ok">
       <DTS:VariableValue
-        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\PRE\Procesado OK\</DTS:VariableValue>
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -180,7 +180,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="procesando">
       <DTS:VariableValue
-        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\PRE\Procesando\</DTS:VariableValue>
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Procesando\</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -191,7 +191,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="zip_files">
       <DTS:VariableValue
-        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\PRE\Procesado OK\GDI_2022-08-22.zip</DTS:VariableValue>
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-09-21.zip</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:LoggingOptions
@@ -306,7 +306,7 @@
             <DTS:ObjectData>
               <ForEachFileEnumeratorProperties>
                 <FEFEProperty
-                  Folder="\\sgtic01\R_SGCET\Datos\GDI\PRE\Temporal\Alojamientos" />
+                  Folder="\\sgtic01\R_SGCET\Datos\GDI\DES\Temporal\Alojamientos" />
                 <FEFEProperty
                   FileSpec="*.*" />
                 <FEFEProperty
@@ -755,7 +755,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="GDI - log loaded file(accomm) KO"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:LoggingOptions
                 DTS:FilterKind="0" />
@@ -781,7 +781,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="GDI - move accomm_csv KO"
               DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:LoggingOptions
                 DTS:FilterKind="0" />
@@ -805,7 +805,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="GDI - move accomm_csv OK"
               DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:LoggingOptions
                 DTS:FilterKind="0" />
@@ -878,7 +878,24 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
-              SQLTask:SqlStatementSource="INSERT INTO [stg].[demanda_comparaciones]&#xA;(&#xA;&#x9; [fecha]&#xA;&#x9;,[demanda_tipo]&#xA;&#x9;,[demanda_categoria]&#xA;&#x9;,[origen_mercado]&#xA;&#x9;,[destino_mercado]&#xA;&#x9;,[rank]&#xA;&#x9;,[ratio]&#xA;)&#xA;SELECT &#xA;&#x9;GETDATE() AS [fecha], &#xA;&#x9;'Salidas' AS [demanda_tipo], &#xA;&#x9;'Alojamiento' AS [demanda_categoria]&#xA;&#x9;,b.alpha2 AS [origen_mercado]&#xA;&#x9;,c.alpha2 AS [destino_mercado]&#xA;&#x9;,[rank]&#xA;&#x9;,[ratio]&#xA;FROM [Destination_Insights].[stg].[FicheroCSV] a&#xA;&#x9;INNER JOIN [DATATUR].[dbo].[DimMercado] b ON a.origin_country = b.countries_es&#xA;&#x9;INNER JOIN [DATATUR].[dbo].[DimMercado] c ON a.destination_country = c.countries_es" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="INSERT INTO [stg].[demanda_comparaciones]&#xA;(&#xA;&#x9; [fecha]&#xA;&#x9;,[demanda_tipo]&#xA;&#x9;,[demanda_categoria]&#xA;&#x9;,[origen_mercado]&#xA;&#x9;,[destino_mercado]&#xA;&#x9;,[rank]&#xA;&#x9;,[ratio]&#xA;)&#xA;SELECT &#xA;&#x9;[fecha] = DATEADD(dd, -(DATEPART(dw, GETDATE()-1)),GETDATE()), &#xA;&#x9;'Salidas' AS [demanda_tipo], &#xA;&#x9;'Alojamiento' AS [demanda_categoria]&#xA;&#x9;,b.alpha2 AS [origen_mercado]&#xA;&#x9;,c.alpha2 AS [destino_mercado]&#xA;&#x9;,[rank]&#xA;&#x9;,[ratio]&#xA;FROM [Destination_Insights].[stg].[FicheroCSV] a&#xA;&#x9;INNER JOIN [DATATUR].[dbo].[DimMercado] b ON a.origin_country = b.countries_es&#xA;&#x9;INNER JOIN [DATATUR].[dbo].[DimMercado] c ON a.destination_country = c.countries_es" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GDI  - Accomm CSV Sequence Container\GDI - update countries"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{a61dd5cb-46fa-49c5-a415-3c78a20adbc4}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="GDI - update countries"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022 CTP2.0; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
+              SQLTask:SqlStatementSource="UPDATE [stg].[FicheroCSV]&#xA;   SET [origin_country] = b.[countries_es]&#xA;      ,[destination_country] = c.[countries_es]&#xA;FROM [Destination_Insights].[stg].[FicheroCSV] a&#xA; INNER JOIN [DATATUR].[dbo].[DimMercado] b ON a.origin_country = b.countries_en&#xA; INNER JOIN [DATATUR].[dbo].[DimMercado] c ON a.destination_country = c.countries_en" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -911,10 +928,18 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\GDI  - Accomm CSV Sequence Container.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{9629AE1E-771A-4366-826D-82CEA932AC85}"
+          DTS:DTSID="{35472833-B1C3-4211-BAE3-AEBBCD6A4776}"
           DTS:From="Package\GDI  - Accomm CSV Sequence Container\GDI - update UTF-8"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
+          DTS:To="Package\GDI  - Accomm CSV Sequence Container\GDI - update countries" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GDI  - Accomm CSV Sequence Container.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{598D2090-F843-4C44-99AB-698379AC7C0F}"
+          DTS:From="Package\GDI  - Accomm CSV Sequence Container\GDI - update countries"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
           DTS:To="Package\GDI  - Accomm CSV Sequence Container\GDI - insert accomm_csv in demanda_comparaciones" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
@@ -1013,7 +1038,7 @@
       <DTS:ObjectData>
         <ExecuteProcessData
           Executable="C:\Program Files\7-Zip\7z.exe"
-          Arguments="a -t7z &quot;\\sgtic01\R_SGCET\Datos\GDI\PRE\Procesado OK\GDI_2022-08-22.zip&quot; &quot;\\sgtic01\R_SGCET\Datos\GDI\PRE\Procesado OK\*.csv&quot; -sdel" />
+          Arguments="a -t7z &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-09-21.zip&quot; &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\*.csv&quot; -sdel" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1208,7 +1233,7 @@
         <NodeLayout
           Size="332,42"
           Id="Package\GDI  - Accomm CSV Sequence Container\GDI - insert accomm_csv in demanda_comparaciones"
-          TopLeft="143.5,569" />
+          TopLeft="140.5,682" />
         <NodeLayout
           Size="172,42"
           Id="Package\GDI  - Accomm CSV Sequence Container\GDI - update UTF-8"
@@ -1235,20 +1260,46 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="187,42"
+          Id="Package\GDI  - Accomm CSV Sequence Container\GDI - update countries"
+          TopLeft="210,580" />
         <EdgeLayout
           Id="Package\GDI  - Accomm CSV Sequence Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="309.75,527">
+          TopLeft="306.75,527">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42"
+              EndConnector="0,53"
               Start="0,0"
-              End="0,34.5">
+              End="0,45.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.5" />
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GDI  - Accomm CSV Sequence Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="305,622">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1260,14 +1311,14 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="614,667"
-          Size="614,710"
+          PanelSize="614,779"
+          Size="614,822"
           Id="Package\GDI  - Accomm CSV Sequence Container"
           TopLeft="52,177" />
         <NodeLayout
           Size="174,42"
           Id="Package\GDI - compress files"
-          TopLeft="273,938" />
+          TopLeft="269,1043" />
         <NodeLayout
           Size="170,42"
           Id="Package\GDI - truncate STG"
@@ -1296,18 +1347,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="359.5,887">
+          TopLeft="357.5,999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51"
+              EndConnector="0,44"
               Start="0,0"
-              End="0,43.5">
+              End="0,36.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.5" />
+                    End="0,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1323,7 +1374,7 @@
     design-time-name="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="175,42"
           Id="Package\GDI  - Accomm CSV Sequence Container\GDI  - Accomm CSV Foreach Loop Container\GDI - load ficherocsv\Lee Fichros Accomm"
@@ -1355,7 +1406,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1377,7 +1430,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
