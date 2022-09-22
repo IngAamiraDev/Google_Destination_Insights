@@ -18,7 +18,7 @@
       DTS:ConnectionString="Data Source=VSRV653\SQLD_TURANALIZA;User ID=Destination_Insights_admin;Initial Catalog=Destination_Insights;Provider=MSOLEDBSQL.1;Auto Translate=False;Application Name=SSIS-{988ACCED-E98F-462E-9F4C-36069689DCBD}Destination_Insights;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIkGRrnMhgEm+jHkYD/UFDgAAAAACAAAAAAADZgAAwAAAABAAAADH6yYdA0SsRLg25y2SowmvAAAAAASAAACgAAAAEAAAAPOPlvHQD4DNa0mJaiuP+g9wAAAAkT0MIaF3G8PbGeCLB1h0k+340flT/iQ4UfAOerNI4EetK6Z3MVOcDofpOfd3pVZDDSfWm5Zxlz+Kb5768jUzaxCIu0Xj1tSMublAnQZB1oRK0OU8eyWIAKRP0L8wa+oboyWVKWz2VJikYg//namLqhQAAADg3Wq+oXufah10kjBcjKptJ1RusA==</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIkGRrnMhgEm+jHkYD/UFDgAAAAACAAAAAAADZgAAwAAAABAAAACs6uOFp6HFZEXr+LbKJ8MOAAAAAASAAACgAAAAEAAAAP76fn2CH/Wrcpi3H0oUQBJwAAAAoPGdXw9ZLvQ8oW6t3E/sQeNbd7PBgONPnSt3rOQcZhwxiemS1GCXkGrAbh3oCqFvZyZyfS//HDVZ5towbhsTO6OEt6roVPKubLK42c1zxwDsIQGsEpj+fNp0JeBZ4W5FleHBl0ag6NnBCwFowjc5CxQAAAAzw7hTT5jEgsm7A8OQCpYG1mrb0Q==</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

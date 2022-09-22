@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="00 1 2 GDI - Staging Accomm CSV"
   DTS:PackageType="5"
-  DTS:VersionBuild="267"
-  DTS:VersionGUID="{13E25984-1C97-483D-BE4C-EA759F94834F}">
+  DTS:VersionBuild="269"
+  DTS:VersionGUID="{FE9EFB37-5309-4CE3-9CBC-77DB0E8537E4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -191,7 +191,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="zip_files">
       <DTS:VariableValue
-        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-09-21.zip</DTS:VariableValue>
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-09-22.zip</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:LoggingOptions
@@ -912,7 +912,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
-              SQLTask:SqlStatementSource="UPDATE [Destination_Insights].[stg].[FicheroCSV] SET [origin_country] = &#xA;REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE([origin_country], '&quot;',''), 'Ã','Á'), 'Ã±','ñ'), 'Ã¡','á'), 'Ã©','é'), 'Ã­','í'), 'Ã³','ó'),'Ãº','ú')&#xA;&#xA;&#xA;UPDATE [Destination_Insights].[stg].[FicheroCSV] SET [destination_country] = &#xA;REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE([destination_country], '&quot;',''), 'Ã','Á'), 'Ã±','ñ'), 'Ã¡','á'), 'Ã©','é'), 'Ã­','í'), 'Ã³','ó'),'Ãº','ú')&#xA;&#xA;&#xA;UPDATE [Destination_Insights].[stg].[FicheroCSV] SET [rank] = REPLACE([rank], '&quot;&quot;',0)&#xA;&#xA;&#xA;DELETE FROM [Destination_Insights].[stg].[FicheroCSV]&#xA;WHERE [rank] = 0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="UPDATE [Destination_Insights].[stg].[FicheroCSV] SET [origin_country] = &#xA;REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE([origin_country], '&quot;',''), 'Ã','Á'), 'Ã±','ñ'), 'Ã¡','á'), 'Ã©','é'), 'Ã­','í'), 'Ã³','ó'),'Ãº','ú')&#xA;&#xA;&#xA;UPDATE [Destination_Insights].[stg].[FicheroCSV] SET [destination_country] = &#xA;REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE([destination_country], '&quot;',''), 'Ã','Á'), 'Ã±','ñ'), 'Ã¡','á'), 'Ã©','é'), 'Ã­','í'), 'Ã³','ó'),'Ãº','ú')&#xA;&#xA;&#xA;UPDATE [Destination_Insights].[stg].[FicheroCSV] SET [rank] = REPLACE([rank], '&quot;&quot;',0)&#xA;&#xA;&#xA;UPDATE [Destination_Insights].[stg].[FicheroCSV]&#xA;SET origin_country = 'Czech Republic'&#xA;WHERE origin_country = 'Czechia'&#xA;&#xA;&#xA;&#xA;DELETE FROM [Destination_Insights].[stg].[FicheroCSV]&#xA;WHERE [rank] = 0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -1038,7 +1038,7 @@
       <DTS:ObjectData>
         <ExecuteProcessData
           Executable="C:\Program Files\7-Zip\7z.exe"
-          Arguments="a -t7z &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-09-21.zip&quot; &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\*.csv&quot; -sdel" />
+          Arguments="a -t7z &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-09-22.zip&quot; &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\*.csv&quot; -sdel" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1235,6 +1235,10 @@
           Id="Package\GDI  - Accomm CSV Sequence Container\GDI - insert accomm_csv in demanda_comparaciones"
           TopLeft="140.5,682" />
         <NodeLayout
+          Size="187,42"
+          Id="Package\GDI  - Accomm CSV Sequence Container\GDI - update countries"
+          TopLeft="210,580" />
+        <NodeLayout
           Size="172,42"
           Id="Package\GDI  - Accomm CSV Sequence Container\GDI - update UTF-8"
           TopLeft="224,485" />
@@ -1260,10 +1264,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="187,42"
-          Id="Package\GDI  - Accomm CSV Sequence Container\GDI - update countries"
-          TopLeft="210,580" />
         <EdgeLayout
           Id="Package\GDI  - Accomm CSV Sequence Container.PrecedenceConstraints[Constraint 1]"
           TopLeft="306.75,527">
