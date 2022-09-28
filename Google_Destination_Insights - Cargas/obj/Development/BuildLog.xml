@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Google Destination Insights - Cargas</Name>
-    <LastWriteTime>2022-08-22T09:07:19.9156742Z</LastWriteTime>
+    <LastWriteTime>2022-09-28T09:05:21.8441981Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,7 +13,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>01 GDI - Work.dtsx</Name>
-      <LastWriteTime>2022-09-12T09:57:09.2100632Z</LastWriteTime>
+      <LastWriteTime>2022-09-28T08:59:58.0000382Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -33,7 +33,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>00.1.1 GDI - Staging Flight CSV.dtsx</Name>
-      <LastWriteTime>2022-09-22T08:28:23.3365975Z</LastWriteTime>
+      <LastWriteTime>2022-09-22T09:18:26.802544Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>

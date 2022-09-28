@@ -3,22 +3,10 @@
   DTS:ObjectName="DB_LOG"
   DTS:DTSID="{CC099B28-C3BC-443A-9DC4-5CAB9B3025FD}"
   DTS:CreationName="OLEDB">
-  <DTS:PropertyExpression
-    DTS:Name="InitialCatalog">@[$Project::log_db]</DTS:PropertyExpression>
-  <DTS:PropertyExpression
-    DTS:Name="Password">@[$Project::log_password]</DTS:PropertyExpression>
-  <DTS:PropertyExpression
-    DTS:Name="ServerName">@[$Project::server_name]</DTS:PropertyExpression>
-  <DTS:PropertyExpression
-    DTS:Name="UserName">@[$Project::log_user]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=VSRV653\SQLD_TURANALIZA;User ID=db_log_admin;Initial Catalog=DB_LOG;Provider=MSOLEDBSQL.1;Auto Translate=False;Application Name=SSIS-Package1-{CC099B28-C3BC-443A-9DC4-5CAB9B3025FD}VSRV653\SQLD_TURANALIZA.DB_LOG.DB_LOG_Admin;">
-      <DTS:Password
-        DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIkGRrnMhgEm+jHkYD/UFDgAAAAACAAAAAAADZgAAwAAAABAAAACJgdb3NKzvlVB7bLBHwEwyAAAAAASAAACgAAAAEAAAAOJ+3RxwzWZrSYXaHkpk8tFwAAAAzYVUPKnnMy5n4FEgHh/DqcBasTDE+0C6iRI/yaVnAH/VFQ65+kxJi+oKMcdYTfZiNIt/xd0pbIqigz0W8qxZ4mn7IohN8iNlk/pm2T4lNjIPX7eu4yE77RE5o7JPKSiDYhsNiFw0xZ0zqWxT7O6iYhQAAAAjGeWTsO8VJsApSLGVxsmZEqwnEA==</DTS:Password>
-    </DTS:ConnectionManager>
+      DTS:ConnectionString="Data Source=VSRV653\SQLD_TURANALIZA;Initial Catalog=DB_LOG;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{CC099B28-C3BC-443A-9DC4-5CAB9B3025FD}VSRV653\SQLD_TURANALIZA.DB_LOG.DB_LOG_Admin;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

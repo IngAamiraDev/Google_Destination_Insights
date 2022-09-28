@@ -191,7 +191,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="zip_files">
       <DTS:VariableValue
-        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-09-22.zip</DTS:VariableValue>
+        DTS:DataType="8">\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-09-28.zip</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:LoggingOptions
@@ -1038,7 +1038,7 @@
       <DTS:ObjectData>
         <ExecuteProcessData
           Executable="C:\Program Files\7-Zip\7z.exe"
-          Arguments="a -t7z &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-09-22.zip&quot; &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\*.csv&quot; -sdel" />
+          Arguments="a -t7z &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\GDI_2022-09-28.zip&quot; &quot;\\sgtic01\R_SGCET\Datos\GDI\DES\Procesado OK\*.csv&quot; -sdel" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable

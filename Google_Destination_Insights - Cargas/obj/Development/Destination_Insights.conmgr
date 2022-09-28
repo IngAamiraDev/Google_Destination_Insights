@@ -3,22 +3,10 @@
   DTS:ObjectName="Destination_Insights"
   DTS:DTSID="{988ACCED-E98F-462E-9F4C-36069689DCBD}"
   DTS:CreationName="OLEDB">
-  <DTS:PropertyExpression
-    DTS:Name="InitialCatalog">@[$Project::gdi_db]</DTS:PropertyExpression>
-  <DTS:PropertyExpression
-    DTS:Name="Password">@[$Project::gdi_password]</DTS:PropertyExpression>
-  <DTS:PropertyExpression
-    DTS:Name="ServerName">@[$Project::server_name]</DTS:PropertyExpression>
-  <DTS:PropertyExpression
-    DTS:Name="UserName">@[$Project::gdi_user]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=VSRV653\SQLD_TURANALIZA;User ID=Destination_Insights_admin;Initial Catalog=Destination_Insights;Provider=MSOLEDBSQL.1;Auto Translate=False;Application Name=SSIS-{988ACCED-E98F-462E-9F4C-36069689DCBD}Destination_Insights;">
-      <DTS:Password
-        DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIkGRrnMhgEm+jHkYD/UFDgAAAAACAAAAAAADZgAAwAAAABAAAACs6uOFp6HFZEXr+LbKJ8MOAAAAAASAAACgAAAAEAAAAP76fn2CH/Wrcpi3H0oUQBJwAAAAoPGdXw9ZLvQ8oW6t3E/sQeNbd7PBgONPnSt3rOQcZhwxiemS1GCXkGrAbh3oCqFvZyZyfS//HDVZ5towbhsTO6OEt6roVPKubLK42c1zxwDsIQGsEpj+fNp0JeBZ4W5FleHBl0ag6NnBCwFowjc5CxQAAAAzw7hTT5jEgsm7A8OQCpYG1mrb0Q==</DTS:Password>
-    </DTS:ConnectionManager>
+      DTS:ConnectionString="Data Source=VSRV653\SQLD_TURANALIZA;Initial Catalog=Destination_Insights;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-{988ACCED-E98F-462E-9F4C-36069689DCBD}Destination_Insights;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>
